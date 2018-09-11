@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{37abf8e3-464e-461b-9cfc-638f51feff0c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{e4163ad1-084d-411d-9715-d6797a636add}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{106756e6-2537-48d4-ab24-9c116a3b5338}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="os_core.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os_cpu_c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os_flag.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os_mbox.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os_mem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os_mutex.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os_q.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os_sem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os_task.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os_time.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="os_trace.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exo3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="includes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="os_cpu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ucos_ii.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="os_cfg_r.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="os_trace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
