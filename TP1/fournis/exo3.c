@@ -77,8 +77,8 @@ void main(void)
 
 	// A completer
 	OSInit();
-	
-	FlagGroup = OSFlagCreate(0x0, &errFlag);
+
+	FlagGroup = OSFlagCreate(0x4, &errFlag);
 
 	err = OSTaskCreate(controller, (void*)0, &controllerStk[TASK_STK_SIZE - 1], CONTROLLER_PRIO);
 	errMsg(err, "Erreur !");
@@ -91,7 +91,7 @@ void main(void)
 	if (errFlag == OS_ERR_NONE) {
 		OSStart();
 	}
-	
+
 
 
 
@@ -125,7 +125,7 @@ void robotA(void* data)
 		int counter = 0;
 		while (counter < itemCount * 1000) { counter++; }
 		printf("ROBOT A COMMANDE #%d avec %d items @ %d.\n", orderNumber, itemCount, OSTimeGet() - startTime);
-		// updateCurrentTotalCount(err, itemCount);
+		updateCurrentTotalCount(err, itemCount);
 		orderNumber++;
 	}
 }
@@ -149,7 +149,7 @@ void robotB(void* data)
 		int counter = 0;
 		while (counter < itemCount * 1000) { counter++; }
 		printf("ROBOT B COMMANDE #%d avec %d items @ %d.\n", orderNumber, itemCount, OSTimeGet() - startTime);
-		// updateCurrentTotalCount(err, itemCount);
+		updateCurrentTotalCount(err, itemCount);
 		orderNumber++;
 	}
 }
