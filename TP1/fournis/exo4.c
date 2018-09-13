@@ -39,6 +39,10 @@ OS_STK           prepRobotBStk[TASK_STK_SIZE];
 OS_STK           transportStk[TASK_STK_SIZE];
 OS_STK           controllerStk[TASK_STK_SIZE];
 
+OS_EVENT *controller_to_robotA;
+OS_EVENT *robotA_to_robotB;
+OS_EVENT* mutex_item_count;
+
 /*
 *********************************************************************************************************
 *                                           SHARED  VARIABLES
@@ -56,6 +60,7 @@ void    controller(void *data);
 void    errMsg(INT8U err, char* errMSg);
 int		readCurrentTotalItemCount();
 void	writeCurrentTotalItemCount(int qty);
+void	updateCurrentTotalCount(INT8U err, int itemCount);
 
 /*
 *********************************************************************************************************
@@ -68,6 +73,10 @@ typedef struct work_data {
 	int work_data_b;
 } work_data;
 
+
+work_data liste_controller_to_robotA[10];
+work_data liste_robotA_to_robotB[10];
+
 /*
 *********************************************************************************************************
 *                                                  MAIN
@@ -79,6 +88,22 @@ void main(void)
 	UBYTE err;
 
 	// A completer
+
+	OSInit();
+
+	mutex_item_count = OSMutexCreate(0, &err);
+
+	err = OSTaskCreate(controller, (void*)0, &controllerStk[TASK_STK_SIZE - 1], CONTROLLER_PRIO);
+	errMsg(err, "Erreur !");
+	err = OSTaskCreate(robotA, (void*)0, &prepRobotAStk[TASK_STK_SIZE - 1], ROBOT_A_PRIO);
+	errMsg(err, "Erreur !");
+	err = OSTaskCreate(robotB, (void*)0, &prepRobotBStk[TASK_STK_SIZE - 1], ROBOT_B_PRIO);
+	errMsg(err, "Erreur !");
+
+	controller_to_robotA = OSQCreate(&liste_controller_to_robotA[0], 10);
+	robotA_to_robotB = OSQCreate(&liste_robotA_to_robotB[0], 10);
+
+	OSStart();
 
 	return;
 }
@@ -101,9 +126,16 @@ void robotA(void* data)
 	{
 		// A completer
 
+		work_data *work_data = OSQPend(controller_to_robotA, 0, &err);
+		OSQPost(robotA_to_robotB, work_data);
+
+
+		itemCountRobotA = work_data->work_data_a;
+
 		int counter = 0;
 		while (counter < itemCountRobotA * 1000) { counter++; }
 		printf("ROBOT A COMMANDE #%d avec %d items @ %d.\n", orderNumber, itemCountRobotA, OSTimeGet() - startTime);
+		updateCurrentTotalCount(err, itemCountRobotA);
 
 		orderNumber++;
 	}
@@ -120,10 +152,14 @@ void robotB(void* data)
 	{
 		// A completer
 
+		work_data *work_data = OSQPend(robotA_to_robotB, 0, &err);
+
+		itemCountRobotB = work_data->work_data_b;
+
 		int counter = 0;
 		while (counter < itemCountRobotB * 1000) { counter++; }
 		printf("ROBOT B COMMANDE #%d avec %d items @ %d.\n", orderNumber, itemCountRobotB, OSTimeGet() - startTime);
-
+		updateCurrentTotalCount(err, itemCountRobotB);
 		orderNumber++;
 	}
 }
@@ -147,6 +183,8 @@ void controller(void* data)
 		printf("TACHE CONTROLLER @ %d : COMMANDE #%d. \n prep time A = %d, prep time B = %d\n", OSTimeGet() - startTime, i, workData->work_data_a, workData->work_data_b);
 		
 		// A completer
+
+		OSQPost(controller_to_robotA, workData);
 
 		// Délai aléatoire avant nouvelle commande
 		randomTime = (rand() % 9 + 5) * 4;
@@ -172,4 +210,11 @@ void errMsg(INT8U err, char* errMsg)
 		printf(errMsg);
 		exit(1);
 	}
+}
+
+void updateCurrentTotalCount(INT8U err, int itemCount) {
+	OSMutexPend(mutex_item_count, 0, &err);
+	errMsg(err, "Erreur mutex_item_count");
+	writeCurrentTotalItemCount(readCurrentTotalItemCount() + itemCount);
+	OSMutexPost(mutex_item_count);
 }
