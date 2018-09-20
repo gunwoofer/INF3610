@@ -28,7 +28,7 @@
 #define ROBOT_A_PRIO_2   		9
 #define ROBOT_B_PRIO_1   		10			
 #define ROBOT_B_PRIO_2   		11
-#define CONTROLLER_PRIO     22
+#define CONTROLLER_PRIO			22
 
 #define QUEUE_SIZE 10
 /*
@@ -45,7 +45,8 @@ OS_STK           transportStk[TASK_STK_SIZE];
 OS_STK           controllerStk[TASK_STK_SIZE];
 
 OS_EVENT *controller_to_robotA;
-OS_EVENT *robotA_to_robotB;
+OS_EVENT *robotA_to_robotB_1;
+OS_EVENT *robotA_to_robotB_2;
 OS_EVENT* mutex_item_count;
 
 
@@ -81,8 +82,9 @@ typedef struct work_data {
 } work_data;
 
 
-work_data liste_controller_to_robotA[10];
-work_data liste_robotA_to_robotB[10];
+work_data liste_controller_to_robotA[QUEUE_SIZE];
+work_data liste_robotA_to_robotB_1[QUEUE_SIZE];
+work_data liste_robotA_to_robotB_2[QUEUE_SIZE];
 
 /*
 *********************************************************************************************************
@@ -94,7 +96,6 @@ void main(void)
 {
 	UBYTE err;
 
-	// A completer
 	int* numero_equipe;
 
 	OSInit();
@@ -113,13 +114,13 @@ void main(void)
 	errMsg(err, "Erreur creation du RobotB !");
 
 	controller_to_robotA = OSQCreate(&liste_controller_to_robotA[0], QUEUE_SIZE);
-	robotA_to_robotB = OSQCreate(&liste_robotA_to_robotB[0], QUEUE_SIZE);
+	robotA_to_robotB_1 = OSQCreate(&liste_robotA_to_robotB_1[0], QUEUE_SIZE);
+	robotA_to_robotB_2 = OSQCreate(&liste_robotA_to_robotB_2[0], QUEUE_SIZE);
 
-	if (controller_to_robotA != NULL && robotA_to_robotB != NULL)
+	if (controller_to_robotA != NULL && robotA_to_robotB_1 != NULL && robotA_to_robotB_2 != NULL)
 		OSStart();
 	else
 		printf("Erreur lors de la creation d'une de communication");
-
 
 	return;
 }
@@ -140,12 +141,21 @@ void robotA(void* data)
 	int itemCountRobotA;
 	while (1)
 	{
-		// A completer
-
 		work_data *work_data = OSQPend(controller_to_robotA, 0, &err);
 		errMsg(err, "Erreur controller_to_robotA");
 
-		OSQPost(robotA_to_robotB, work_data);
+		if (data == 1) {
+			printf("Robot A | Equipe %d sending request to Robot B | Equipe 1\n", data);
+			OSQPost(robotA_to_robotB_1, work_data);
+		}
+		else if (data == 2) {
+			printf("Robot A | Equipe %d sending request to Robot B | Equipe 2\n", data);
+			OSQPost(robotA_to_robotB_2, work_data);
+		}
+		else {
+			printf("Erreur argument pData");
+		}
+
 
 		itemCountRobotA = work_data->work_data_a;
 
@@ -167,10 +177,17 @@ void robotB(void* data)
 	int itemCountRobotB;
 	while (1)
 	{
-		// A completer
+		work_data *work_data = NULL;
 
-		work_data *work_data = OSQPend(robotA_to_robotB, 0, &err);
-		errMsg(err, "Erreur robotA_to_robotB");
+		if (data == 1) {
+			work_data = OSQPend(robotA_to_robotB_1, 0, &err);
+			errMsg(err, "Erreur robotA_to_robotB_1");
+		}
+		else {
+			work_data = OSQPend(robotA_to_robotB_2, 0, &err);
+			errMsg(err, "Erreur robotA_to_robotB_2");
+		}
+
 
 		itemCountRobotB = work_data->work_data_b;
 
