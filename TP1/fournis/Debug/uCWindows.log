@@ -1,8 +1,6 @@
 ﻿  exo4.c
-d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo4.c(103): warning C4047: 'fonction' : les niveaux d'indirection de 'void **' et de 'work_data *' sont différents
-d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo4.c(103): warning C4022: 'OSQCreate' : incompatibilité de pointeur pour le paramètre réel 1
-d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo4.c(104): warning C4047: 'fonction' : les niveaux d'indirection de 'void **' et de 'work_data *' sont différents
-d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo4.c(104): warning C4022: 'OSQCreate' : incompatibilité de pointeur pour le paramètre réel 1
-d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo4.c(169): warning C4101: 'err' : variable locale non référencée
-exo4.obj : warning LNK4075: ' /EDITANDCONTINUE' ignoré à cause de la spécification '/SAFESEH'
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo4.c(106): warning C4047: 'fonction' : les niveaux d'indirection de 'void **' et de 'work_data *' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo4.c(106): warning C4022: 'OSQCreate' : incompatibilité de pointeur pour le paramètre réel 1
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo4.c(107): warning C4047: 'fonction' : les niveaux d'indirection de 'void **' et de 'work_data *' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo4.c(107): warning C4022: 'OSQCreate' : incompatibilité de pointeur pour le paramètre réel 1
   uCWindows.vcxproj -> D:\Valentin\POLYMTL\INF3610\TPS\TP1\fournis\.\Debug\uCWindows.exe

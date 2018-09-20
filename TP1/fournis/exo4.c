@@ -28,6 +28,7 @@
 #define ROBOT_B_PRIO   		9
 #define CONTROLLER_PRIO     22
 
+#define QUEUE_SIZE 10
 /*
 *********************************************************************************************************
 *                                             VARIABLES
@@ -42,6 +43,8 @@ OS_STK           controllerStk[TASK_STK_SIZE];
 OS_EVENT *controller_to_robotA;
 OS_EVENT *robotA_to_robotB;
 OS_EVENT* mutex_item_count;
+
+
 
 /*
 *********************************************************************************************************
@@ -94,16 +97,20 @@ void main(void)
 	mutex_item_count = OSMutexCreate(0, &err);
 
 	err = OSTaskCreate(controller, (void*)0, &controllerStk[TASK_STK_SIZE - 1], CONTROLLER_PRIO);
-	errMsg(err, "Erreur !");
+	errMsg(err, "Erreur creation du Controleur !");
 	err = OSTaskCreate(robotA, (void*)0, &prepRobotAStk[TASK_STK_SIZE - 1], ROBOT_A_PRIO);
-	errMsg(err, "Erreur !");
+	errMsg(err, "Erreur creation du RobotA!");
 	err = OSTaskCreate(robotB, (void*)0, &prepRobotBStk[TASK_STK_SIZE - 1], ROBOT_B_PRIO);
-	errMsg(err, "Erreur !");
+	errMsg(err, "Erreur creation du RobotB !");
 
-	controller_to_robotA = OSQCreate(&liste_controller_to_robotA[0], 10);
-	robotA_to_robotB = OSQCreate(&liste_robotA_to_robotB[0], 10);
+	controller_to_robotA = OSQCreate(&liste_controller_to_robotA[0], QUEUE_SIZE);
+	robotA_to_robotB = OSQCreate(&liste_robotA_to_robotB[0], QUEUE_SIZE);
 
-	OSStart();
+	if (controller_to_robotA != NULL && robotA_to_robotB != NULL)
+		OSStart();
+	else
+		printf("Erreur lors de la creation d'une de communication");
+	
 
 	return;
 }
@@ -127,8 +134,9 @@ void robotA(void* data)
 		// A completer
 
 		work_data *work_data = OSQPend(controller_to_robotA, 0, &err);
-		OSQPost(robotA_to_robotB, work_data);
+		errMsg(err, "Erreur controller_to_robotA");
 
+		OSQPost(robotA_to_robotB, work_data);
 
 		itemCountRobotA = work_data->work_data_a;
 
@@ -153,6 +161,7 @@ void robotB(void* data)
 		// A completer
 
 		work_data *work_data = OSQPend(robotA_to_robotB, 0, &err);
+		errMsg(err, "Erreur robotA_to_robotB");
 
 		itemCountRobotB = work_data->work_data_b;
 
@@ -166,7 +175,6 @@ void robotB(void* data)
 
 void controller(void* data)
 {
-	INT8U err;
 	int startTime = 0;
 	int randomTime = 0;
 	work_data* workData;
