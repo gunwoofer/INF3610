@@ -14,7 +14,7 @@
     <SccProjectName />
     <SccLocalPath />
     <ProjectGuid>{41CABB1B-1A8C-257A-3BAE-7BAE7B65D200}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -121,7 +121,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="exo4.c" />
+    <ClCompile Include="exo5.c" />
     <ClCompile Include="os_core.c" />
     <ClCompile Include="os_cpu_c.c" />
     <ClCompile Include="os_flag.c" />
