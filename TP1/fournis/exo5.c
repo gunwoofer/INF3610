@@ -24,8 +24,10 @@
 
 #define TASK_STK_SIZE       16384            // Size of each task's stacks (# of WORDs)
 
-#define ROBOT_A_PRIO   		8				 // Defining Priority of each task
-#define ROBOT_B_PRIO   		9
+#define ROBOT_A_PRIO_1   		8				 // Defining Priority of each task
+#define ROBOT_A_PRIO_2   		9
+#define ROBOT_B_PRIO_1   		10			
+#define ROBOT_B_PRIO_2   		11
 #define CONTROLLER_PRIO     22
 
 #define QUEUE_SIZE 10
@@ -35,8 +37,10 @@
 *********************************************************************************************************
 */
 
-OS_STK           prepRobotAStk[TASK_STK_SIZE];	//Stack of each task
-OS_STK           prepRobotBStk[TASK_STK_SIZE];
+OS_STK           prepRobotAStk_1[TASK_STK_SIZE];	//Stack of each task
+OS_STK           prepRobotBStk_1[TASK_STK_SIZE];
+OS_STK           prepRobotAStk_2[TASK_STK_SIZE];
+OS_STK           prepRobotBStk_2[TASK_STK_SIZE];
 OS_STK           transportStk[TASK_STK_SIZE];
 OS_STK           controllerStk[TASK_STK_SIZE];
 
@@ -91,16 +95,21 @@ void main(void)
 	UBYTE err;
 
 	// A completer
+	int* numero_equipe;
 
 	OSInit();
 
 	mutex_item_count = OSMutexCreate(0, &err);
 
-	err = OSTaskCreate(controller, (void*)0, &controllerStk[TASK_STK_SIZE - 1], CONTROLLER_PRIO);
+	err = OSTaskCreate(controller, (void*) 0, &controllerStk[TASK_STK_SIZE - 1], CONTROLLER_PRIO);
 	errMsg(err, "Erreur creation du Controleur !");
-	err = OSTaskCreate(robotA, (void*)0, &prepRobotAStk[TASK_STK_SIZE - 1], ROBOT_A_PRIO);
+	err = OSTaskCreate(robotA, (void*) numero_equipe = 1, &prepRobotAStk_1[TASK_STK_SIZE - 1], ROBOT_A_PRIO_1);
 	errMsg(err, "Erreur creation du RobotA!");
-	err = OSTaskCreate(robotB, (void*)0, &prepRobotBStk[TASK_STK_SIZE - 1], ROBOT_B_PRIO);
+	err = OSTaskCreate(robotB, (void*) numero_equipe = 1, &prepRobotBStk_1[TASK_STK_SIZE - 1], ROBOT_B_PRIO_1);
+	errMsg(err, "Erreur creation du RobotB !");
+	err = OSTaskCreate(robotA, (void*) numero_equipe = 2, &prepRobotAStk_2[TASK_STK_SIZE - 1], ROBOT_A_PRIO_2);
+	errMsg(err, "Erreur creation du RobotA!");
+	err = OSTaskCreate(robotB, (void*) numero_equipe = 2, &prepRobotBStk_2[TASK_STK_SIZE - 1], ROBOT_B_PRIO_2);
 	errMsg(err, "Erreur creation du RobotB !");
 
 	controller_to_robotA = OSQCreate(&liste_controller_to_robotA[0], QUEUE_SIZE);
@@ -127,7 +136,7 @@ void robotA(void* data)
 	int startTime = 0;
 	int orderNumber = 1;
 
-	printf("ROBOT A @ %d : DEBUT.\n", OSTimeGet() - startTime);
+	printf("ROBOT A @ %d | EQUIPE %d : DEBUT.\n", OSTimeGet() - startTime, data);
 	int itemCountRobotA;
 	while (1)
 	{
@@ -154,7 +163,7 @@ void robotB(void* data)
 	INT8U err;
 	int startTime = 0;
 	int orderNumber = 1;
-	printf("ROBOT B @ %d : DEBUT. \n", OSTimeGet() - startTime);
+	printf("ROBOT B @ %d | EQUIPE %d : DEBUT. \n", OSTimeGet() - startTime, data);
 	int itemCountRobotB;
 	while (1)
 	{
