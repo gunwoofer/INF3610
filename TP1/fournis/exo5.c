@@ -14,7 +14,7 @@
 *********************************************************************************************************
 */
 
-// Main include of µC-II
+// Main include of ï¿½C-II
 #include "includes.h"
 /*
 *********************************************************************************************************
@@ -145,23 +145,22 @@ void robotA(void* data)
 		errMsg(err, "Erreur controller_to_robotA");
 
 		if (data == 1) {
-			printf("Robot A | Equipe %d sending request to Robot B | Equipe 1\n", data);
-			OSQPost(robotA_to_robotB_1, work_data);
+			err = OSQPost(robotA_to_robotB_1, work_data);
+			errMsg(err, "Erreur post robotA_to_robotB_1");
 		}
 		else if (data == 2) {
-			printf("Robot A | Equipe %d sending request to Robot B | Equipe 2\n", data);
-			OSQPost(robotA_to_robotB_2, work_data);
+			err = OSQPost(robotA_to_robotB_2, work_data);
+			errMsg(err, "Erreur post robotA_to_robotB_2");
 		}
 		else {
 			printf("Erreur argument pData");
 		}
 
-
 		itemCountRobotA = work_data->work_data_a;
 
 		int counter = 0;
 		while (counter < itemCountRobotA * 1000) { counter++; }
-		printf("ROBOT A COMMANDE #%d avec %d items @ %d.\n", orderNumber, itemCountRobotA, OSTimeGet() - startTime);
+		printf("ROBOT A | EQUIPE %d COMMANDE #%d avec %d items @ %d.\n", data, orderNumber, itemCountRobotA, OSTimeGet() - startTime);
 		updateCurrentTotalCount(err, itemCountRobotA);
 
 		orderNumber++;
@@ -183,17 +182,19 @@ void robotB(void* data)
 			work_data = OSQPend(robotA_to_robotB_1, 0, &err);
 			errMsg(err, "Erreur robotA_to_robotB_1");
 		}
-		else {
+		else if (data == 2) {
 			work_data = OSQPend(robotA_to_robotB_2, 0, &err);
 			errMsg(err, "Erreur robotA_to_robotB_2");
 		}
-
+		else {
+			printf("Erreur argument pData");
+		}
 
 		itemCountRobotB = work_data->work_data_b;
 
 		int counter = 0;
 		while (counter < itemCountRobotB * 1000) { counter++; }
-		printf("ROBOT B COMMANDE #%d avec %d items @ %d.\n", orderNumber, itemCountRobotB, OSTimeGet() - startTime);
+		printf("ROBOT B | EQUIPE %d COMMANDE #%d avec %d items @ %d.\n", data, orderNumber, itemCountRobotB, OSTimeGet() - startTime);
 		updateCurrentTotalCount(err, itemCountRobotB);
 		orderNumber++;
 	}
@@ -201,6 +202,7 @@ void robotB(void* data)
 
 void controller(void* data)
 {
+	INT8U err;
 	int startTime = 0;
 	int randomTime = 0;
 	work_data* workData;
@@ -208,19 +210,20 @@ void controller(void* data)
 
 	for (int i = 1; i < 11; i++)
 	{
-		//Création d'une commande
+		//Crï¿½ation d'une commande
 		workData = malloc(sizeof(work_data));
 
 		workData->work_data_a = (rand() % 8 + 3) * 10;
 		workData->work_data_b = (rand() % 8 + 6) * 10;
 
-		printf("TACHE CONTROLLER @ %d : COMMANDE #%d. \n prep time A = %d, prep time B = %d\n", OSTimeGet() - startTime, i, workData->work_data_a, workData->work_data_b);
+		printf("TACHE CONTROLLER @ %d : COMMANDE #%d. \nPrep time A = %d, Prep time B = %d\n", OSTimeGet() - startTime, i, workData->work_data_a, workData->work_data_b);
 
 		// A completer
 
-		OSQPost(controller_to_robotA, workData);
+		err = OSQPost(controller_to_robotA, workData);
+		errMsg(err, "Erreur post controller_to_robotA");
 
-		// Délai aléatoire avant nouvelle commande
+		// Dï¿½lai alï¿½atoire avant nouvelle commande
 		randomTime = (rand() % 9 + 5) * 4;
 		OSTimeDly(randomTime);
 	}
@@ -233,6 +236,7 @@ int	readCurrentTotalItemCount()
 	OSTimeDly(2);
 	return total_item_count;
 }
+
 void writeCurrentTotalItemCount(int newCount)
 {
 	OSTimeDly(2);
