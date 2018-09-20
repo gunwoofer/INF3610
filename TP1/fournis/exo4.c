@@ -198,6 +198,8 @@ void controller(void* data)
 		randomTime = (rand() % 9 + 5) * 4;
 		OSTimeDly(randomTime);
 	}
+
+	free(workData);
 }
 
 int	readCurrentTotalItemCount()
