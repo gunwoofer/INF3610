@@ -159,6 +159,9 @@ void robotA(void* data)
 
 		itemCountRobotA = work_data->work_data_a;
 
+		// Ici on divise par 2 le travail a faire par Robot A car il y aura 2 robot A qui effectuerons cette tache. (Ainsi on gagne du temps)
+		itemCountRobotA /= 2;
+
 		int counter = 0;
 		while (counter < itemCountRobotA * 1000) { counter++; }
 		printf("ROBOT A | EQUIPE %d COMMANDE #%d avec %d items @ %d.\n", data, orderNumber, itemCountRobotA, OSTimeGet() - startTime);
@@ -193,6 +196,9 @@ void robotB(void* data)
 		}
 
 		itemCountRobotB = work_data->work_data_b;
+
+		// Ici on divise par 2 le travail a faire par Robot B car il y aura 2 robot B qui effectuerons cette tache. (Ainsi on gagne du temps)
+		itemCountRobotB /= 2;
 
 		int counter = 0;
 		while (counter < itemCountRobotB * 1000) { counter++; }
