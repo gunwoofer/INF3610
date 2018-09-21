@@ -236,6 +236,11 @@ void controller(void* data)
 		OSTimeDly(randomTime);
 	}
 
+	OSTaskSuspend(ROBOT_A_PRIO_1);
+	OSTaskSuspend(ROBOT_A_PRIO_2);
+	OSTaskSuspend(ROBOT_B_PRIO_1);
+	OSTaskSuspend(ROBOT_B_PRIO_2);
+
 	free(workData);
 }
 

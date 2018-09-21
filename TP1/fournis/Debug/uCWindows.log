@@ -1,21 +1,20 @@
 ﻿  exo5.c
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(108): warning C4047: '=' : les niveaux d'indirection de 'void *' et de 'int' sont différents
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(110): warning C4047: '=' : les niveaux d'indirection de 'void *' et de 'int' sont différents
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(112): warning C4047: '=' : les niveaux d'indirection de 'void *' et de 'int' sont différents
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(114): warning C4047: '=' : les niveaux d'indirection de 'void *' et de 'int' sont différents
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(117): warning C4047: 'fonction' : les niveaux d'indirection de 'void **' et de 'work_data *' sont différents
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(117): warning C4022: 'OSQCreate' : incompatibilité de pointeur pour le paramètre réel 1
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(118): warning C4047: 'fonction' : les niveaux d'indirection de 'void **' et de 'work_data *' sont différents
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(118): warning C4022: 'OSQCreate' : incompatibilité de pointeur pour le paramètre réel 1
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(119): warning C4047: 'fonction' : les niveaux d'indirection de 'void **' et de 'work_data *' sont différents
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(119): warning C4022: 'OSQCreate' : incompatibilité de pointeur pour le paramètre réel 1
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(148): warning C4047: '==' : les niveaux d'indirection de 'void *' et de 'int' sont différents
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(152): warning C4047: '==' : les niveaux d'indirection de 'void *' et de 'int' sont différents
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(141): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 2 est de type 'void *'
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(167): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 1 est de type 'void *'
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(186): warning C4047: '==' : les niveaux d'indirection de 'void *' et de 'int' sont différents
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(190): warning C4047: '==' : les niveaux d'indirection de 'void *' et de 'int' sont différents
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(180): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 2 est de type 'void *'
-d:\gitkrakenprojects\inf3610\tp1\fournis\exo5.c(205): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 1 est de type 'void *'
-  uCWindows.vcxproj -> D:\GitKrakenProjects\INF3610\TP1\fournis\.\Debug\uCWindows.exe
-  uCWindows.vcxproj -> .\Debug\uCWindows.pdb (Full PDB)
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(108): warning C4047: '=' : les niveaux d'indirection de 'void *' et de 'int' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(110): warning C4047: '=' : les niveaux d'indirection de 'void *' et de 'int' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(112): warning C4047: '=' : les niveaux d'indirection de 'void *' et de 'int' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(114): warning C4047: '=' : les niveaux d'indirection de 'void *' et de 'int' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(117): warning C4047: 'fonction' : les niveaux d'indirection de 'void **' et de 'work_data *' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(117): warning C4022: 'OSQCreate' : incompatibilité de pointeur pour le paramètre réel 1
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(118): warning C4047: 'fonction' : les niveaux d'indirection de 'void **' et de 'work_data *' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(118): warning C4022: 'OSQCreate' : incompatibilité de pointeur pour le paramètre réel 1
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(119): warning C4047: 'fonction' : les niveaux d'indirection de 'void **' et de 'work_data *' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(119): warning C4022: 'OSQCreate' : incompatibilité de pointeur pour le paramètre réel 1
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(148): warning C4047: '==' : les niveaux d'indirection de 'void *' et de 'int' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(152): warning C4047: '==' : les niveaux d'indirection de 'void *' et de 'int' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(141): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 2 est de type 'void *'
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(167): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 1 est de type 'void *'
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(186): warning C4047: '==' : les niveaux d'indirection de 'void *' et de 'int' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(190): warning C4047: '==' : les niveaux d'indirection de 'void *' et de 'int' sont différents
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(180): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 2 est de type 'void *'
+d:\valentin\polymtl\inf3610\tps\tp1\fournis\exo5.c(205): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 1 est de type 'void *'
+  uCWindows.vcxproj -> D:\Valentin\POLYMTL\INF3610\TPS\TP1\fournis\.\Debug\uCWindows.exe
