@@ -14,7 +14,7 @@
 *********************************************************************************************************
 */
 
-// Main include of ï¿½C-II
+// Main include of µC-II
 #include "includes.h"
 /*
 *********************************************************************************************************
@@ -47,7 +47,8 @@ OS_STK           controllerStk[TASK_STK_SIZE];
 OS_EVENT *controller_to_robotA;
 OS_EVENT *robotA_to_robotB_1;
 OS_EVENT *robotA_to_robotB_2;
-OS_EVENT* mutex_item_count;
+OS_EVENT *mutex_item_count;
+OS_EVENT* sem_queue;
 
 
 
@@ -101,6 +102,9 @@ void main(void)
 	OSInit();
 
 	mutex_item_count = OSMutexCreate(0, &err);
+	errMsg(err, "Erreur mutex");
+	sem_queue = OSSemCreate(0, &err);
+	errMsg(err, "Erreur sem queue");
 
 	err = OSTaskCreate(controller, (void*) 0, &controllerStk[TASK_STK_SIZE - 1], CONTROLLER_PRIO);
 	errMsg(err, "Erreur creation du Controleur !");
@@ -141,8 +145,15 @@ void robotA(void* data)
 	int itemCountRobotA;
 	while (1)
 	{
+		printf("Robot A | Equipe %d veut la main\n", data);
+		
+		OSSemPend(sem_queue, 0, &err);
+		errMsg(err, "Erreur sem queue pend");
+
 		work_data *work_data = OSQPend(controller_to_robotA, 0, &err);
 		errMsg(err, "Erreur controller_to_robotA");
+
+		printf("Robot A | Equipe %d a prit la main\n", data);
 
 		if (data == 1) {
 			err = OSQPost(robotA_to_robotB_1, work_data);
@@ -210,7 +221,7 @@ void controller(void* data)
 
 	for (int i = 1; i < 11; i++)
 	{
-		//Crï¿½ation d'une commande
+		//Création d'une commande
 		workData = malloc(sizeof(work_data));
 
 		workData->work_data_a = (rand() % 8 + 3) * 10;
@@ -223,7 +234,13 @@ void controller(void* data)
 		err = OSQPost(controller_to_robotA, workData);
 		errMsg(err, "Erreur post controller_to_robotA");
 
-		// Dï¿½lai alï¿½atoire avant nouvelle commande
+		err = OSSemPost(sem_queue);
+		errMsg(err, "Erreur sem queue post");
+
+		err = OSSemPost(sem_queue);
+		errMsg(err, "Erreur sem queue post");
+
+		// Délai aléatoire avant nouvelle commande
 		randomTime = (rand() % 9 + 5) * 4;
 		OSTimeDly(randomTime);
 	}

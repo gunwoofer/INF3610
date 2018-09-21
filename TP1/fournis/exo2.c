@@ -76,6 +76,7 @@ void main(void)
 	sem_controller_to_robot_A = OSSemCreate(0);
 	sem_robot_A_to_robot_B = OSSemCreate(0);
 	mutex_item_count = OSMutexCreate(0, &err);
+	errMsg(err, "Erreur mutex");
 
 	err = OSTaskCreate(controller, (void*)0, &controllerStk[TASK_STK_SIZE - 1], CONTROLLER_PRIO);
 	errMsg(err, "Erreur !");
