@@ -1,0 +1,1215 @@
+18:09:41 INFO  : Registering command handlers for SDK TCF services
+18:09:42 INFO  : Launching XSCT server: xsct.bat -interactive C:\TEMP\3610\1726525_1733927\Labo2\Labo2.sdk\temp_xsdb_launch_script.tcl
+18:09:45 INFO  : XSCT server has started successfully.
+18:09:46 INFO  : Successfully done setting XSCT server connection channel  
+18:09:46 INFO  : Successfully done setting SDK workspace  
+18:14:55 INFO  : Registering command handlers for SDK TCF services
+18:14:56 INFO  : Launching XSCT server: xsct.bat -interactive C:\TEMP\3610\1726525_1733927\Labo2\Labo2.sdk\temp_xsdb_launch_script.tcl
+18:14:58 INFO  : XSCT server has started successfully.
+18:14:59 INFO  : Successfully done setting XSCT server connection channel  
+18:14:59 INFO  : Successfully done setting SDK workspace  
+18:17:38 INFO  : Registering command handlers for SDK TCF services
+18:17:39 INFO  : Launching XSCT server: xsct.bat -interactive C:\TEMP\3610\1726525_1733927\Labo2\Labo2.sdk\temp_xsdb_launch_script.tcl
+18:17:42 INFO  : XSCT server has started successfully.
+18:17:43 INFO  : Successfully done setting XSCT server connection channel  
+18:17:43 INFO  : Processing command line option -hwspec C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/design_1_wrapper.hdf.
+18:17:43 INFO  : Successfully done setting SDK workspace  
+18:23:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:23:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248685957" && level==0} -index 1' command is executed.
+18:23:15 INFO  : FPGA configured successfully with bitstream "C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:25:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248685957" && level==0} -index 1' command is executed.
+18:25:12 INFO  : 'fpga -state' command is executed.
+18:25:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:25:13 INFO  : Jtag cable 'Digilent Zed 210248685957' is selected.
+18:25:13 INFO  : 'jtag frequency' command is executed.
+18:25:13 INFO  : Sourcing of 'C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:25:13 INFO  : Context for 'APU' is selected.
+18:25:13 INFO  : Hardware design information is loaded from 'C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:25:13 INFO  : 'configparams force-mem-access 1' command is executed.
+18:25:13 INFO  : Context for 'APU' is selected.
+18:25:13 INFO  : 'stop' command is executed.
+18:25:14 INFO  : 'ps7_init' command is executed.
+18:25:14 INFO  : 'ps7_post_config' command is executed.
+18:25:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:25:14 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:25:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:25:14 INFO  : The application 'C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:25:14 INFO  : 'configparams force-mem-access 0' command is executed.
+18:25:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248685957"} -index 0
+loadhw -hw C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248685957"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685957"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685957"} -index 0
+dow C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:25:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:25:14 INFO  : 'con' command is executed.
+18:25:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685957"} -index 0
+con
+----------------End of Script----------------
+
+18:25:14 INFO  : Disconnected from the channel tcfchan#1.
+18:29:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248685957" && level==0} -index 1' command is executed.
+18:29:18 INFO  : 'fpga -state' command is executed.
+18:29:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:29:19 INFO  : Jtag cable 'Digilent Zed 210248685957' is selected.
+18:29:19 INFO  : 'jtag frequency' command is executed.
+18:29:19 INFO  : Sourcing of 'C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:29:19 INFO  : Context for 'APU' is selected.
+18:29:19 INFO  : Hardware design information is loaded from 'C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:29:19 INFO  : 'configparams force-mem-access 1' command is executed.
+18:29:19 INFO  : Context for 'APU' is selected.
+18:29:19 INFO  : 'stop' command is executed.
+18:29:19 INFO  : 'ps7_init' command is executed.
+18:29:19 INFO  : 'ps7_post_config' command is executed.
+18:29:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:29:20 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:29:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:29:20 INFO  : The application 'C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:29:20 INFO  : 'configparams force-mem-access 0' command is executed.
+18:29:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248685957"} -index 0
+loadhw -hw C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248685957"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685957"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685957"} -index 0
+dow C:/TEMP/3610/1726525_1733927/Labo2/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:29:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:29:20 INFO  : 'con' command is executed.
+18:29:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685957"} -index 0
+con
+----------------End of Script----------------
+
+18:29:20 INFO  : Disconnected from the channel tcfchan#2.
+16:25:57 INFO  : Registering command handlers for SDK TCF services
+16:26:00 INFO  : Launching XSCT server: xsct.bat -interactive C:\TEMP\Labo2.sdk\temp_xsdb_launch_script.tcl
+16:26:07 INFO  : XSCT server has started successfully.
+16:26:12 INFO  : Successfully done setting XSCT server connection channel  
+16:26:12 INFO  : Successfully done setting SDK workspace  
+16:27:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:27:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+16:27:24 INFO  : FPGA configured successfully with bitstream "C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+16:27:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+16:27:36 INFO  : 'fpga -state' command is executed.
+16:27:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:27:36 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+16:27:36 INFO  : 'jtag frequency' command is executed.
+16:27:36 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:27:36 INFO  : Context for 'APU' is selected.
+16:27:36 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+16:27:36 INFO  : 'configparams force-mem-access 1' command is executed.
+16:27:36 INFO  : Context for 'APU' is selected.
+16:27:36 INFO  : 'stop' command is executed.
+16:27:37 INFO  : 'ps7_init' command is executed.
+16:27:37 INFO  : 'ps7_post_config' command is executed.
+16:27:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:27:37 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+16:27:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:27:38 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:27:38 INFO  : 'configparams force-mem-access 0' command is executed.
+16:27:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:27:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:27:38 INFO  : 'con' command is executed.
+16:27:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+con
+----------------End of Script----------------
+
+16:27:38 INFO  : Disconnected from the channel tcfchan#1.
+18:08:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+18:08:32 INFO  : 'fpga -state' command is executed.
+18:08:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:08:32 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+18:08:32 INFO  : 'jtag frequency' command is executed.
+18:08:32 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:08:32 INFO  : Context for 'APU' is selected.
+18:08:32 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:08:32 INFO  : 'configparams force-mem-access 1' command is executed.
+18:08:32 INFO  : Context for 'APU' is selected.
+18:08:32 INFO  : 'stop' command is executed.
+18:08:33 INFO  : 'ps7_init' command is executed.
+18:08:33 INFO  : 'ps7_post_config' command is executed.
+18:08:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:08:33 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:08:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:08:34 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:08:34 INFO  : 'configparams force-mem-access 0' command is executed.
+18:08:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:08:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:08:34 INFO  : 'con' command is executed.
+18:08:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+con
+----------------End of Script----------------
+
+18:08:34 INFO  : Disconnected from the channel tcfchan#2.
+18:10:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+18:10:08 INFO  : 'fpga -state' command is executed.
+18:10:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:10:09 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+18:10:09 INFO  : 'jtag frequency' command is executed.
+18:10:09 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:10:09 INFO  : Context for 'APU' is selected.
+18:10:11 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:10:11 INFO  : 'configparams force-mem-access 1' command is executed.
+18:10:12 INFO  : Context for 'APU' is selected.
+18:10:12 INFO  : 'stop' command is executed.
+18:10:12 INFO  : 'ps7_init' command is executed.
+18:10:12 INFO  : 'ps7_post_config' command is executed.
+18:10:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:10:12 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:10:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:10:13 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:10:13 INFO  : 'configparams force-mem-access 0' command is executed.
+18:10:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:12:25 INFO  : Disconnected from the channel tcfchan#3.
+18:13:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+18:13:00 INFO  : 'fpga -state' command is executed.
+18:13:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:13:01 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+18:13:01 INFO  : 'jtag frequency' command is executed.
+18:13:01 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:13:01 INFO  : Context for 'APU' is selected.
+18:13:04 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:13:04 INFO  : 'configparams force-mem-access 1' command is executed.
+18:13:04 INFO  : Context for 'APU' is selected.
+18:13:04 INFO  : 'stop' command is executed.
+18:13:04 INFO  : 'ps7_init' command is executed.
+18:13:04 INFO  : 'ps7_post_config' command is executed.
+18:13:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:13:05 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:13:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:13:05 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:13:05 INFO  : 'configparams force-mem-access 0' command is executed.
+18:13:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:18:52 INFO  : Disconnected from the channel tcfchan#4.
+18:18:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+18:18:59 INFO  : 'fpga -state' command is executed.
+18:18:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:19:00 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+18:19:00 INFO  : 'jtag frequency' command is executed.
+18:19:00 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:19:00 INFO  : Context for 'APU' is selected.
+18:19:03 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:19:03 INFO  : 'configparams force-mem-access 1' command is executed.
+18:19:03 INFO  : Context for 'APU' is selected.
+18:19:03 INFO  : 'stop' command is executed.
+18:19:03 INFO  : 'ps7_init' command is executed.
+18:19:03 INFO  : 'ps7_post_config' command is executed.
+18:19:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:19:03 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:19:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:19:04 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:19:04 INFO  : 'configparams force-mem-access 0' command is executed.
+18:19:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:32:08 INFO  : Disconnected from the channel tcfchan#5.
+18:32:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+18:32:12 INFO  : 'fpga -state' command is executed.
+18:32:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:32:13 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+18:32:13 INFO  : 'jtag frequency' command is executed.
+18:32:13 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:32:13 INFO  : Context for 'APU' is selected.
+18:32:15 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:32:15 INFO  : 'configparams force-mem-access 1' command is executed.
+18:32:15 INFO  : Context for 'APU' is selected.
+18:32:15 INFO  : 'stop' command is executed.
+18:32:16 INFO  : 'ps7_init' command is executed.
+18:32:16 INFO  : 'ps7_post_config' command is executed.
+18:32:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:32:16 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:32:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:32:17 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:32:17 INFO  : 'configparams force-mem-access 0' command is executed.
+18:32:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:32:21 INFO  : Disconnected from the channel tcfchan#6.
+18:36:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+18:36:00 INFO  : 'fpga -state' command is executed.
+18:36:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:36:00 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+18:36:00 INFO  : 'jtag frequency' command is executed.
+18:36:00 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:36:01 INFO  : Context for 'APU' is selected.
+18:36:03 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:36:03 INFO  : 'configparams force-mem-access 1' command is executed.
+18:36:03 INFO  : Context for 'APU' is selected.
+18:36:03 INFO  : 'stop' command is executed.
+18:36:04 INFO  : 'ps7_init' command is executed.
+18:36:04 INFO  : 'ps7_post_config' command is executed.
+18:36:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:36:04 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:36:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:36:05 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:36:05 INFO  : 'configparams force-mem-access 0' command is executed.
+18:36:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:37:55 INFO  : Disconnected from the channel tcfchan#7.
+18:43:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+18:43:27 INFO  : 'fpga -state' command is executed.
+18:43:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:43:27 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+18:43:27 INFO  : 'jtag frequency' command is executed.
+18:43:27 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:43:27 INFO  : Context for 'APU' is selected.
+18:43:30 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:43:30 INFO  : 'configparams force-mem-access 1' command is executed.
+18:43:30 INFO  : Context for 'APU' is selected.
+18:43:30 INFO  : 'stop' command is executed.
+18:43:31 INFO  : 'ps7_init' command is executed.
+18:43:31 INFO  : 'ps7_post_config' command is executed.
+18:43:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:43:31 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:43:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:43:32 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:43:32 INFO  : 'configparams force-mem-access 0' command is executed.
+18:43:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:46:01 INFO  : Disconnected from the channel tcfchan#8.
+18:55:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+18:55:32 INFO  : 'fpga -state' command is executed.
+18:55:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:55:32 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+18:55:32 INFO  : 'jtag frequency' command is executed.
+18:55:32 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:55:32 INFO  : Context for 'APU' is selected.
+18:55:35 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:55:35 INFO  : 'configparams force-mem-access 1' command is executed.
+18:55:35 INFO  : Context for 'APU' is selected.
+18:55:35 INFO  : 'stop' command is executed.
+18:55:35 INFO  : 'ps7_init' command is executed.
+18:55:35 INFO  : 'ps7_post_config' command is executed.
+18:55:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:55:35 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:55:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:55:36 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:55:36 INFO  : 'configparams force-mem-access 0' command is executed.
+18:55:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:56:55 INFO  : Disconnected from the channel tcfchan#9.
+18:58:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+18:58:45 INFO  : 'fpga -state' command is executed.
+18:58:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:58:46 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+18:58:46 INFO  : 'jtag frequency' command is executed.
+18:58:46 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:58:46 INFO  : Context for 'APU' is selected.
+18:58:48 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:58:48 INFO  : 'configparams force-mem-access 1' command is executed.
+18:58:49 INFO  : Context for 'APU' is selected.
+18:58:49 INFO  : 'stop' command is executed.
+18:58:49 INFO  : 'ps7_init' command is executed.
+18:58:49 INFO  : 'ps7_post_config' command is executed.
+18:58:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:58:49 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:58:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:58:50 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:58:50 INFO  : 'configparams force-mem-access 0' command is executed.
+18:58:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:03:59 INFO  : Disconnected from the channel tcfchan#10.
+19:04:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:04:03 INFO  : 'fpga -state' command is executed.
+19:04:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:04:04 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:04:04 INFO  : 'jtag frequency' command is executed.
+19:04:04 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:04:04 INFO  : Context for 'APU' is selected.
+19:04:07 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:04:07 INFO  : 'configparams force-mem-access 1' command is executed.
+19:04:07 INFO  : Context for 'APU' is selected.
+19:04:07 INFO  : 'stop' command is executed.
+19:04:07 INFO  : 'ps7_init' command is executed.
+19:04:07 INFO  : 'ps7_post_config' command is executed.
+19:04:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:04:08 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:04:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:04:08 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:04:08 INFO  : 'configparams force-mem-access 0' command is executed.
+19:04:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:05:51 INFO  : Disconnected from the channel tcfchan#11.
+19:06:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:06:08 INFO  : 'fpga -state' command is executed.
+19:06:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:06:08 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:06:08 INFO  : 'jtag frequency' command is executed.
+19:06:08 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:06:08 INFO  : Context for 'APU' is selected.
+19:06:11 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:06:11 INFO  : 'configparams force-mem-access 1' command is executed.
+19:06:11 INFO  : Context for 'APU' is selected.
+19:06:11 INFO  : 'stop' command is executed.
+19:06:11 INFO  : 'ps7_init' command is executed.
+19:06:11 INFO  : 'ps7_post_config' command is executed.
+19:06:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:06:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:06:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:06:12 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:06:12 INFO  : 'configparams force-mem-access 0' command is executed.
+19:06:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:10:16 INFO  : Disconnected from the channel tcfchan#12.
+19:10:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:10:21 INFO  : 'fpga -state' command is executed.
+19:10:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:10:21 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:10:21 INFO  : 'jtag frequency' command is executed.
+19:10:21 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:10:21 INFO  : Context for 'APU' is selected.
+19:10:24 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:10:24 INFO  : 'configparams force-mem-access 1' command is executed.
+19:10:24 INFO  : Context for 'APU' is selected.
+19:10:24 INFO  : 'stop' command is executed.
+19:10:25 INFO  : 'ps7_init' command is executed.
+19:10:25 INFO  : 'ps7_post_config' command is executed.
+19:10:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:10:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:10:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:10:26 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:10:26 INFO  : 'configparams force-mem-access 0' command is executed.
+19:10:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:10:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:10:26 INFO  : 'con' command is executed.
+19:10:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+con
+----------------End of Script----------------
+
+19:10:26 INFO  : Disconnected from the channel tcfchan#13.
+19:15:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:15:46 INFO  : 'fpga -state' command is executed.
+19:15:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:15:46 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:15:46 INFO  : 'jtag frequency' command is executed.
+19:15:46 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:15:47 INFO  : Context for 'APU' is selected.
+19:15:49 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:15:49 INFO  : 'configparams force-mem-access 1' command is executed.
+19:15:49 INFO  : Context for 'APU' is selected.
+19:15:49 INFO  : 'stop' command is executed.
+19:15:50 INFO  : 'ps7_init' command is executed.
+19:15:50 INFO  : 'ps7_post_config' command is executed.
+19:15:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:15:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:15:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:15:51 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:15:51 INFO  : 'configparams force-mem-access 0' command is executed.
+19:15:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:18:06 INFO  : Disconnected from the channel tcfchan#14.
+19:18:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:18:11 INFO  : 'fpga -state' command is executed.
+19:18:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:18:12 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:18:12 INFO  : 'jtag frequency' command is executed.
+19:18:12 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:18:12 INFO  : Context for 'APU' is selected.
+19:18:14 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:18:14 INFO  : 'configparams force-mem-access 1' command is executed.
+19:18:14 INFO  : Context for 'APU' is selected.
+19:18:14 INFO  : 'stop' command is executed.
+19:18:15 INFO  : 'ps7_init' command is executed.
+19:18:15 INFO  : 'ps7_post_config' command is executed.
+19:18:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:18:15 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:18:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:18:16 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:18:16 INFO  : 'configparams force-mem-access 0' command is executed.
+19:18:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:19:10 INFO  : Disconnected from the channel tcfchan#15.
+19:19:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:19:30 INFO  : 'fpga -state' command is executed.
+19:19:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:19:30 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:19:30 INFO  : 'jtag frequency' command is executed.
+19:19:30 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:19:30 INFO  : Context for 'APU' is selected.
+19:19:33 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:19:33 INFO  : 'configparams force-mem-access 1' command is executed.
+19:19:33 INFO  : Context for 'APU' is selected.
+19:19:33 INFO  : 'stop' command is executed.
+19:19:34 INFO  : 'ps7_init' command is executed.
+19:19:34 INFO  : 'ps7_post_config' command is executed.
+19:19:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:19:34 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:19:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:19:35 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:19:35 INFO  : 'configparams force-mem-access 0' command is executed.
+19:19:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:20:33 INFO  : Disconnected from the channel tcfchan#16.
+19:20:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:20:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:20:44 INFO  : FPGA configured successfully with bitstream "C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+19:21:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:21:09 INFO  : 'fpga -state' command is executed.
+19:21:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:21:10 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:21:10 INFO  : 'jtag frequency' command is executed.
+19:21:10 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:21:10 INFO  : Context for 'APU' is selected.
+19:21:10 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:21:10 INFO  : 'configparams force-mem-access 1' command is executed.
+19:21:10 INFO  : Context for 'APU' is selected.
+19:21:10 INFO  : 'stop' command is executed.
+19:21:10 INFO  : 'ps7_init' command is executed.
+19:21:10 INFO  : 'ps7_post_config' command is executed.
+19:21:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:21:10 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:21:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:21:11 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:21:11 INFO  : 'configparams force-mem-access 0' command is executed.
+19:21:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:22:35 INFO  : Disconnected from the channel tcfchan#17.
+19:22:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:22:41 INFO  : 'fpga -state' command is executed.
+19:22:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:22:41 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:22:41 INFO  : 'jtag frequency' command is executed.
+19:22:41 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:22:41 INFO  : Context for 'APU' is selected.
+19:22:44 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:22:44 INFO  : 'configparams force-mem-access 1' command is executed.
+19:22:44 INFO  : Context for 'APU' is selected.
+19:22:44 INFO  : 'stop' command is executed.
+19:22:44 INFO  : 'ps7_init' command is executed.
+19:22:44 INFO  : 'ps7_post_config' command is executed.
+19:22:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:22:45 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:22:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:22:45 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:22:45 INFO  : 'configparams force-mem-access 0' command is executed.
+19:22:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:23:28 INFO  : Disconnected from the channel tcfchan#18.
+19:23:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:23:30 INFO  : 'fpga -state' command is executed.
+19:23:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:23:30 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:23:30 INFO  : 'jtag frequency' command is executed.
+19:23:30 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:23:30 INFO  : Context for 'APU' is selected.
+19:23:33 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:23:33 INFO  : 'configparams force-mem-access 1' command is executed.
+19:23:33 INFO  : Context for 'APU' is selected.
+19:23:33 INFO  : 'stop' command is executed.
+19:23:33 INFO  : 'ps7_init' command is executed.
+19:23:33 INFO  : 'ps7_post_config' command is executed.
+19:23:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:23:33 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:23:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:23:34 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:23:34 INFO  : 'configparams force-mem-access 0' command is executed.
+19:23:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:23:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:23:34 INFO  : 'con' command is executed.
+19:23:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+con
+----------------End of Script----------------
+
+19:23:34 INFO  : Disconnected from the channel tcfchan#19.
+19:23:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:23:39 INFO  : 'fpga -state' command is executed.
+19:23:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:23:39 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:23:39 INFO  : 'jtag frequency' command is executed.
+19:23:39 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:23:39 INFO  : Context for 'APU' is selected.
+19:23:42 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:23:42 INFO  : 'configparams force-mem-access 1' command is executed.
+19:23:42 INFO  : Context for 'APU' is selected.
+19:23:42 INFO  : 'stop' command is executed.
+19:23:42 INFO  : 'ps7_init' command is executed.
+19:23:42 INFO  : 'ps7_post_config' command is executed.
+19:23:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:23:42 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:23:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:23:43 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:23:43 INFO  : 'configparams force-mem-access 0' command is executed.
+19:23:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:23:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:23:43 INFO  : 'con' command is executed.
+19:23:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+con
+----------------End of Script----------------
+
+19:23:43 INFO  : Disconnected from the channel tcfchan#20.
+19:26:28 INFO  : Registering command handlers for SDK TCF services
+19:26:29 INFO  : Launching XSCT server: xsct.bat -interactive C:\TEMP\Labo2.sdk\temp_xsdb_launch_script.tcl
+19:26:31 INFO  : XSCT server has started successfully.
+19:26:31 INFO  : Successfully done setting XSCT server connection channel  
+19:26:32 INFO  : Successfully done setting SDK workspace  
+19:26:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:26:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:26:55 INFO  : FPGA configured successfully with bitstream "C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+19:28:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:28:24 INFO  : 'fpga -state' command is executed.
+19:28:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:28:25 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:28:25 INFO  : 'jtag frequency' command is executed.
+19:28:25 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:28:25 INFO  : Context for 'APU' is selected.
+19:28:25 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:28:25 INFO  : 'configparams force-mem-access 1' command is executed.
+19:28:25 INFO  : Context for 'APU' is selected.
+19:28:25 INFO  : 'stop' command is executed.
+19:28:26 INFO  : 'ps7_init' command is executed.
+19:28:26 INFO  : 'ps7_post_config' command is executed.
+19:28:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:28:26 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:28:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:28:26 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:28:26 INFO  : 'configparams force-mem-access 0' command is executed.
+19:28:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:31:03 INFO  : Disconnected from the channel tcfchan#1.
+19:31:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:31:10 INFO  : 'fpga -state' command is executed.
+19:31:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:31:10 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:31:10 INFO  : 'jtag frequency' command is executed.
+19:31:10 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:31:10 INFO  : Context for 'APU' is selected.
+19:31:13 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:31:13 INFO  : 'configparams force-mem-access 1' command is executed.
+19:31:13 INFO  : Context for 'APU' is selected.
+19:31:13 INFO  : 'stop' command is executed.
+19:31:13 INFO  : 'ps7_init' command is executed.
+19:31:13 INFO  : 'ps7_post_config' command is executed.
+19:31:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:31:13 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:31:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:31:14 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:31:14 INFO  : 'configparams force-mem-access 0' command is executed.
+19:31:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:33:08 INFO  : Disconnected from the channel tcfchan#2.
+19:33:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:33:18 INFO  : 'fpga -state' command is executed.
+19:33:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:33:18 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:33:18 INFO  : 'jtag frequency' command is executed.
+19:33:18 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:33:18 INFO  : Context for 'APU' is selected.
+19:33:21 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:33:21 INFO  : 'configparams force-mem-access 1' command is executed.
+19:33:21 INFO  : Context for 'APU' is selected.
+19:33:21 INFO  : 'stop' command is executed.
+19:33:21 INFO  : 'ps7_init' command is executed.
+19:33:21 INFO  : 'ps7_post_config' command is executed.
+19:33:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:33:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:22 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:33:22 INFO  : 'configparams force-mem-access 0' command is executed.
+19:33:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:33:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:22 INFO  : 'con' command is executed.
+19:33:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+con
+----------------End of Script----------------
+
+19:33:22 INFO  : Disconnected from the channel tcfchan#3.
+19:34:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:34:07 INFO  : 'fpga -state' command is executed.
+19:34:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:34:07 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:34:07 INFO  : 'jtag frequency' command is executed.
+19:34:07 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:34:07 INFO  : Context for 'APU' is selected.
+19:34:09 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:34:09 INFO  : 'configparams force-mem-access 1' command is executed.
+19:34:10 INFO  : Context for 'APU' is selected.
+19:34:10 INFO  : 'stop' command is executed.
+19:34:10 INFO  : 'ps7_init' command is executed.
+19:34:10 INFO  : 'ps7_post_config' command is executed.
+19:34:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:34:10 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:34:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:34:11 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:34:11 INFO  : 'configparams force-mem-access 0' command is executed.
+19:34:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:35:44 INFO  : Disconnected from the channel tcfchan#4.
+19:35:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248684760" && level==0} -index 1' command is executed.
+19:35:52 INFO  : 'fpga -state' command is executed.
+19:35:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:35:52 INFO  : Jtag cable 'Digilent Zed 210248684760' is selected.
+19:35:52 INFO  : 'jtag frequency' command is executed.
+19:35:52 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:35:52 INFO  : Context for 'APU' is selected.
+19:35:55 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:35:55 INFO  : 'configparams force-mem-access 1' command is executed.
+19:35:55 INFO  : Context for 'APU' is selected.
+19:35:55 INFO  : 'stop' command is executed.
+19:35:55 INFO  : 'ps7_init' command is executed.
+19:35:55 INFO  : 'ps7_post_config' command is executed.
+19:35:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:35:55 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:35:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:35:56 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:35:56 INFO  : 'configparams force-mem-access 0' command is executed.
+19:35:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248684760"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:16:09 INFO  : Registering command handlers for SDK TCF services
+09:16:10 INFO  : Launching XSCT server: xsct.bat -interactive C:\TEMP\Labo2.sdk\temp_xsdb_launch_script.tcl
+09:16:12 INFO  : XSCT server has started successfully.
+09:16:13 INFO  : Successfully done setting XSCT server connection channel  
+09:16:13 INFO  : Successfully done setting SDK workspace  
+09:17:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:17:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248685291" && level==0} -index 1' command is executed.
+09:17:14 INFO  : FPGA configured successfully with bitstream "C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:23:13 INFO  : Registering command handlers for SDK TCF services
+09:23:14 INFO  : Launching XSCT server: xsct.bat -interactive C:\TEMP\Labo2.sdk\temp_xsdb_launch_script.tcl
+09:23:16 INFO  : XSCT server has started successfully.
+09:23:16 INFO  : Successfully done setting XSCT server connection channel  
+09:23:16 INFO  : Successfully done setting SDK workspace  
+09:27:30 INFO  : Registering command handlers for SDK TCF services
+09:27:31 INFO  : Launching XSCT server: xsct.bat -interactive C:\TEMP\Labo2.sdk\temp_xsdb_launch_script.tcl
+09:27:34 INFO  : XSCT server has started successfully.
+09:27:34 INFO  : Successfully done setting XSCT server connection channel  
+09:27:35 INFO  : Successfully done setting SDK workspace  
+09:38:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:38:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248685291" && level==0} -index 1' command is executed.
+09:38:55 INFO  : FPGA configured successfully with bitstream "C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:39:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248685291" && level==0} -index 1' command is executed.
+09:39:49 INFO  : 'fpga -state' command is executed.
+09:39:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:39:49 INFO  : Jtag cable 'Digilent Zed 210248685291' is selected.
+09:39:49 INFO  : 'jtag frequency' command is executed.
+09:39:49 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:39:49 INFO  : Context for 'APU' is selected.
+09:39:49 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:39:49 INFO  : 'configparams force-mem-access 1' command is executed.
+09:39:49 INFO  : Context for 'APU' is selected.
+09:39:50 INFO  : 'stop' command is executed.
+09:39:50 INFO  : 'ps7_init' command is executed.
+09:39:50 INFO  : 'ps7_post_config' command is executed.
+09:39:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:39:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+09:39:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:39:51 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:39:51 INFO  : 'configparams force-mem-access 0' command is executed.
+09:39:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:39:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:39:51 INFO  : 'con' command is executed.
+09:39:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+con
+----------------End of Script----------------
+
+09:39:51 INFO  : Disconnected from the channel tcfchan#1.
+09:40:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248685291" && level==0} -index 1' command is executed.
+09:40:47 INFO  : 'fpga -state' command is executed.
+09:40:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:40:48 INFO  : Jtag cable 'Digilent Zed 210248685291' is selected.
+09:40:48 INFO  : 'jtag frequency' command is executed.
+09:40:48 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:40:48 INFO  : Context for 'APU' is selected.
+09:40:48 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:40:48 INFO  : 'configparams force-mem-access 1' command is executed.
+09:40:48 INFO  : Context for 'APU' is selected.
+09:40:48 INFO  : 'stop' command is executed.
+09:40:48 INFO  : 'ps7_init' command is executed.
+09:40:48 INFO  : 'ps7_post_config' command is executed.
+09:40:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:40:49 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+09:40:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:40:49 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:40:49 INFO  : 'configparams force-mem-access 0' command is executed.
+09:40:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:40:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:40:49 INFO  : 'con' command is executed.
+09:40:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+con
+----------------End of Script----------------
+
+09:40:49 INFO  : Disconnected from the channel tcfchan#2.
+09:41:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248685291" && level==0} -index 1' command is executed.
+09:41:02 INFO  : 'fpga -state' command is executed.
+09:41:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:41:02 INFO  : Jtag cable 'Digilent Zed 210248685291' is selected.
+09:41:02 INFO  : 'jtag frequency' command is executed.
+09:41:02 INFO  : Sourcing of 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+09:41:02 INFO  : Context for 'APU' is selected.
+09:41:02 INFO  : Hardware design information is loaded from 'C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+09:41:02 INFO  : 'configparams force-mem-access 1' command is executed.
+09:41:02 INFO  : Context for 'APU' is selected.
+09:41:03 INFO  : 'stop' command is executed.
+09:41:03 INFO  : 'ps7_init' command is executed.
+09:41:03 INFO  : 'ps7_post_config' command is executed.
+09:41:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:41:03 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+09:41:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:41:04 INFO  : The application 'C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:41:04 INFO  : 'configparams force-mem-access 0' command is executed.
+09:41:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+loadhw -hw C:/TEMP/Labo2.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+dow C:/TEMP/Labo2.sdk/Labo2/Debug/Labo2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:41:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:41:04 INFO  : 'con' command is executed.
+09:41:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248685291"} -index 0
+con
+----------------End of Script----------------
+
+09:41:04 INFO  : Disconnected from the channel tcfchan#3.
