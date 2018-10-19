@@ -27,6 +27,7 @@
 //								Routines d'interruptions
 ///////////////////////////////////////////////////////////////////////////////////////
 
+
 void timer_isr(void* not_valid) {
 	if (private_timer_irq_triggered()) {
 		private_timer_clear_irq();
@@ -37,19 +38,19 @@ void timer_isr(void* not_valid) {
 void fit_timer_1s_isr(void *not_valid) {
 	/*TODO: definition handler pour timer 1s*/
 	uint8_t erreur = OSSemPost(sem_generation_donnees);
-	errMsg(erreur, "Erreur pendant le post sur sem_generation_donnees");
+	errMsg(erreur, "Erreur pendant le post sur sem_generation_donnees\n");
 }
 
 void fit_timer_3s_isr(void *not_valid) {
 	/*TODO: definition handler pour timer 3s*/
 	uint8_t erreur = OSSemPost(sem_verification);
-	errMsg(erreur, "Erreur pendant le post sur sem_verification");
+	errMsg(erreur, "Erreur pendant le post sur sem_verification\n");
 }
 
 void gpio_isr(void * not_valid) {
 	/*TODO: definition handler pour switches*/
 	uint8_t erreur = OSSemPost(sem_statistiques);
-	errMsg(erreur, "Erreur pendant le post sur sem_statistiques");
+	errMsg(erreur, "Erreur pendant le post sur sem_statistiques\n");
 }
 
 /*
@@ -112,6 +113,8 @@ int create_tasks() {
 	OSTaskCreate(terminal, (void*)1, &terminal0Stk[TASK_STK_SIZE - 1], TERMINAL0_PRIO);
 	OSTaskCreate(terminal, (void*)2, &terminal1Stk[TASK_STK_SIZE - 1], TERMINAL1_PRIO);
 
+	OSTaskCreate(verification, (void*)0, &verificationStk[TASK_STK_SIZE - 1], VERIFICATION_PRIO);
+
 	return 0;
 }
 
@@ -149,7 +152,7 @@ void generation(void* data) {
 	while (1) {
 		/*TODO: Synchronisation unilaterale timer 1s*/
 		OSSemPend(sem_generation_donnees, 0, &err);
-		errMsg(err, "Erreur Pend sem generation donnees");
+		errMsg(err, "Erreur Pend sem generation donnees\n");
 		srand(seed);
 		skipGen = rand() % 5; //On saute la generation 1 fois sur 5
 		if (skipGen != 0){
@@ -157,6 +160,7 @@ void generation(void* data) {
 			avion->id = nbAvionsCrees;
 			remplirAvion(avion);
 			nbAvionsCrees++;
+			xil_printf("Nouvel avion cree avec un retard de %d \n", avion->retard);
 
 			/*TODO: Envoi des avions dans les files appropriees*/
 			if (avion->retard < 20) {
@@ -198,7 +202,7 @@ void atterrissage(void* data)
 				break;
 		}
 
-		xil_printf("[ATTERRISSAGE] Debut atterrissage\n");
+		xil_printf("[ATTERRISSAGE] Debut atterrissage de l avion en retard de : %d\n", avion->retard);
 		OSTimeDly(150); //Temps pour que l'avion atterrisse
 
 		xil_printf("[ATTERRISSAGE] Attente terminal libre\n");
@@ -239,13 +243,14 @@ void terminal(void* data)
 		/*TODO: Mise en attente d'un avion venant de la piste d'atterrissage*/
 		if (numTerminal == 1) {
 			avion = OSQPend(Q_terminal_1, 0, &err);
-			errMsg(err, "Erreur Pend q terminal 1");
+			errMsg(err, "Erreur Pend q terminal 1\n");
 		} else {
 			avion = OSQPend(Q_terminal_2, 0, &err);
-			errMsg(err, "Erreur Pend q terminal 2");
+			errMsg(err, "Erreur Pend q terminal 2\n");
 		}
 
 		xil_printf("[TERMINAL %d] Obtention avion\n", numTerminal);
+		xil_printf("Arrive dans le terminal %d de l avion en retard de : %d\n", numTerminal, avion->retard);
 
 		OSTimeDly(160);//Attente pour le vidage, le nettoyage et le remplissage de l'avion
 
@@ -256,13 +261,13 @@ void terminal(void* data)
 
 		/*TODO: Notifier que le terminal est libre (mecanisme de votre choix)*/
 		if (numTerminal == 1) {
-			xil_printf("Liberer terminal 1");
+			xil_printf("Liberer terminal 1\n");
 			OSFlagPost(terminaux_status, 0x10, OS_FLAG_CLR, &err);
-			errMsg(err, "Erreur post flag terminal libere");
+			errMsg(err, "Erreur post flag terminal libere\n");
 		} else {
-			xil_printf("Liberer terminal 2");
+			xil_printf("Liberer terminal 2\n");
 			OSFlagPost(terminaux_status, 0x01, OS_FLAG_CLR, &err);
-			errMsg(err, "Erreur post flag terminal libere");
+			errMsg(err, "Erreur post flag terminal libere\n");
 		}
 
 	}
@@ -315,10 +320,37 @@ void statistiques(void* data){
 void verification(void* data){
 	uint8_t err;
 	xil_printf("[VERIFICATION] Tache lancee\n");
+
+	OS_Q_DATA data_low;
+	OS_Q_DATA data_med;
+	OS_Q_DATA data_high;
+
 	while(1){
 		/*TODO: Synchronisation unilaterale avec timer 3s*/
+		OSSemPend(sem_verification, 0, &err);
+
+		err = OSQQuery(Q_atterrissage_low, &data_low);
+		errMsg(err, "Erreur query low\n");
+
+		err = OSQQuery(Q_atterrissage_low, &data_med);
+		errMsg(err, "Erreur query low\n");
+
+		err = OSQQuery(Q_atterrissage_low, &data_high);
+		errMsg(err, "Erreur query low\n");
+
+		if (data_low.OSNMsgs > 6 || data_med.OSNMsgs > 4 || data_high.OSNMsgs > 3)
+			stopSimDebordement = true;
+
 		if (stopSimDebordement){
 			/*TODO: Suspension de toutes les taches de la simulation*/
+			xil_printf("ARRET DE LA SIMULATION\n");
+			OSTaskSuspend(GENERATION_PRIO);
+			OSTaskSuspend(ATTERRISSAGE_PRIO);
+			OSTaskSuspend(TERMINAL0_PRIO);
+			OSTaskSuspend(TERMINAL1_PRIO);
+			// OSTaskSuspend(DECOLLAGE_PRIO);
+			OSTaskSuspend(VERIFICATION_PRIO);
+			// OSTaskSuspend(STATISTIQUES_PRIO);
 		}
 	}
 }

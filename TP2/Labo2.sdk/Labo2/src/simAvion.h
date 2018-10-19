@@ -53,6 +53,7 @@ void *Q_atterrissage_medium_data[4];
 OS_EVENT *Q_atterrissage_low;
 void *Q_atterrissage_low_data[6];
 
+
 OS_EVENT *Q_decollage;
 void *Q_decollage_data[10];
 
@@ -92,6 +93,7 @@ OS_FLAG_GRP* terminaux_status;
 OS_EVENT* sem_generation_donnees;
 OS_EVENT* sem_verification;
 OS_EVENT* sem_statistiques;
+
 
 /*
 *********************************************************************************************************
