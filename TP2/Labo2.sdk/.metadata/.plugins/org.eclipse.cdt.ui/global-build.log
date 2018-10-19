@@ -4736,3 +4736,648 @@ make pre-build main-build
 a9-linaro-pre-build-step
 ' '
 make: Rien à faire pour « main-build ».
+12:12:09 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:238:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'decollage':
+../src/simAvion.c:281:9: warning: unused variable 'avion' [-Wunused-variable]
+  Avion* avion = NULL;
+         ^~~~~
+../src/simAvion.c:280:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:296:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 141608	   4228	4665808	4811644	 496b7c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:16:42 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'decollage':
+../src/simAvion.c:284:9: warning: unused variable 'avion' [-Wunused-variable]
+  Avion* avion = NULL;
+         ^~~~~
+../src/simAvion.c:283:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:299:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 141608	   4228	4665808	4811644	 496b7c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:17:13 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'decollage':
+../src/simAvion.c:284:9: warning: unused variable 'avion' [-Wunused-variable]
+  Avion* avion = NULL;
+         ^~~~~
+../src/simAvion.c:283:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:299:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 141632	   4228	4665808	4811668	 496b94	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:17:51 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'decollage':
+../src/simAvion.c:284:9: warning: unused variable 'avion' [-Wunused-variable]
+  Avion* avion = NULL;
+         ^~~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:299:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 141696	   4228	4665808	4811732	 496bd4	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:18:07 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'decollage':
+../src/simAvion.c:284:9: warning: unused variable 'avion' [-Wunused-variable]
+  Avion* avion = NULL;
+         ^~~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:300:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 141720	   4228	4665808	4811756	 496bec	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:18:23 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'decollage':
+../src/simAvion.c:296:2: error: expected ';' before '}' token
+  }
+  ^
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:301:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+make: *** [src/simAvion.o] Erreur 1
+12:18:31 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'decollage':
+../src/simAvion.c:296:2: error: expected ';' before '}' token
+  }
+  ^
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:301:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+make: *** [src/simAvion.o] Erreur 1
+12:18:38 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:301:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 141720	   4228	4665808	4811756	 496bec	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:18:59 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:301:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'verification':
+../src/simAvion.c:334:12: warning: unused variable 'data_decollage' [-Wunused-variable]
+  OS_Q_DATA data_decollage;
+            ^~~~~~~~~~~~~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 141720	   4228	4665808	4811756	 496bec	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:20:24 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:301:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'verification':
+../src/simAvion.c:343:18: error: 'Q_atterrissage_med' undeclared (first use in this function); did you mean 'Q_atterrissage_low'?
+   err = OSQQuery(Q_atterrissage_med, &data_med);
+                  ^~~~~~~~~~~~~~~~~~
+                  Q_atterrissage_low
+../src/simAvion.c:343:18: note: each undeclared identifier is reported only once for each function it appears in
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+make: *** [src/simAvion.o] Erreur 1
+12:20:48 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:301:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 141848	   4228	4665808	4811884	 496c6c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:21:01 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:301:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 141848	   4228	4665808	4811884	 496c6c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:21:07 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c:103:16: warning: unused variable 'decollageStk' [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:239:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:301:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:103:16: warning: 'decollageStk' defined but not used [-Wunused-variable]
+  static OS_STK decollageStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 141848	   4228	4665808	4811884	 496c6c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:22:02 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:240:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:302:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+At top level:
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 141912	   4228	4665808	4811948	 496cac	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:22:11 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+12:23:00 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».

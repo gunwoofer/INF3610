@@ -113,7 +113,6 @@ int create_tasks() {
 	OSTaskCreate(terminal, (void*)1, &terminal0Stk[TASK_STK_SIZE - 1], TERMINAL0_PRIO);
 	OSTaskCreate(terminal, (void*)2, &terminal1Stk[TASK_STK_SIZE - 1], TERMINAL1_PRIO);
 
-	OSTaskCreate(decollage, (void*)0, &decollageStk[TASK_STK_SIZE - 1], DECOLLAGE_PRIO);
 	OSTaskCreate(verification, (void*)0, &verificationStk[TASK_STK_SIZE - 1], VERIFICATION_PRIO);
 
 	return 0;
@@ -287,13 +286,13 @@ void decollage(void* data)
 
 	while (1) {
 		/*TODO: Mise en attente d'un avion pret pour le decollage*/
-		avion = OSQPend(Q_decollage, 0, &err);
+		OSQPend(Q_decollage, 0, &err);
 		errMsg(err, "erreur pend decollage\n");
 		OSTimeDly(30); //Temps pour que l'avion decolle
 		xil_printf("[DECOLLAGE] Avion decolle\n");
 
 		/*TODO: Destruction de l'avion*/
-		free(avion);
+		free(avion)
 	}
 }
 
@@ -332,8 +331,6 @@ void verification(void* data){
 	OS_Q_DATA data_med;
 	OS_Q_DATA data_high;
 
-	OS_Q_DATA data_decollage;
-
 	while(1){
 		/*TODO: Synchronisation unilaterale avec timer 3s*/
 		OSSemPend(sem_verification, 0, &err);
@@ -341,16 +338,13 @@ void verification(void* data){
 		err = OSQQuery(Q_atterrissage_low, &data_low);
 		errMsg(err, "Erreur query low\n");
 
-		err = OSQQuery(Q_atterrissage_medium, &data_med);
-		errMsg(err, "Erreur query med\n");
+		err = OSQQuery(Q_atterrissage_low, &data_med);
+		errMsg(err, "Erreur query low\n");
 
-		err = OSQQuery(Q_atterrissage_high, &data_high);
-		errMsg(err, "Erreur query high\n");
+		err = OSQQuery(Q_atterrissage_low, &data_high);
+		errMsg(err, "Erreur query low\n");
 
-		err = OSQQuery(Q_decollage, &data_decollage);
-		errMsg(err, "Erreur query decollage\n");
-
-		if (data_low.OSNMsgs > 6 || data_med.OSNMsgs > 4 || data_high.OSNMsgs > 3 || data_decollage.OSNMsgs > 10)
+		if (data_low.OSNMsgs > 6 || data_med.OSNMsgs > 4 || data_high.OSNMsgs > 3)
 			stopSimDebordement = true;
 
 		if (stopSimDebordement){
@@ -360,9 +354,9 @@ void verification(void* data){
 			OSTaskSuspend(ATTERRISSAGE_PRIO);
 			OSTaskSuspend(TERMINAL0_PRIO);
 			OSTaskSuspend(TERMINAL1_PRIO);
-			OSTaskSuspend(DECOLLAGE_PRIO);
+			// OSTaskSuspend(DECOLLAGE_PRIO);
 			OSTaskSuspend(VERIFICATION_PRIO);
-			//OSTaskSuspend(STATISTIQUES_PRIO);
+			// OSTaskSuspend(STATISTIQUES_PRIO);
 		}
 	}
 }

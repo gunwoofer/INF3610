@@ -113,7 +113,6 @@ int create_tasks() {
 	OSTaskCreate(terminal, (void*)1, &terminal0Stk[TASK_STK_SIZE - 1], TERMINAL0_PRIO);
 	OSTaskCreate(terminal, (void*)2, &terminal1Stk[TASK_STK_SIZE - 1], TERMINAL1_PRIO);
 
-	OSTaskCreate(decollage, (void*)0, &decollageStk[TASK_STK_SIZE - 1], DECOLLAGE_PRIO);
 	OSTaskCreate(verification, (void*)0, &verificationStk[TASK_STK_SIZE - 1], VERIFICATION_PRIO);
 
 	return 0;
@@ -341,7 +340,7 @@ void verification(void* data){
 		err = OSQQuery(Q_atterrissage_low, &data_low);
 		errMsg(err, "Erreur query low\n");
 
-		err = OSQQuery(Q_atterrissage_medium, &data_med);
+		err = OSQQuery(Q_atterrissage_med, &data_med);
 		errMsg(err, "Erreur query med\n");
 
 		err = OSQQuery(Q_atterrissage_high, &data_high);
@@ -360,9 +359,9 @@ void verification(void* data){
 			OSTaskSuspend(ATTERRISSAGE_PRIO);
 			OSTaskSuspend(TERMINAL0_PRIO);
 			OSTaskSuspend(TERMINAL1_PRIO);
-			OSTaskSuspend(DECOLLAGE_PRIO);
+			// OSTaskSuspend(DECOLLAGE_PRIO);
 			OSTaskSuspend(VERIFICATION_PRIO);
-			//OSTaskSuspend(STATISTIQUES_PRIO);
+			// OSTaskSuspend(STATISTIQUES_PRIO);
 		}
 	}
 }

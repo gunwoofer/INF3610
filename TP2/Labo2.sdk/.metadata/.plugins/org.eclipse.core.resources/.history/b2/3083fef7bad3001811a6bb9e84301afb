@@ -113,7 +113,6 @@ int create_tasks() {
 	OSTaskCreate(terminal, (void*)1, &terminal0Stk[TASK_STK_SIZE - 1], TERMINAL0_PRIO);
 	OSTaskCreate(terminal, (void*)2, &terminal1Stk[TASK_STK_SIZE - 1], TERMINAL1_PRIO);
 
-	OSTaskCreate(decollage, (void*)0, &decollageStk[TASK_STK_SIZE - 1], DECOLLAGE_PRIO);
 	OSTaskCreate(verification, (void*)0, &verificationStk[TASK_STK_SIZE - 1], VERIFICATION_PRIO);
 
 	return 0;
@@ -360,9 +359,9 @@ void verification(void* data){
 			OSTaskSuspend(ATTERRISSAGE_PRIO);
 			OSTaskSuspend(TERMINAL0_PRIO);
 			OSTaskSuspend(TERMINAL1_PRIO);
-			OSTaskSuspend(DECOLLAGE_PRIO);
+			// OSTaskSuspend(DECOLLAGE_PRIO);
 			OSTaskSuspend(VERIFICATION_PRIO);
-			//OSTaskSuspend(STATISTIQUES_PRIO);
+			// OSTaskSuspend(STATISTIQUES_PRIO);
 		}
 	}
 }
