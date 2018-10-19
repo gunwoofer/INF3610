@@ -1,8 +1,8 @@
-12:23:00 **** Incremental Build of configuration Debug for project Labo2 ****
+13:26:30 **** Incremental Build of configuration Debug for project Labo2 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 make: Rien à faire pour « main-build ».
 
-12:23:00 Build Finished (took 547ms)
+13:26:31 Build Finished (took 500ms)
 

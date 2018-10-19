@@ -41,6 +41,9 @@
 #define TERMINAL_LIBRE_2 0x01
 #define TERMINAUX_LIBRES 0x11
 
+
+bool testflag = true;
+
 /*
 *********************************************************************************************************
 *                                               QUEUES

@@ -41,12 +41,14 @@ int initialize_bsp();
 			/* TODO: Rajoutez vos fonctions de connexion ici*/
 			int connect_fit_timer_1();
 			int connect_fit_timer_3();
+			int connect_gpio_irq();
 void cleanup();
 	void disconnect_timer_irq();
 	void disconnect_intc_irq();
 	/* TODO: Rajoutez vos fonctions de déconnexion ici */
-	int disconnect_fit_timer_1();
-	int disconnect_fit_timer_3();
+	void disconnect_fit_timer_1();
+	void disconnect_fit_timer_3();
+	void disconnect_gpio_irq();
 
 /**
  * Handler prototypes

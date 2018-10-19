@@ -49,8 +49,15 @@ void fit_timer_3s_isr(void *not_valid) {
 
 void gpio_isr(void * not_valid) {
 	/*TODO: definition handler pour switches*/
+	if (testflag) {
+		xil_printf("Print !");
+		testflag = false;
+	}
+
 	uint8_t erreur = OSSemPost(sem_statistiques);
 	errMsg(erreur, "Erreur pendant le post sur sem_statistiques\n");
+
+	XGpio_InterruptClear(&gpSwitch, XGPIO_IR_MASK);
 }
 
 /*
@@ -115,6 +122,7 @@ int create_tasks() {
 
 	OSTaskCreate(decollage, (void*)0, &decollageStk[TASK_STK_SIZE - 1], DECOLLAGE_PRIO);
 	OSTaskCreate(verification, (void*)0, &verificationStk[TASK_STK_SIZE - 1], VERIFICATION_PRIO);
+	OSTaskCreate(statistiques, (void*)0, &statistiquesStk[TASK_STK_SIZE - 1], STATISTIQUES_PRIO);
 
 	return 0;
 }
@@ -301,14 +309,32 @@ void decollage(void* data)
 void statistiques(void* data){
 	uint8_t err;
 	xil_printf("[STATISTIQUES] Tache lancee\n");
+
+	/*OS_Q_DATA data_low;
+	OS_Q_DATA data_med;
+	OS_Q_DATA data_high;*/
+
 	while(1){
 		/*TODO: Synchronisation unilaterale switches*/
+		OSQPend(sem_statistiques, 0, &err);
+		errMsg(err, "erreur pend statistiques\n");
+
 		xil_printf("\n------------------ Affichage des statistiques ------------------\n");
 
 		/*TODO: Obtenir statistiques pour les files d'atterrissage*/
-		/*xil_printf("Nb d'avions en attente d'atterrissage de type High : %d\n", ...);
-		xil_printf("Nb d'avions en attente d'atterrissage de type Medium : %d\n", ...);
-		xil_printf("Nb d'avions en attente d'atterrissage de type Low : %d\n", ...);*/
+
+		/*err = OSQQuery(Q_atterrissage_low, &data_low);
+		errMsg(err, "Erreur query low\n");
+
+		err = OSQQuery(Q_atterrissage_medium, &data_med);
+		errMsg(err, "Erreur query med\n");
+
+		err = OSQQuery(Q_atterrissage_high, &data_high);
+		errMsg(err, "Erreur query high\n");
+
+		xil_printf("Nb d'avions en attente d'atterrissage de type High : %d\n", data_low.OSNMsgs);
+		xil_printf("Nb d'avions en attente d'atterrissage de type Medium : %d\n", data_med.OSNMsgs);
+		xil_printf("Nb d'avions en attente d'atterrissage de type Low : %d\n", data_high.OSNMsgs);*/
 
 		/*TODO: Obtenir statistiques pour la file de decollage*/
 		//xil_printf("Nb d'avions en attente de decollage : %d\n", ...);
@@ -362,7 +388,7 @@ void verification(void* data){
 			OSTaskSuspend(TERMINAL1_PRIO);
 			OSTaskSuspend(DECOLLAGE_PRIO);
 			OSTaskSuspend(VERIFICATION_PRIO);
-			//OSTaskSuspend(STATISTIQUES_PRIO);
+			OSTaskSuspend(STATISTIQUES_PRIO);
 		}
 	}
 }

@@ -1,0 +1,58 @@
+#include <xscugic.h>
+#include <xintc.h>
+#include <xgpio.h>
+#include <CortexA-MPCore_PrivateTimer.h>
+
+
+#define GIC_DEVICE_ID	        XPAR_PS7_SCUGIC_0_DEVICE_ID
+#define PL_INTC_IRQ_ID          XPS_IRQ_INT_ID
+#define FIT_1S_IRQ_ID           XPAR_AXI_INTC_0_FIT_TIMER_0_INTERRUPT_INTR
+#define FIT_3S_IRQ_ID			XPAR_AXI_INTC_0_FIT_TIMER_1_INTERRUPT_INTR
+#define GPIO_SW_IRQ_ID			XPAR_AXI_INTC_0_AXI_GPIO_0_IP2INTC_IRPT_INTR
+#define GPIO_SW_DEVICE_ID		XPAR_AXI_GPIO_0_DEVICE_ID
+
+extern XScuGic gic;
+extern XIntc axi_intc;
+extern XGpio gpSwitch;
+
+/**
+ * Main BSP init Function
+ */
+int initialize_bsp();
+
+
+/**
+ * HW Setup
+ */
+	void initialize_timer();
+	void initialize_gpio();
+
+/**
+ * Interrupt related functions
+ */
+	int prepare_and_enable_irq();
+		int initialize_interrupt_controller();
+			int initialize_gic();
+			int initialize_axi_intc();
+		void enable_interrupt_controller();
+		int connect_irqs();
+			int connect_intc_irq();
+			int connect_timer_irq();
+			/* TODO: Rajoutez vos fonctions de connexion ici*/
+			int connect_fit_timer_1();
+			int connect_fit_timer_3();
+			int connect_gpio_irq();
+void cleanup();
+	void disconnect_timer_irq();
+	void disconnect_intc_irq();
+	/* TODO: Rajoutez vos fonctions de déconnexion ici */
+	void disconnect_fit_timer_1();
+	void disconnect_fit_timer_3();
+
+/**
+ * Handler prototypes
+ */
+void fit_timer_1s_isr(void *not_valid);
+void fit_timer_3s_isr(void *not_valid);
+void timer_isr(void* not_valid);
+void gpio_isr(void * data);

@@ -5381,3 +5381,2284 @@ make pre-build main-build
 a9-linaro-pre-build-step
 ' '
 make: Rien à faire pour « main-build ».
+12:30:08 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:240:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+At top level:
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142000	   4228	4665808	4812036	 496d04	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:30:14 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:240:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+At top level:
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142000	   4228	4665808	4812036	 496d04	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:31:16 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+12:32:13 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:240:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+At top level:
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142368	   4228	4665808	4812404	 496e74	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:32:17 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c:104:16: warning: unused variable 'statistiquesStk' [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:240:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+At top level:
+../src/simAvion.c:104:16: warning: 'statistiquesStk' defined but not used [-Wunused-variable]
+  static OS_STK statistiquesStk[TASK_STK_SIZE];
+                ^~~~~~~~~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142368	   4228	4665808	4812404	 496e74	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:32:26 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+12:33:18 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:241:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142432	   4228	4665808	4812468	 496eb4	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:33:25 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:241:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142432	   4228	4665808	4812468	 496eb4	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:33:28 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+12:34:51 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:108:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:242:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142440	   4228	4665808	4812476	 496ebc	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:38:15 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+'Finished building: ../src/bsp_init.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142504	   4228	4665808	4812540	 496efc	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:38:49 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+../src/bsp_init.c: In function 'connect_irqs':
+../src/bsp_init.c:167:11: warning: implicit declaration of function 'connect_gpio'; did you mean 'connect_irqs'? [-Wimplicit-function-declaration]
+  status = connect_gpio();
+           ^~~~~~~~~~~~
+           connect_irqs
+'Finished building: ../src/bsp_init.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142568	   4228	4665808	4812604	 496f3c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:38:54 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+12:39:21 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:241:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142560	   4228	4665808	4812596	 496f34	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:46:55 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+12:47:50 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+../src/bsp_init.c: In function 'connect_irqs':
+../src/bsp_init.c:167:11: warning: implicit declaration of function 'connect_gpio_irq'; did you mean 'connect_intc_irq'? [-Wimplicit-function-declaration]
+  status = connect_gpio_irq();
+           ^~~~~~~~~~~~~~~~
+           connect_intc_irq
+'Finished building: ../src/bsp_init.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/bsp_init.o: In function `connect_irqs':
+C:\TEMP\Labo2.sdk\Labo2\Debug/../src/bsp_init.c:167: undefined reference to `connect_gpio_irq'
+collect2.exe: error: ld returned 1 exit status
+make: *** [Labo2.elf] Erreur 1
+12:47:57 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+../src/bsp_init.c: In function 'connect_irqs':
+../src/bsp_init.c:167:11: warning: implicit declaration of function 'connect_gpio_irq'; did you mean 'connect_intc_irq'? [-Wimplicit-function-declaration]
+  status = connect_gpio_irq();
+           ^~~~~~~~~~~~~~~~
+           connect_intc_irq
+'Finished building: ../src/bsp_init.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142560	   4228	4665808	4812596	 496f34	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:49:40 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+../src/bsp_init.c: In function 'connect_irqs':
+../src/bsp_init.c:167:11: warning: implicit declaration of function 'connect_gpio_irq'; did you mean 'connect_intc_irq'? [-Wimplicit-function-declaration]
+  status = connect_gpio_irq();
+           ^~~~~~~~~~~~~~~~
+           connect_intc_irq
+'Finished building: ../src/bsp_init.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142560	   4228	4665808	4812596	 496f34	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:50:26 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+12:52:33 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+../src/bsp_init.c: In function 'connect_irqs':
+../src/bsp_init.c:167:11: warning: implicit declaration of function 'connect_gpio_irq'; did you mean 'connect_intc_irq'? [-Wimplicit-function-declaration]
+  status = connect_gpio_irq();
+           ^~~~~~~~~~~~~~~~
+           connect_intc_irq
+../src/bsp_init.c: At top level:
+../src/bsp_init.c:270:6: error: conflicting types for 'disconnect_fit_timer_1'
+ void disconnect_fit_timer_1() {
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/bsp_init.c:1:0:
+../src/bsp_init.h:48:6: note: previous declaration of 'disconnect_fit_timer_1' was here
+  int disconnect_fit_timer_1();
+      ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/bsp_init.o] Erreur 1
+12:52:54 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+../src/bsp_init.c: In function 'connect_irqs':
+../src/bsp_init.c:167:11: warning: implicit declaration of function 'connect_gpio_irq'; did you mean 'connect_intc_irq'? [-Wimplicit-function-declaration]
+  status = connect_gpio_irq();
+           ^~~~~~~~~~~~~~~~
+           connect_intc_irq
+'Finished building: ../src/bsp_init.c'
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:241:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142560	   4228	4665808	4812596	 496f34	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:53:14 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+../src/bsp_init.c: In function 'connect_irqs':
+../src/bsp_init.c:167:11: warning: implicit declaration of function 'connect_gpio_irq'; did you mean 'connect_intc_irq'? [-Wimplicit-function-declaration]
+  status = connect_gpio_irq();
+           ^~~~~~~~~~~~~~~~
+           connect_intc_irq
+'Finished building: ../src/bsp_init.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142624	   4228	4665808	4812660	 496f74	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:53:53 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+'Finished building: ../src/bsp_init.c'
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:241:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142624	   4228	4665808	4812660	 496f74	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:54:04 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48:0,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h: In function 'disconnect_gpio_irq':
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:28:19: error: storage class specified for parameter 'u_int8_t'
+ typedef __uint8_t u_int8_t;
+                   ^~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:31:20: error: storage class specified for parameter 'u_int16_t'
+ typedef __uint16_t u_int16_t;
+                    ^~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:34:20: error: storage class specified for parameter 'u_int32_t'
+ typedef __uint32_t u_int32_t;
+                    ^~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:37:20: error: storage class specified for parameter 'u_int64_t'
+ typedef __uint64_t u_int64_t;
+                    ^~~~~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:69:0,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\machine\types.h:19:18: error: storage class specified for parameter '__off_t'
+ typedef long int __off_t;
+                  ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\machine\types.h:20:13: error: storage class specified for parameter '__pid_t'
+ typedef int __pid_t;
+             ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\machine\types.h:22:1: error: expected declaration specifiers before '__extension__'
+ __extension__ typedef long long int __loff_t;
+ ^~~~~~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\machine\types.h:28:15: error: storage class specified for parameter '__suseconds_t'
+ typedef long  __suseconds_t; /* microseconds (signed) */
+               ^~~~~~~~~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:25:0,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:85,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\_sigset.h:41:23: error: storage class specified for parameter '__sigset_t'
+ typedef unsigned long __sigset_t;
+                       ^~~~~~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:26:0,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:85,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\_timeval.h:35:23: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'suseconds_t'
+ typedef __suseconds_t suseconds_t;
+                       ^~~~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\_timeval.h:40:18: error: storage class specified for parameter 'time_t'
+ typedef _TIME_T_ time_t;
+                  ^~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\_timeval.h:52:2: error: expected specifier-qualifier-list before 'time_t'
+  time_t  tv_sec;  /* seconds */
+  ^~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\timespec.h:38:0,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:27,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:85,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\_timespec.h:45:2: error: expected specifier-qualifier-list before 'time_t'
+  time_t tv_sec;  /* seconds */
+  ^~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:85:0,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:31:20: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sigset_t'
+ typedef __sigset_t sigset_t;
+                    ^~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:45:23: error: storage class specified for parameter 'fd_mask'
+ typedef unsigned long fd_mask;
+                       ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:54:2: error: expected specifier-qualifier-list before 'fd_mask'
+  fd_mask fds_bits[_howmany(FD_SETSIZE, NFDBITS)];
+  ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:55:3: error: storage class specified for parameter '_types_fd_set'
+ } _types_fd_set;
+   ^~~~~~~~~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:5:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:73:27: error: expected declaration specifiers or '...' before '_types_fd_set'
+ int select __P ((int __n, fd_set *__readfds, fd_set *__writefds,
+                           ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:73:46: error: expected declaration specifiers or '...' before '_types_fd_set'
+ int select __P ((int __n, fd_set *__readfds, fd_set *__writefds,
+                                              ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:74:4: error: expected declaration specifiers or '...' before '_types_fd_set'
+    fd_set *__exceptfds, struct timeval *__timeout));
+    ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:76:28: error: expected declaration specifiers or '...' before '_types_fd_set'
+ int pselect __P ((int __n, fd_set *__readfds, fd_set *__writefds,
+                            ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:76:47: error: expected declaration specifiers or '...' before '_types_fd_set'
+ int pselect __P ((int __n, fd_set *__readfds, fd_set *__writefds,
+                                               ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:77:5: error: expected declaration specifiers or '...' before '_types_fd_set'
+     fd_set *__exceptfds, const struct timespec *__timeout,
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:76:13: error: unknown type name 'sigset_t'
+ int pselect __P ((int __n, fd_set *__readfds, fd_set *__writefds,
+             ^
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48:0,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:94:23: error: storage class specified for parameter 'u_char'
+ typedef unsigned char u_char;
+                       ^~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:98:24: error: storage class specified for parameter 'u_short'
+ typedef unsigned short u_short;
+                        ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:102:22: error: storage class specified for parameter 'u_int'
+ typedef unsigned int u_int;
+                      ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:106:23: error: storage class specified for parameter 'u_long'
+ typedef unsigned long u_long;
+                       ^~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:114:24: error: storage class specified for parameter 'ushort'
+ typedef unsigned short ushort;  /* System V compatibility */
+                        ^~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:115:22: error: storage class specified for parameter 'uint'
+ typedef unsigned int uint;  /* System V compatibility */
+                      ^~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:116:23: error: storage class specified for parameter 'ulong'
+ typedef unsigned long ulong;  /* System V compatibility */
+                       ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:120:19: error: storage class specified for parameter 'clock_t'
+ typedef _CLOCK_T_ clock_t;
+                   ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:130:14: error: storage class specified for parameter 'daddr_t'
+ typedef long daddr_t;
+              ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:134:16: error: storage class specified for parameter 'caddr_t'
+ typedef char * caddr_t;
+                ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:143:24: error: storage class specified for parameter 'ino_t'
+ typedef unsigned short ino_t;
+                        ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:172:16: error: storage class specified for parameter 'off_t'
+ typedef _off_t off_t;
+                ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:173:17: error: storage class specified for parameter 'dev_t'
+ typedef __dev_t dev_t;
+                 ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:174:17: error: storage class specified for parameter 'uid_t'
+ typedef __uid_t uid_t;
+                 ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:175:17: error: storage class specified for parameter 'gid_t'
+ typedef __gid_t gid_t;
+                 ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:181:13: error: storage class specified for parameter 'pid_t'
+ typedef int pid_t;
+             ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:189:14: error: storage class specified for parameter 'key_t'
+ typedef long key_t;
+              ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:193:18: error: storage class specified for parameter 'ssize_t'
+ typedef _ssize_t ssize_t;
+                  ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:209:22: error: storage class specified for parameter 'mode_t'
+ typedef unsigned int mode_t _ST_INT32;
+                      ^~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:214:24: error: storage class specified for parameter 'nlink_t'
+ typedef unsigned short nlink_t;
+                        ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:221:21: error: storage class specified for parameter 'clockid_t'
+ typedef _CLOCKID_T_ clockid_t;
+                     ^~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:226:19: error: storage class specified for parameter 'timer_t'
+ typedef _TIMER_T_ timer_t;
+                   ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:230:23: error: storage class specified for parameter 'useconds_t'
+ typedef unsigned long useconds_t;
+                       ^~~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:237:19: error: storage class specified for parameter 'sbintime_t'
+ typedef __int64_t sbintime_t;
+                   ^~~~~~~~~~
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:53:16: error: storage class specified for parameter 'FILE'
+ typedef __FILE FILE;
+                ^~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:60:17: error: storage class specified for parameter 'fpos_t'
+ typedef _fpos_t fpos_t;
+                 ^~~~~~
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:167:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(tmpfile, (void));
+ ^~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:172:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fclose, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:173:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fflush, (FILE *));
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:174:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(freopen, (const char *__restrict, const char *__restrict, FILE *__restrict));
+ ^~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:175:6: error: expected declaration specifiers or '...' before 'FILE'
+ void _EXFUN(setbuf, (FILE *__restrict, char *__restrict));
+      ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:176:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(setvbuf, (FILE *__restrict, char *__restrict, int, size_t));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:177:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fprintf, (FILE *__restrict, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:179:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fscanf, (FILE *__restrict, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:187:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(vfprintf, (FILE *__restrict, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:193:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fgetc, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:194:9: error: expected declaration specifiers or '...' before 'FILE'
+ char *  _EXFUN(fgets, (char *__restrict, int, FILE *__restrict));
+         ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:195:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fputc, (int, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:196:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fputs, (const char *__restrict, FILE *__restrict));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:197:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(getc, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:200:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(putc, (int, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:203:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(ungetc, (int, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:204:8: error: expected declaration specifiers or '...' before 'FILE'
+ size_t _EXFUN(fread, (_PTR __restrict, size_t _size, size_t _n, FILE *__restrict));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:205:8: error: expected declaration specifiers or '...' before 'FILE'
+ size_t _EXFUN(fwrite, (const _PTR __restrict , size_t _size, size_t _n, FILE *));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:209:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fgetpos, (FILE *__restrict, fpos_t *__restrict));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:209:5: error: expected declaration specifiers or '...' before 'fpos_t'
+ int _EXFUN(fgetpos, (FILE *__restrict, fpos_t *__restrict));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:211:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fseek, (FILE *, long, int));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:215:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fsetpos, (FILE *, const fpos_t *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:215:5: error: expected ';', ',' or ')' before '*' token
+ int _EXFUN(fsetpos, (FILE *, const fpos_t *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:217:6: error: expected declaration specifiers or '...' before 'FILE'
+ long _EXFUN(ftell, ( FILE *));
+      ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:218:6: error: expected declaration specifiers or '...' before 'FILE'
+ void _EXFUN(rewind, (FILE *));
+      ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:219:6: error: expected declaration specifiers or '...' before 'FILE'
+ void _EXFUN(clearerr, (FILE *));
+      ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:220:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(feof, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:221:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(ferror, (FILE *));
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:224:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(fopen, (const char *__restrict _name, const char *__restrict _type));
+ ^~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:238:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fseeko, (FILE *, off_t, int));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:238:5: error: expected declaration specifiers or '...' before 'off_t'
+ int _EXFUN(fseeko, (FILE *, off_t, int));
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:239:1: error: expected declaration specifiers before 'off_t'
+ off_t _EXFUN(ftello, ( FILE *));
+ ^~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:251:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(vfscanf, (FILE *__restrict, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:275:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fiprintf, (FILE *, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:277:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fiscanf, (FILE *, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:297:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(vfiprintf, (FILE *, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:299:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(vfiscanf, (FILE *, const char *, __VALIST)
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:320:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(fdopen, (int, const char *));
+ ^~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:322:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fileno, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:325:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(pclose, (FILE *));
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:326:1: error: expected declaration specifiers before 'FILE'
+ FILE *  _EXFUN(popen, (const char *, const char *));
+ ^~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:330:9: error: expected declaration specifiers or '...' before 'FILE'
+ void    _EXFUN(setbuffer, (FILE *, char *, int));
+         ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:331:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(setlinebuf, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:335:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(getw, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:336:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(putw, (int, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:339:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(getc_unlocked, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:341:6: error: expected declaration specifiers or '...' before 'FILE'
+ void _EXFUN(flockfile, (FILE *));
+      ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:342:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(ftrylockfile, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:343:6: error: expected declaration specifiers or '...' before 'FILE'
+ void _EXFUN(funlockfile, (FILE *));
+      ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:344:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(putc_unlocked, (int, FILE *));
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:358:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(fmemopen, (void *__restrict, size_t, const char *__restrict));
+ ^~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:361:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(open_memstream, (char **, size_t *));
+ ^~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:386:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fclose_r, (struct _reent *, FILE *));
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:388:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(_fdopen_r, (struct _reent *, int, const char *));
+ ^~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:389:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fflush_r, (struct _reent *, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:390:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fgetc_r, (struct _reent *, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:391:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fgetc_unlocked_r, (struct _reent *, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:392:9: error: expected declaration specifiers or '...' before 'FILE'
+ char *  _EXFUN(_fgets_r, (struct _reent *, char *__restrict, int, FILE *__restrict));
+         ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:393:9: error: expected declaration specifiers or '...' before 'FILE'
+ char *  _EXFUN(_fgets_unlocked_r, (struct _reent *, char *__restrict, int, FILE *__restrict));
+         ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:398:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fgetpos_r, (struct _reent *, FILE *, fpos_t *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:398:5: error: expected declaration specifiers or '...' before 'fpos_t'
+ int _EXFUN(_fgetpos_r, (struct _reent *, FILE *, fpos_t *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:399:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fsetpos_r, (struct _reent *, FILE *, const fpos_t *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:399:5: error: expected ';', ',' or ')' before '*' token
+ int _EXFUN(_fsetpos_r, (struct _reent *, FILE *, const fpos_t *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:401:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fiprintf_r, (struct _reent *, FILE *, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:403:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fiscanf_r, (struct _reent *, FILE *, const char *, ...)
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:405:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(_fmemopen_r, (struct _reent *, void *__restrict, size_t, const char *__restrict));
+ ^~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:406:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(_fopen_r, (struct _reent *, const char *__restrict, const char *__restrict));
+ ^~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:407:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(_freopen_r, (struct _reent *, const char *__restrict, const char *__restrict, FILE *__restrict));
+ ^~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:408:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fprintf_r, (struct _reent *, FILE *__restrict, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:410:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fpurge_r, (struct _reent *, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:411:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fputc_r, (struct _reent *, int, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:412:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fputc_unlocked_r, (struct _reent *, int, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:413:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fputs_r, (struct _reent *, const char *__restrict, FILE *__restrict));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:414:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fputs_unlocked_r, (struct _reent *, const char *__restrict, FILE *__restrict));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:415:8: error: expected declaration specifiers or '...' before 'FILE'
+ size_t _EXFUN(_fread_r, (struct _reent *, _PTR __restrict, size_t _size, size_t _n, FILE *__restrict));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:416:8: error: expected declaration specifiers or '...' before 'FILE'
+ size_t _EXFUN(_fread_unlocked_r, (struct _reent *, _PTR __restrict, size_t _size, size_t _n, FILE *__restrict));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:417:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fscanf_r, (struct _reent *, FILE *__restrict, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:419:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fseek_r, (struct _reent *, FILE *, long, int));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:420:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_fseeko_r,(struct _reent *, FILE *, _off_t, int));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:421:6: error: expected declaration specifiers or '...' before 'FILE'
+ long _EXFUN(_ftell_r, (struct _reent *, FILE *));
+      ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:422:8: error: expected declaration specifiers or '...' before 'FILE'
+ _off_t _EXFUN(_ftello_r,(struct _reent *, FILE *));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:423:6: error: expected declaration specifiers or '...' before 'FILE'
+ void _EXFUN(_rewind_r, (struct _reent *, FILE *));
+      ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:424:8: error: expected declaration specifiers or '...' before 'FILE'
+ size_t _EXFUN(_fwrite_r, (struct _reent *, const _PTR __restrict, size_t _size, size_t _n, FILE *__restrict));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:425:8: error: expected declaration specifiers or '...' before 'FILE'
+ size_t _EXFUN(_fwrite_unlocked_r, (struct _reent *, const _PTR __restrict, size_t _size, size_t _n, FILE *__restrict));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:426:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_getc_r, (struct _reent *, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:427:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_getc_unlocked_r, (struct _reent *, FILE *));
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:435:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(_open_memstream_r, (struct _reent *, char **, size_t *));
+ ^~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:439:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_putc_r, (struct _reent *, int, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:440:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_putc_unlocked_r, (struct _reent *, int, FILE *));
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:462:1: error: expected declaration specifiers before 'FILE'
+ FILE * _EXFUN(_tmpfile_r, (struct _reent *));
+ ^~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:464:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_ungetc_r, (struct _reent *, int, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:477:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_vfiprintf_r, (struct _reent *, FILE *, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:479:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_vfiscanf_r, (struct _reent *, FILE *, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:481:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_vfprintf_r, (struct _reent *, FILE *__restrict, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:483:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(_vfscanf_r, (struct _reent *, FILE *__restrict, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:508:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fpurge, (FILE *));
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:509:1: error: expected declaration specifiers before 'ssize_t'
+ ssize_t _EXFUN(__getdelim, (char **, size_t *, int, FILE *));
+ ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:510:1: error: expected declaration specifiers before 'ssize_t'
+ ssize_t _EXFUN(__getline, (char **, size_t *, FILE *));
+ ^~~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:513:6: error: expected declaration specifiers or '...' before 'FILE'
+ void _EXFUN(clearerr_unlocked, (FILE *));
+      ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:514:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(feof_unlocked, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:515:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(ferror_unlocked, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:516:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fileno_unlocked, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:517:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fflush_unlocked, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:518:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fgetc_unlocked, (FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:519:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(fputc_unlocked, (int, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:520:8: error: expected declaration specifiers or '...' before 'FILE'
+ size_t _EXFUN(fread_unlocked, (_PTR __restrict, size_t _size, size_t _n, FILE *__restrict));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:521:8: error: expected declaration specifiers or '...' before 'FILE'
+ size_t _EXFUN(fwrite_unlocked, (const _PTR __restrict , size_t _size, size_t _n, FILE *));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:555:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(__srget_r, (struct _reent *, FILE *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:556:5: error: expected declaration specifiers or '...' before 'FILE'
+ int _EXFUN(__swbuf_r, (struct _reent *, int, FILE *));
+     ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:579:1: error: expected declaration specifiers before 'FILE'
+ FILE *_EXFUN(funopen,(const _PTR __cookie,
+ ^~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:586:1: error: expected declaration specifiers before 'FILE'
+ FILE *_EXFUN(_funopen_r,(struct _reent *, const _PTR __cookie,
+ ^~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:665:61: error: expected declaration specifiers or '...' before 'FILE'
+ _ELIDABLE_INLINE int __sputc_r(struct _reent *_ptr, int _c, FILE *_p) {
+                                                             ^~~~
+../src/bsp_init.c:21:22: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int initialize_bsp() {
+                      ^
+../src/bsp_init.c:29:25: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void initialize_timer() {
+                         ^
+../src/bsp_init.c:41:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+../src/bsp_init.c:60:30: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int prepare_and_enable_irq() {
+                              ^
+../src/bsp_init.c:80:39: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int initialize_interrupt_controller() {
+                                       ^
+../src/bsp_init.c:94:22: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int initialize_gic() {
+                      ^
+../src/bsp_init.c:113:27: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int initialize_axi_intc() {
+                           ^
+../src/bsp_init.c:123:36: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void enable_interrupt_controller() {
+                                    ^
+../src/bsp_init.c:143:20: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int connect_irqs() {
+                    ^
+../src/bsp_init.c:174:24: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int connect_intc_irq() {
+                        ^
+../src/bsp_init.c:193:25: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int connect_timer_irq() {
+                         ^
+../src/bsp_init.c:215:27: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int connect_fit_timer_1() {
+                           ^
+../src/bsp_init.c:227:27: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int connect_fit_timer_3() {
+                           ^
+../src/bsp_init.c:238:24: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ int connect_gpio_irq() {
+                        ^
+../src/bsp_init.c:249:16: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void cleanup() {
+                ^
+../src/bsp_init.c:258:29: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void disconnect_timer_irq() {
+                             ^
+../src/bsp_init.c:263:28: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void disconnect_intc_irq() {
+                            ^
+../src/bsp_init.c:270:31: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void disconnect_fit_timer_1() {
+                               ^
+../src/bsp_init.c:275:31: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ void disconnect_fit_timer_3() {
+                               ^
+../src/bsp_init.c:19:7: error: declaration for parameter 'gpSwitch' but no such parameter
+ XGpio gpSwitch;
+       ^~~~~~~~
+../src/bsp_init.c:18:7: error: declaration for parameter 'axi_intc' but no such parameter
+ XIntc axi_intc;
+       ^~~~~~~~
+../src/bsp_init.c:17:9: error: declaration for parameter 'gic' but no such parameter
+ XScuGic gic;
+         ^~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\ctype.h:4:0,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_printf.h:8,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_0/ps7_cortexa9_0/include/xscugic.h:198,
+                 from ../src/bsp_init.h:1,
+                 from ../src/bsp_init.c:1:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:503:5: error: declaration for parameter '_vsscanf_r' but no such parameter
+ int _EXFUN(_vsscanf_r, (struct _reent *, const char *__restrict, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:501:5: error: declaration for parameter '_vsprintf_r' but no such parameter
+ int _EXFUN(_vsprintf_r, (struct _reent *, char *__restrict, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:499:5: error: declaration for parameter '_vsnprintf_r' but no such parameter
+ int _EXFUN(_vsnprintf_r, (struct _reent *, char *__restrict, size_t, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:497:5: error: declaration for parameter '_vsniprintf_r' but no such parameter
+ int _EXFUN(_vsniprintf_r, (struct _reent *, char *, size_t, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:495:5: error: declaration for parameter '_vsiscanf_r' but no such parameter
+ int _EXFUN(_vsiscanf_r, (struct _reent *, const char *, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:493:5: error: declaration for parameter '_vsiprintf_r' but no such parameter
+ int _EXFUN(_vsiprintf_r, (struct _reent *, char *, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:491:5: error: declaration for parameter '_vscanf_r' but no such parameter
+ int _EXFUN(_vscanf_r, (struct _reent *, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:489:5: error: declaration for parameter '_vprintf_r' but no such parameter
+ int _EXFUN(_vprintf_r, (struct _reent *, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:487:5: error: declaration for parameter '_viscanf_r' but no such parameter
+ int _EXFUN(_viscanf_r, (struct _reent *, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:485:5: error: declaration for parameter '_viprintf_r' but no such parameter
+ int _EXFUN(_viprintf_r, (struct _reent *, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:475:5: error: declaration for parameter '_vdprintf_r' but no such parameter
+ int _EXFUN(_vdprintf_r, (struct _reent *, int, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:473:5: error: declaration for parameter '_vdiprintf_r' but no such parameter
+ int _EXFUN(_vdiprintf_r, (struct _reent *, int, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:471:5: error: declaration for parameter '_vasprintf_r' but no such parameter
+ int _EXFUN(_vasprintf_r, (struct _reent *, char **, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:469:8: error: declaration for parameter '_vasnprintf_r' but no such parameter
+ char * _EXFUN(_vasnprintf_r, (struct _reent*, char *, size_t *, const char *, __VALIST)
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:467:8: error: declaration for parameter '_vasniprintf_r' but no such parameter
+ char * _EXFUN(_vasniprintf_r, (struct _reent*, char *, size_t *, const char *, __VALIST)
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:465:5: error: declaration for parameter '_vasiprintf_r' but no such parameter
+ int _EXFUN(_vasiprintf_r, (struct _reent *, char **, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:463:8: error: declaration for parameter '_tmpnam_r' but no such parameter
+ char * _EXFUN(_tmpnam_r, (struct _reent *, char *));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:461:8: error: declaration for parameter '_tempnam_r' but no such parameter
+ char * _EXFUN(_tempnam_r, (struct _reent *, const char *, const char *));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:459:5: error: declaration for parameter '_sscanf_r' but no such parameter
+ int _EXFUN(_sscanf_r, (struct _reent *, const char *__restrict, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:457:5: error: declaration for parameter '_sprintf_r' but no such parameter
+ int _EXFUN(_sprintf_r, (struct _reent *, char *__restrict, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:455:5: error: declaration for parameter '_snprintf_r' but no such parameter
+ int _EXFUN(_snprintf_r, (struct _reent *, char *__restrict, size_t, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:453:5: error: declaration for parameter '_sniprintf_r' but no such parameter
+ int _EXFUN(_sniprintf_r, (struct _reent *, char *, size_t, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:451:5: error: declaration for parameter '_siscanf_r' but no such parameter
+ int _EXFUN(_siscanf_r, (struct _reent *, const char *, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:449:5: error: declaration for parameter '_siprintf_r' but no such parameter
+ int _EXFUN(_siprintf_r, (struct _reent *, char *, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:447:5: error: declaration for parameter '_scanf_r' but no such parameter
+ int _EXFUN(_scanf_r, (struct _reent *, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:445:5: error: declaration for parameter '_rename_r' but no such parameter
+ int _EXFUN(_rename_r, (struct _reent *,
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:444:5: error: declaration for parameter '_remove_r' but no such parameter
+ int _EXFUN(_remove_r, (struct _reent *, const char *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:443:5: error: declaration for parameter '_puts_r' but no such parameter
+ int _EXFUN(_puts_r, (struct _reent *, const char *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:442:5: error: declaration for parameter '_putchar_r' but no such parameter
+ int _EXFUN(_putchar_r, (struct _reent *, int));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:441:5: error: declaration for parameter '_putchar_unlocked_r' but no such parameter
+ int _EXFUN(_putchar_unlocked_r, (struct _reent *, int));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:437:5: error: declaration for parameter '_printf_r' but no such parameter
+ int _EXFUN(_printf_r, (struct _reent *, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:436:6: error: declaration for parameter '_perror_r' but no such parameter
+ void _EXFUN(_perror_r, (struct _reent *, const char *));
+      ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:433:5: error: declaration for parameter '_iscanf_r' but no such parameter
+ int _EXFUN(_iscanf_r, (struct _reent *, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:431:5: error: declaration for parameter '_iprintf_r' but no such parameter
+ int _EXFUN(_iprintf_r, (struct _reent *, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:430:8: error: declaration for parameter '_gets_r' but no such parameter
+ char * _EXFUN(_gets_r, (struct _reent *, char *));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:429:5: error: declaration for parameter '_getchar_unlocked_r' but no such parameter
+ int _EXFUN(_getchar_unlocked_r, (struct _reent *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:428:5: error: declaration for parameter '_getchar_r' but no such parameter
+ int _EXFUN(_getchar_r, (struct _reent *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:387:5: error: declaration for parameter '_fcloseall_r' but no such parameter
+ int _EXFUN(_fcloseall_r, (struct _reent *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:384:5: error: declaration for parameter '_dprintf_r' but no such parameter
+ int _EXFUN(_dprintf_r, (struct _reent *, int, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:382:5: error: declaration for parameter '_diprintf_r' but no such parameter
+ int _EXFUN(_diprintf_r, (struct _reent *, int, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:380:5: error: declaration for parameter '_asprintf_r' but no such parameter
+ int _EXFUN(_asprintf_r, (struct _reent *, char **__restrict, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:378:8: error: declaration for parameter '_asnprintf_r' but no such parameter
+ char * _EXFUN(_asnprintf_r, (struct _reent *, char *__restrict, size_t *__restrict, const char *__restrict, ...)
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:376:8: error: declaration for parameter '_asniprintf_r' but no such parameter
+ char * _EXFUN(_asniprintf_r, (struct _reent *, char *, size_t *, const char *, ...)
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:374:5: error: declaration for parameter '_asiprintf_r' but no such parameter
+ int _EXFUN(_asiprintf_r, (struct _reent *, char **, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:367:5: error: declaration for parameter 'renameat' but no such parameter
+ int _EXFUN(renameat, (int, const char *, int, const char *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:362:5: error: declaration for parameter 'vdprintf' but no such parameter
+ int _EXFUN(vdprintf, (int, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:355:5: error: declaration for parameter 'dprintf' but no such parameter
+ int _EXFUN(dprintf, (int, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:345:5: error: declaration for parameter 'putchar_unlocked' but no such parameter
+ int _EXFUN(putchar_unlocked, (int));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:340:5: error: declaration for parameter 'getchar_unlocked' but no such parameter
+ int _EXFUN(getchar_unlocked, (void));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:309:5: error: declaration for parameter 'vsniprintf' but no such parameter
+ int _EXFUN(vsniprintf, (char *, size_t, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:307:5: error: declaration for parameter 'vsiscanf' but no such parameter
+ int _EXFUN(vsiscanf, (const char *, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:305:5: error: declaration for parameter 'vsiprintf' but no such parameter
+ int _EXFUN(vsiprintf, (char *, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:303:5: error: declaration for parameter 'viscanf' but no such parameter
+ int _EXFUN(viscanf, (const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:301:5: error: declaration for parameter 'viprintf' but no such parameter
+ int _EXFUN(viprintf, (const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:295:5: error: declaration for parameter 'vdiprintf' but no such parameter
+ int _EXFUN(vdiprintf, (int, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:293:8: error: declaration for parameter 'vasnprintf' but no such parameter
+ char * _EXFUN(vasnprintf, (char *, size_t *, const char *, __VALIST)
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:291:8: error: declaration for parameter 'vasniprintf' but no such parameter
+ char * _EXFUN(vasniprintf, (char *, size_t *, const char *, __VALIST)
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:289:5: error: declaration for parameter 'vasiprintf' but no such parameter
+ int _EXFUN(vasiprintf, (char **, const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:287:5: error: declaration for parameter 'sniprintf' but no such parameter
+ int _EXFUN(sniprintf, (char *, size_t, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:285:5: error: declaration for parameter 'siscanf' but no such parameter
+ int _EXFUN(siscanf, (const char *, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:283:5: error: declaration for parameter 'siprintf' but no such parameter
+ int _EXFUN(siprintf, (char *, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:281:5: error: declaration for parameter 'iscanf' but no such parameter
+ int _EXFUN(iscanf, (const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:279:5: error: declaration for parameter 'iprintf' but no such parameter
+ int _EXFUN(iprintf, (const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:272:5: error: declaration for parameter 'diprintf' but no such parameter
+ int _EXFUN(diprintf, (int, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:269:8: error: declaration for parameter 'asnprintf' but no such parameter
+ char * _EXFUN(asnprintf, (char *__restrict, size_t *__restrict, const char *__restrict, ...)
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:267:8: error: declaration for parameter 'asniprintf' but no such parameter
+ char * _EXFUN(asniprintf, (char *, size_t *, const char *, ...)
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:265:5: error: declaration for parameter 'asiprintf' but no such parameter
+ int _EXFUN(asiprintf, (char **, const char *, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:255:5: error: declaration for parameter 'vsscanf' but no such parameter
+ int _EXFUN(vsscanf, (const char *__restrict, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:253:5: error: declaration for parameter 'vscanf' but no such parameter
+ int _EXFUN(vscanf, (const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:249:5: error: declaration for parameter 'vsnprintf' but no such parameter
+ int _EXFUN(vsnprintf, (char *__restrict, size_t, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:247:5: error: declaration for parameter 'snprintf' but no such parameter
+ int _EXFUN(snprintf, (char *__restrict, size_t, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:228:5: error: declaration for parameter 'rename' but no such parameter
+ int _EXFUN(rename, (const char *, const char *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:227:5: error: declaration for parameter 'remove' but no such parameter
+ int _EXFUN(remove, (const char *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:225:5: error: declaration for parameter 'sprintf' but no such parameter
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:222:9: error: declaration for parameter 'perror' but no such parameter
+ void    _EXFUN(perror, (const char *));
+         ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:202:5: error: declaration for parameter 'puts' but no such parameter
+ int _EXFUN(puts, (const char *));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:201:5: error: declaration for parameter 'putchar' but no such parameter
+ int _EXFUN(putchar, (int));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:199:9: error: declaration for parameter 'gets' but no such parameter
+ char *  _EXFUN(gets, (char *));
+         ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:198:5: error: declaration for parameter 'getchar' but no such parameter
+ int _EXFUN(getchar, (void));
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:191:5: error: declaration for parameter 'vsprintf' but no such parameter
+ int _EXFUN(vsprintf, (char *__restrict, const char *__restrict, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:189:5: error: declaration for parameter 'vprintf' but no such parameter
+ int _EXFUN(vprintf, (const char *, __VALIST)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:185:5: error: declaration for parameter 'sscanf' but no such parameter
+ int _EXFUN(sscanf, (const char *__restrict, const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:183:5: error: declaration for parameter 'scanf' but no such parameter
+ int _EXFUN(scanf, (const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:181:5: error: declaration for parameter 'printf' but no such parameter
+ int _EXFUN(printf, (const char *__restrict, ...)
+     ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:170:8: error: declaration for parameter 'tempnam' but no such parameter
+ char * _EXFUN(tempnam, (const char *, const char *));
+        ^
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:168:8: error: declaration for parameter 'tmpnam' but no such parameter
+ char * _EXFUN(tmpnam, (char *));
+        ^
+In file included from ../src/bsp_init.c:4:0:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:60:17: error: declaration for parameter 'fpos_t' but no such parameter
+ typedef _fpos_t fpos_t;
+                 ^~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:53:16: error: declaration for parameter 'FILE' but no such parameter
+ typedef __FILE FILE;
+                ^~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48:0,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:237:19: error: declaration for parameter 'sbintime_t' but no such parameter
+ typedef __int64_t sbintime_t;
+                   ^~~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:230:23: error: declaration for parameter 'useconds_t' but no such parameter
+ typedef unsigned long useconds_t;
+                       ^~~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:226:19: error: declaration for parameter 'timer_t' but no such parameter
+ typedef _TIMER_T_ timer_t;
+                   ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:221:21: error: declaration for parameter 'clockid_t' but no such parameter
+ typedef _CLOCKID_T_ clockid_t;
+                     ^~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:214:24: error: declaration for parameter 'nlink_t' but no such parameter
+ typedef unsigned short nlink_t;
+                        ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:209:22: error: declaration for parameter 'mode_t' but no such parameter
+ typedef unsigned int mode_t _ST_INT32;
+                      ^~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:193:18: error: declaration for parameter 'ssize_t' but no such parameter
+ typedef _ssize_t ssize_t;
+                  ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:189:14: error: declaration for parameter 'key_t' but no such parameter
+ typedef long key_t;
+              ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:181:13: error: declaration for parameter 'pid_t' but no such parameter
+ typedef int pid_t;
+             ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:175:17: error: declaration for parameter 'gid_t' but no such parameter
+ typedef __gid_t gid_t;
+                 ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:174:17: error: declaration for parameter 'uid_t' but no such parameter
+ typedef __uid_t uid_t;
+                 ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:173:17: error: declaration for parameter 'dev_t' but no such parameter
+ typedef __dev_t dev_t;
+                 ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:172:16: error: declaration for parameter 'off_t' but no such parameter
+ typedef _off_t off_t;
+                ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:143:24: error: declaration for parameter 'ino_t' but no such parameter
+ typedef unsigned short ino_t;
+                        ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:134:16: error: declaration for parameter 'caddr_t' but no such parameter
+ typedef char * caddr_t;
+                ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:130:14: error: declaration for parameter 'daddr_t' but no such parameter
+ typedef long daddr_t;
+              ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:120:19: error: declaration for parameter 'clock_t' but no such parameter
+ typedef _CLOCK_T_ clock_t;
+                   ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:116:23: error: declaration for parameter 'ulong' but no such parameter
+ typedef unsigned long ulong;  /* System V compatibility */
+                       ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:115:22: error: declaration for parameter 'uint' but no such parameter
+ typedef unsigned int uint;  /* System V compatibility */
+                      ^~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:114:24: error: declaration for parameter 'ushort' but no such parameter
+ typedef unsigned short ushort;  /* System V compatibility */
+                        ^~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:106:23: error: declaration for parameter 'u_long' but no such parameter
+ typedef unsigned long u_long;
+                       ^~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:102:22: error: declaration for parameter 'u_int' but no such parameter
+ typedef unsigned int u_int;
+                      ^~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:98:24: error: declaration for parameter 'u_short' but no such parameter
+ typedef unsigned short u_short;
+                        ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:94:23: error: declaration for parameter 'u_char' but no such parameter
+ typedef unsigned char u_char;
+                       ^~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:85:0,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:55:3: error: declaration for parameter '_types_fd_set' but no such parameter
+ } _types_fd_set;
+   ^~~~~~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:45:23: error: declaration for parameter 'fd_mask' but no such parameter
+ typedef unsigned long fd_mask;
+                       ^~~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:26:0,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:85,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\_timeval.h:40:18: error: declaration for parameter 'time_t' but no such parameter
+ typedef _TIME_T_ time_t;
+                  ^~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\select.h:25:0,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:85,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\_sigset.h:41:23: error: declaration for parameter '__sigset_t' but no such parameter
+ typedef unsigned long __sigset_t;
+                       ^~~~~~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:69:0,
+                 from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\machine\types.h:28:15: error: declaration for parameter '__suseconds_t' but no such parameter
+ typedef long  __suseconds_t; /* microseconds (signed) */
+               ^~~~~~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\machine\types.h:20:13: error: declaration for parameter '__pid_t' but no such parameter
+ typedef int __pid_t;
+             ^~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\machine\types.h:19:18: error: declaration for parameter '__off_t' but no such parameter
+ typedef long int __off_t;
+                  ^~~~~~~
+In file included from c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\stdio.h:48:0,
+                 from ../src/bsp_init.c:4:
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:37:20: error: declaration for parameter 'u_int64_t' but no such parameter
+ typedef __uint64_t u_int64_t;
+                    ^~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:34:20: error: declaration for parameter 'u_int32_t' but no such parameter
+ typedef __uint32_t u_int32_t;
+                    ^~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:31:20: error: declaration for parameter 'u_int16_t' but no such parameter
+ typedef __uint16_t u_int16_t;
+                    ^~~~~~~~~
+c:\logiciels\xilinx\sdk\2018.1\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\sys\types.h:28:19: error: declaration for parameter 'u_int8_t' but no such parameter
+ typedef __uint8_t u_int8_t;
+                   ^~~~~~~~
+In file included from ../src/bsp_init.c:2:0:
+../src/platform.h:39:6: error: declaration for parameter 'cleanup_platform' but no such parameter
+ void cleanup_platform();
+      ^~~~~~~~~~~~~~~~
+../src/platform.h:38:6: error: declaration for parameter 'init_platform' but no such parameter
+ void init_platform();
+      ^~~~~~~~~~~~~
+In file included from ../src/bsp_init.c:1:0:
+../src/bsp_init.h:59:6: error: declaration for parameter 'gpio_isr' but no such parameter
+ void gpio_isr(void * data);
+      ^~~~~~~~
+../src/bsp_init.h:58:6: error: declaration for parameter 'timer_isr' but no such parameter
+ void timer_isr(void* not_valid);
+      ^~~~~~~~~
+../src/bsp_init.h:57:6: error: declaration for parameter 'fit_timer_3s_isr' but no such parameter
+ void fit_timer_3s_isr(void *not_valid);
+      ^~~~~~~~~~~~~~~~
+../src/bsp_init.h:56:6: error: declaration for parameter 'fit_timer_1s_isr' but no such parameter
+ void fit_timer_1s_isr(void *not_valid);
+      ^~~~~~~~~~~~~~~~
+../src/bsp_init.c:278:1: error: expected '{' at end of input
+ }
+ ^
+make: *** [src/bsp_init.o] Erreur 1
+12:54:07 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+'Finished building: ../src/bsp_init.c'
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:107:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:241:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142624	   4228	4665808	4812660	 496f74	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:54:30 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+../src/bsp_init.c:281:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ void disconnect_gpio_irq() {
+ ^~~~
+make: *** [src/bsp_init.o] Erreur 1
+12:54:35 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+'Finished building: ../src/bsp_init.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142688	   4228	4665808	4812724	 496fb4	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+12:54:41 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+13:06:53 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:110:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:244:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142688	   4228	4665808	4812724	 496fb4	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:06:59 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+13:07:49 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:110:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:244:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142688	   4228	4665808	4812724	 496fb4	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:07:53 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:111:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:245:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142688	   4228	4665808	4812724	 496fb4	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:07:57 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+13:10:57 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:111:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:245:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142320	   4228	4665808	4812356	 496e44	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:11:04 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+13:11:35 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:111:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:245:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142320	   4228	4665808	4812356	 496e44	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:11:42 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+13:11:59 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:111:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:245:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142320	   4228	4665808	4812356	 496e44	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:13:02 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:108:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:242:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142256	   4228	4665808	4812292	 496e04	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:16:12 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+13:19:53 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/bsp_init.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/bsp_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/bsp_init.d" -MT"src/bsp_init.o" -o "src/bsp_init.o" "../src/bsp_init.c"
+'Finished building: ../src/bsp_init.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142320	   4228	4665808	4812356	 496e44	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:19:56 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+13:22:00 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:110:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:244:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142320	   4228	4665808	4812356	 496e44	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:22:26 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:111:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:245:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142328	   4228	4665808	4812364	 496e4c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:23:19 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'gpio_isr':
+../src/simAvion.c:52:6: error: 'testflag' undeclared (first use in this function); did you mean 'tostring'?
+  if (testflag)
+      ^~~~~~~~
+      tostring
+../src/simAvion.c:52:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/simAvion.c:52:2: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  if (testflag)
+  ^~
+../src/simAvion.c:54:3: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   testflag = False;
+   ^~~~~~~~
+../src/simAvion.c:54:14: error: 'False' undeclared (first use in this function); did you mean 'false'?
+   testflag = False;
+              ^~~~~
+              false
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:112:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:246:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+make: *** [src/simAvion.o] Erreur 1
+13:23:22 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'gpio_isr':
+../src/simAvion.c:52:6: error: 'testflag' undeclared (first use in this function); did you mean 'tostring'?
+  if (testflag)
+      ^~~~~~~~
+      tostring
+../src/simAvion.c:52:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/simAvion.c:52:2: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  if (testflag)
+  ^~
+../src/simAvion.c:54:3: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   testflag = false;
+   ^~~~~~~~
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:112:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:246:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+make: *** [src/simAvion.o] Erreur 1
+13:23:50 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'gpio_isr':
+../src/simAvion.c:54:12: error: lvalue required as left operand of assignment
+   testflag = false;
+            ^
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:112:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:246:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+make: *** [src/simAvion.o] Erreur 1
+13:23:55 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'gpio_isr':
+../src/simAvion.c:54:12: error: lvalue required as left operand of assignment
+   testflag = false;
+            ^
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:112:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:246:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+make: *** [src/simAvion.o] Erreur 1
+13:24:36 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+In file included from ../src/simAvion.h:14:0,
+                 from ../src/simAvion.c:18:
+../src/simAvion.h:45:15: error: expected '=', ',', ';', 'asm' or '__attribute__' before numeric constant
+ bool testflag true
+               ^
+../src/simAvion.c: In function 'gpio_isr':
+../src/simAvion.c:52:6: error: 'testflag' undeclared (first use in this function); did you mean 'tostring'?
+  if (testflag)
+      ^~~~~~~~
+      tostring
+../src/simAvion.c:52:6: note: each undeclared identifier is reported only once for each function it appears in
+../src/simAvion.c:52:2: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  if (testflag)
+  ^~
+../src/simAvion.c:54:3: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   testflag = false;
+   ^~~~~~~~
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:112:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'create_events':
+../src/simAvion.c:138:2: error: 'Q_atterrissage_high' undeclared (first use in this function); did you mean 'Q_atterrissage_low'?
+  Q_atterrissage_high = OSQCreate(&Q_atterrissage_high_data[0], 3);
+  ^~~~~~~~~~~~~~~~~~~
+  Q_atterrissage_low
+../src/simAvion.c: In function 'generation':
+../src/simAvion.c:182:19: error: 'Q_atterrissage_high' undeclared (first use in this function); did you mean 'Q_atterrissage_low'?
+     err = OSQPost(Q_atterrissage_high, avion);
+                   ^~~~~~~~~~~~~~~~~~~
+                   Q_atterrissage_low
+../src/simAvion.c: In function 'atterrissage':
+../src/simAvion.c:203:20: error: 'Q_atterrissage_high' undeclared (first use in this function); did you mean 'Q_atterrissage_low'?
+    avion = OSQPend(Q_atterrissage_high, 100, &err);
+                    ^~~~~~~~~~~~~~~~~~~
+                    Q_atterrissage_low
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:246:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'verification':
+../src/simAvion.c:371:18: error: 'Q_atterrissage_high' undeclared (first use in this function); did you mean 'Q_atterrissage_low'?
+   err = OSQQuery(Q_atterrissage_high, &data_high);
+                  ^~~~~~~~~~~~~~~~~~~
+                  Q_atterrissage_low
+make: *** [src/simAvion.o] Erreur 1
+13:24:40 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+In file included from ../src/simAvion.c:18:0:
+../src/simAvion.h:52:1: error: expected ',' or ';' before 'OS_EVENT'
+ OS_EVENT *Q_atterrissage_high;
+ ^~~~~~~~
+../src/simAvion.c: In function 'gpio_isr':
+../src/simAvion.c:52:2: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  if (testflag)
+  ^~
+../src/simAvion.c:54:3: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   testflag = false;
+   ^~~~~~~~
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:112:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'create_events':
+../src/simAvion.c:138:2: error: 'Q_atterrissage_high' undeclared (first use in this function); did you mean 'Q_atterrissage_low'?
+  Q_atterrissage_high = OSQCreate(&Q_atterrissage_high_data[0], 3);
+  ^~~~~~~~~~~~~~~~~~~
+  Q_atterrissage_low
+../src/simAvion.c:138:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/simAvion.c: In function 'generation':
+../src/simAvion.c:182:19: error: 'Q_atterrissage_high' undeclared (first use in this function); did you mean 'Q_atterrissage_low'?
+     err = OSQPost(Q_atterrissage_high, avion);
+                   ^~~~~~~~~~~~~~~~~~~
+                   Q_atterrissage_low
+../src/simAvion.c: In function 'atterrissage':
+../src/simAvion.c:203:20: error: 'Q_atterrissage_high' undeclared (first use in this function); did you mean 'Q_atterrissage_low'?
+    avion = OSQPend(Q_atterrissage_high, 100, &err);
+                    ^~~~~~~~~~~~~~~~~~~
+                    Q_atterrissage_low
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:246:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'verification':
+../src/simAvion.c:371:18: error: 'Q_atterrissage_high' undeclared (first use in this function); did you mean 'Q_atterrissage_low'?
+   err = OSQQuery(Q_atterrissage_high, &data_high);
+                  ^~~~~~~~~~~~~~~~~~~
+                  Q_atterrissage_low
+make: *** [src/simAvion.o] Erreur 1
+13:24:41 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'gpio_isr':
+../src/simAvion.c:52:2: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  if (testflag)
+  ^~
+../src/simAvion.c:54:3: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   testflag = false;
+   ^~~~~~~~
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:112:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:246:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142328	   4236	4665808	4812372	 496e54	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:24:58 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:112:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:246:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142328	   4236	4665808	4812372	 496e54	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:25:02 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+13:26:23 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'create_tasks':
+../src/simAvion.c:114:10: warning: unused variable 'err' [-Wunused-variable]
+  uint8_t err;
+          ^~~
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:248:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142392	   4236	4665808	4812436	 496e94	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+13:26:30 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
