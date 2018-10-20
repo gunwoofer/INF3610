@@ -217,21 +217,22 @@ void atterrissage(void* data)
 				break;
 		}
 
-		xil_printf("[ATTERRISSAGE] Debut atterrissage de l avion en retard de : %d\n", avion->retard);
+		xil_printf("[ATTERRISSAGE] Debut atterrissage [%d]\n", avion->id);
 		OSTimeDly(150); //Temps pour que l'avion atterrisse
-		xil_printf("[ATTERRISSAGE] Attente terminal libre\n");
+		xil_printf("[ATTERRISSAGE] Attente terminal libre [%d]\n", avion->id);
 		/*TODO: Mise en attente d'un terminal libre (mecanisme a votre choix)*/
 		/*TODO: Envoi de l'avion au terminal choisi (mecanisme de votre choix)*/
+
 		OS_FLAGS flag = OSFlagPend(terminaux_status, 0x11, OS_FLAG_WAIT_CLR_ANY, 0, &err);
 		// Lire le flag, decider du terminal, decrementer le terminal
 		if (flag == TERMINAL_LIBRE_1 || flag == TERMINAUX_LIBRES) {
-			xil_printf("[ATTERRISSAGE] Terminal libre num 1 obtenu\n");
+			xil_printf("[ATTERRISSAGE] Terminal libre num 1 obtenu [%d]\n", avion->id);
 			OSFlagPost(terminaux_status, 0x10, OS_FLAG_SET, &err);
 			errMsg(err, "Erreur post flag terminal pris\n");
 			err = OSQPost(Q_terminal_1, avion);
 			errMsg(err, "Erreur post q terminal 1\n");
 		} else if (flag == TERMINAL_LIBRE_2) {
-			xil_printf("[ATTERRISSAGE] Terminal libre num 2 obtenu\n");
+			xil_printf("[ATTERRISSAGE] Terminal libre num 2 obtenu [%d]\n", avion->id);
 			OSFlagPost(terminaux_status, 0x01, OS_FLAG_SET, &err);
 			errMsg(err, "Erreur post flag terminal pris\n");
 			err = OSQPost(Q_terminal_2, avion);
@@ -259,14 +260,14 @@ void terminal(void* data)
 			errMsg(err, "Erreur Pend q terminal 2\n");
 		}
 
-		xil_printf("[TERMINAL %d] Obtention avion\n", numTerminal);
+		xil_printf("[TERMINAL %d] Obtention avion [%d]\n", numTerminal, avion->id);
 
 		OSTimeDly(160);//Attente pour le vidage, le nettoyage et le remplissage de l'avion
 
 		remplirAvion(avion);
 
 		/*TODO: Envoi de l'avion pour le piste de decollage*/
-		xil_printf("[TERMINAL %d] Liberation avion\n", numTerminal);
+		xil_printf("[TERMINAL %d] Liberation avion [%d]\n", numTerminal, avion->id);
 
 		/*TODO: Notifier que le terminal est libre (mecanisme de votre choix)*/
 		if (numTerminal == 1) {
@@ -276,6 +277,8 @@ void terminal(void* data)
 			OSFlagPost(terminaux_status, 0x01, OS_FLAG_CLR, &err);
 			errMsg(err, "Erreur post flag terminal libere\n");
 		}
+
+		xil_printf("[TERMINAL %d] Liberation du terminal\n", numTerminal);
 
 		err = OSQPost(Q_decollage, avion);
 		errMsg(err, "erreur post decollage\n");
@@ -294,7 +297,7 @@ void decollage(void* data)
 		avion = OSQPend(Q_decollage, 0, &err);
 		errMsg(err, "erreur pend decollage\n");
 		OSTimeDly(30); //Temps pour que l'avion decolle
-		xil_printf("[DECOLLAGE] Avion decolle\n");
+		xil_printf("[DECOLLAGE] Avion decolle [%d]\n", avion->id);
 
 		/*TODO: Destruction de l'avion*/
 		free(avion);
@@ -306,9 +309,10 @@ void statistiques(void* data){
 	uint8_t err;
 	xil_printf("[STATISTIQUES] Tache lancee\n");
 
-	OS_Q_DATA data_low;
-	OS_Q_DATA data_med;
-	OS_Q_DATA data_high;
+	OS_Q_DATA stat_low;
+	OS_Q_DATA stat_med;
+	OS_Q_DATA stat_high;
+	OS_Q_DATA stat_dec;
 
 	while(1){
 		/*TODO: Synchronisation unilaterale switches*/
@@ -320,30 +324,48 @@ void statistiques(void* data){
 
 		/*TODO: Obtenir statistiques pour les files d'atterrissage*/
 
-		err = OSQQuery(Q_atterrissage_low, &data_low);
+		err = OSQQuery(Q_atterrissage_low, &stat_low);
 		errMsg(err, "Erreur query low\n");
 
-		err = OSQQuery(Q_atterrissage_medium, &data_med);
+		err = OSQQuery(Q_atterrissage_medium, &stat_med);
 		errMsg(err, "Erreur query med\n");
 
-		err = OSQQuery(Q_atterrissage_high, &data_high);
+		err = OSQQuery(Q_atterrissage_high, &stat_high);
 		errMsg(err, "Erreur query high\n");
 
-		xil_printf("Nb d'avions en attente d'atterrissage de type High : %d\n", data_low.OSNMsgs);
-		xil_printf("Nb d'avions en attente d'atterrissage de type Medium : %d\n", data_med.OSNMsgs);
-		xil_printf("Nb d'avions en attente d'atterrissage de type Low : %d\n", data_high.OSNMsgs);
+		err = OSQQuery(Q_decollage, &stat_dec);
+		errMsg(err, "Erreur query dec\n");
+
+		xil_printf("Nb d'avions en attente d'atterrissage de type High : %d\n", stat_low.OSNMsgs);
+		xil_printf("Nb d'avions en attente d'atterrissage de type Medium : %d\n", stat_med.OSNMsgs);
+		xil_printf("Nb d'avions en attente d'atterrissage de type Low : %d\n", stat_high.OSNMsgs);
 
 		/*TODO: Obtenir statistiques pour la file de decollage*/
-		//xil_printf("Nb d'avions en attente de decollage : %d\n", ...);
+		xil_printf("Nb d'avions en attente de decollage : %d\n", stat_dec.OSNMsgs);
 
 		/*TODO: Obtenir statut des terminaux*/
-		xil_printf("Terminal 0 ");
-		int statutTerm0 = 0; /*A modifier (simplement un exemple d'affichage pour vous aider)*/
-		(statutTerm0 == 0) ? xil_printf("OCCUPE\n") : xil_printf("LIBRE\n");
+		int statutTerm1 = 0;
+		int statutTerm2 = 0;
+
+		if (terminaux_status->OSFlagFlags == 0x00) {
+			statutTerm1 = 1;
+			statutTerm2 = 1;
+		} else if (terminaux_status->OSFlagFlags == 0x11) {
+			statutTerm1 = 0;
+			statutTerm2 = 0;
+		} else if (terminaux_status->OSFlagFlags == 0x10) {
+			statutTerm1 = 0;
+			statutTerm2 = 1;
+		} else if (terminaux_status->OSFlagFlags == 0x01) {
+			statutTerm1 = 1;
+			statutTerm2 = 0;
+		}
 
 		xil_printf("Terminal 1 ");
-		int statutTerm1 = 0; /*A modifier (simplement un exemple d'affichage pour vous aider)*/
 		(statutTerm1 == 0) ? xil_printf("OCCUPE\n") : xil_printf("LIBRE\n");
+
+		xil_printf("Terminal 2 ");
+		(statutTerm2 == 0) ? xil_printf("OCCUPE\n") : xil_printf("LIBRE\n");
 	}
 }
 

@@ -8571,3 +8571,877 @@ make pre-build main-build
 a9-linaro-pre-build-step
 ' '
 make: Rien à faire pour « main-build ».
+18:59:10 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:00:45 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142856	   4228	4665808	4812892	 49705c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:01:13 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142768	   4228	4665808	4812804	 497004	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:01:19 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:05:26 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142928	   4228	4665808	4812964	 4970a4	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:05:43 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142936	   4228	4665808	4812972	 4970ac	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:05:53 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:07:18 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142896	   4228	4665808	4812932	 497084	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:08:04 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:311:2: error: unknown type name 'OS_Q_DATAs'; did you mean 'OS_Q_DATA'?
+  OS_Q_DATAs stat_high;
+  ^~~~~~~~~~
+  OS_Q_DATA
+../src/simAvion.c:329:39: warning: passing argument 2 of 'OSQQuery' from incompatible pointer type [-Wincompatible-pointer-types]
+   err = OSQQuery(Q_atterrissage_high, &stat_high);
+                                       ^
+In file included from ../src/simAvion.h:11:0,
+                 from ../src/simAvion.c:18:
+../src/ucos/ucos_ii.h:987:15: note: expected 'OS_Q_DATA * {aka struct os_q_data *}' but argument is of type 'int *'
+ INT8U         OSQQuery                (OS_EVENT        *pevent,
+               ^~~~~~~~
+../src/simAvion.c:334:83: error: request for member 'OSNMsgs' in something not a structure or union
+   xil_printf("Nb d'avions en attente d'atterrissage de type Low : %d\n", stat_high.OSNMsgs);
+                                                                                   ^
+make: *** [src/simAvion.o] Erreur 1
+19:08:14 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:311:2: error: unknown type name 'OS_Q_DATAs'; did you mean 'OS_Q_DATA'?
+  OS_Q_DATAs stat_high;
+  ^~~~~~~~~~
+  OS_Q_DATA
+../src/simAvion.c:329:39: warning: passing argument 2 of 'OSQQuery' from incompatible pointer type [-Wincompatible-pointer-types]
+   err = OSQQuery(Q_atterrissage_high, &stat_high);
+                                       ^
+In file included from ../src/simAvion.h:11:0,
+                 from ../src/simAvion.c:18:
+../src/ucos/ucos_ii.h:987:15: note: expected 'OS_Q_DATA * {aka struct os_q_data *}' but argument is of type 'int *'
+ INT8U         OSQQuery                (OS_EVENT        *pevent,
+               ^~~~~~~~
+../src/simAvion.c:334:83: error: request for member 'OSNMsgs' in something not a structure or union
+   xil_printf("Nb d'avions en attente d'atterrissage de type Low : %d\n", stat_high.OSNMsgs);
+                                                                                   ^
+make: *** [src/simAvion.o] Erreur 1
+19:10:43 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142896	   4228	4665808	4812932	 497084	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:13:05 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142928	   4228	4665808	4812964	 4970a4	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:13:58 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142928	   4228	4665808	4812964	 4970a4	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:14:13 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142936	   4228	4665808	4812972	 4970ac	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:14:45 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:312:12: warning: unused variable 'stat_dec' [-Wunused-variable]
+  OS_Q_DATA stat_dec;
+            ^~~~~~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 142936	   4228	4665808	4812972	 4970ac	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:15:14 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143024	   4228	4665808	4813060	 497104	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:15:32 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143064	   4228	4665808	4813100	 49712c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:15:37 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143064	   4228	4665808	4813100	 49712c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:15:40 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143064	   4228	4665808	4813100	 49712c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:15:46 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143064	   4228	4665808	4813100	 49712c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:15:52 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:16:21 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143064	   4228	4665808	4813100	 49712c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:17:40 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:19:04 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:247:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143024	   4228	4665808	4813060	 497104	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:19:24 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:249:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143064	   4228	4665808	4813100	 49712c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:19:34 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:249:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143064	   4228	4665808	4813100	 49712c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:19:40 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:23:15 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:249:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143168	   4228	4665808	4813204	 497194	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:23:28 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:25:07 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:251:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143168	   4228	4665808	4813204	 497194	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:25:10 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:29:41 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:251:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143168	   4228	4665808	4813204	 497194	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:29:45 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:30:56 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:251:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143168	   4228	4665808	4813204	 497194	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:31:22 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:248:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143064	   4228	4665808	4813100	 49712c	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:33:14 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:248:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+../src/simAvion.c: In function 'statistiques':
+../src/simAvion.c:353:4: warning: statement with no effect [-Wunused-value]
+    statutTerm0
+    ^~~~~~~~~~~
+../src/simAvion.c:354:3: error: expected ';' before '}' token
+   }
+   ^
+make: *** [src/simAvion.o] Erreur 1
+19:33:27 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:248:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143168	   4228	4665808	4813204	 497194	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:35:10 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:248:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143296	   4228	4665808	4813332	 497214	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:35:15 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:35:35 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:38:04 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:248:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143296	   4228	4665808	4813332	 497214	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:38:35 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:248:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143296	   4228	4665808	4813332	 497214	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:38:41 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:40:29 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:43:38 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:248:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143296	   4228	4665808	4813332	 497214	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
+19:43:41 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:46:17 **** Incremental Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+19:50:08 **** Auto Build of configuration Debug for project Labo2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/simAvion.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -I../src/ucos -c -fmessage-length=0 -MT"src/simAvion.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/simAvion.d" -MT"src/simAvion.o" -o "src/simAvion.o" "../src/simAvion.c"
+../src/simAvion.c: In function 'terminal':
+../src/simAvion.c:248:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int numTerminal = data; //TODO: A modifier
+                    ^~~~
+'Finished building: ../src/simAvion.c'
+' '
+'Building target: Labo2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "Labo2.elf"  ./src/ucos/CortexA-MPCore_GIC_a.o ./src/ucos/CortexA-MPCore_GIC_c.o ./src/ucos/CortexA-MPCore_PrivateTimer.o ./src/ucos/CortexA-MPCore_SCU.o ./src/ucos/asm_vectors.o ./src/ucos/os_core.o ./src/ucos/os_cpu_a.o ./src/ucos/os_cpu_c.o ./src/ucos/os_cpu_fpu_a.o ./src/ucos/os_dbg.o ./src/ucos/os_flag.o ./src/ucos/os_mbox.o ./src/ucos/os_mem.o ./src/ucos/os_mutex.o ./src/ucos/os_q.o ./src/ucos/os_sem.o ./src/ucos/os_task.o ./src/ucos/os_time.o ./src/ucos/os_tmr.o  ./src/bsp_init.o ./src/platform.o ./src/simAvion.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Labo2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Labo2.elf  |tee "Labo2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 143256	   4228	4665808	4813292	 4971ec	Labo2.elf
+'Finished building: Labo2.elf.size'
+' '
