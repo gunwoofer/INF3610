@@ -188,7 +188,7 @@ void generation(void* data) {
 				err = OSQPost(Q_atterrissage_high, avion);
 				errMsg(err, "Erreur Post Q atterissage high\n");
 			} else {
-				xil_printf("[GENERATION] Erreur ! Avion avec plus de 1h de retard\n");
+				xil_printf("Erreur avion avec plus de 1h de retard\n");
 			}
 		}
 		else{
@@ -225,18 +225,20 @@ void atterrissage(void* data)
 		OS_FLAGS flag = OSFlagPend(terminaux_status, 0x11, OS_FLAG_WAIT_CLR_ANY, 0, &err);
 		// Lire le flag, decider du terminal, decrementer le terminal
 		if (flag == TERMINAL_LIBRE_1 || flag == TERMINAUX_LIBRES) {
-			xil_printf("[ATTERRISSAGE] Terminal libre num 1 obtenu\n");
 			OSFlagPost(terminaux_status, 0x10, OS_FLAG_SET, &err);
 			errMsg(err, "Erreur post flag terminal pris\n");
 			err = OSQPost(Q_terminal_1, avion);
 			errMsg(err, "Erreur post q terminal 1\n");
 		} else if (flag == TERMINAL_LIBRE_2) {
-			xil_printf("[ATTERRISSAGE] Terminal libre num 2 obtenu\n");
 			OSFlagPost(terminaux_status, 0x01, OS_FLAG_SET, &err);
 			errMsg(err, "Erreur post flag terminal pris\n");
 			err = OSQPost(Q_terminal_2, avion);
 			errMsg(err, "Erreur post q terminal 2\n");
 		}
+
+
+		//xil_printf("[ATTERRISSAGE] Terminal libre num %d obtenu\n", ...);
+
 
 	}
 }
