@@ -236,7 +236,7 @@ int connect_fit_timer_3() {
 }
 
 int connect_gpio_irq() {
-	int status = XIntc_Connect(&axi_intc, GPIO_SW_IRQ_ID, gpio_isr, NULL);
+	int status = XIntc_Connect(&axi_intc, GPIO_SW_IRQ_ID, gpio_isr, &gpSwitch);
 
 	if (status != XST_SUCCESS)
 		return status;

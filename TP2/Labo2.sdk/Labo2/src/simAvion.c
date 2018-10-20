@@ -27,7 +27,6 @@
 //								Routines d'interruptions
 ///////////////////////////////////////////////////////////////////////////////////////
 
-
 void timer_isr(void* not_valid) {
 	if (private_timer_irq_triggered()) {
 		private_timer_clear_irq();
@@ -49,11 +48,6 @@ void fit_timer_3s_isr(void *not_valid) {
 
 void gpio_isr(void * not_valid) {
 	/*TODO: definition handler pour switches*/
-	if (testflag) {
-		xil_printf("Print !");
-		testflag = false;
-	}
-
 	uint8_t erreur = OSSemPost(sem_statistiques);
 	errMsg(erreur, "Erreur pendant le post sur sem_statistiques\n");
 
@@ -114,15 +108,26 @@ int create_tasks() {
 	uint8_t err;
 
 	/*TODO: Creation des taches*/
-	OSTaskCreate(generation, (void*)0, &generationStk[TASK_STK_SIZE - 1], GENERATION_PRIO);
-	OSTaskCreate(atterrissage, (void*)0, &atterrissage0Stk[TASK_STK_SIZE - 1], ATTERRISSAGE_PRIO);
+	err = OSTaskCreate(generation, (void*)0, &generationStk[TASK_STK_SIZE - 1], GENERATION_PRIO);
+	errMsg(err, "Erreur task create\n");
 
-	OSTaskCreate(terminal, (void*)1, &terminal0Stk[TASK_STK_SIZE - 1], TERMINAL0_PRIO);
-	OSTaskCreate(terminal, (void*)2, &terminal1Stk[TASK_STK_SIZE - 1], TERMINAL1_PRIO);
+	err = OSTaskCreate(atterrissage, (void*)0, &atterrissage0Stk[TASK_STK_SIZE - 1], ATTERRISSAGE_PRIO);
+	errMsg(err, "Erreur task create\n");
 
-	OSTaskCreate(decollage, (void*)0, &decollageStk[TASK_STK_SIZE - 1], DECOLLAGE_PRIO);
-	OSTaskCreate(verification, (void*)0, &verificationStk[TASK_STK_SIZE - 1], VERIFICATION_PRIO);
-	OSTaskCreate(statistiques, (void*)0, &statistiquesStk[TASK_STK_SIZE - 1], STATISTIQUES_PRIO);
+	err = OSTaskCreate(terminal, (void*)1, &terminal0Stk[TASK_STK_SIZE - 1], TERMINAL0_PRIO);
+	errMsg(err, "Erreur task create\n");
+
+	err = OSTaskCreate(terminal, (void*)2, &terminal1Stk[TASK_STK_SIZE - 1], TERMINAL1_PRIO);
+	errMsg(err, "Erreur task create\n");
+
+	err = OSTaskCreate(decollage, (void*)0, &decollageStk[TASK_STK_SIZE - 1], DECOLLAGE_PRIO);
+	errMsg(err, "Erreur task create\n");
+
+	err = OSTaskCreate(verification, (void*)0, &verificationStk[TASK_STK_SIZE - 1], VERIFICATION_PRIO);
+	errMsg(err, "Erreur task create\n");
+
+	err = OSTaskCreate(statistiques, (void*)0, &statistiquesStk[TASK_STK_SIZE - 1], STATISTIQUES_PRIO);
+	errMsg(err, "Erreur task create\n");
 
 	return 0;
 }
@@ -215,7 +220,6 @@ void atterrissage(void* data)
 
 		xil_printf("[ATTERRISSAGE] Debut atterrissage de l avion en retard de : %d\n", avion->retard);
 		OSTimeDly(150); //Temps pour que l'avion atterrisse
-
 		xil_printf("[ATTERRISSAGE] Attente terminal libre\n");
 		/*TODO: Mise en attente d'un terminal libre (mecanisme a votre choix)*/
 		/*TODO: Envoi de l'avion au terminal choisi (mecanisme de votre choix)*/
@@ -316,8 +320,9 @@ void statistiques(void* data){
 
 	while(1){
 		/*TODO: Synchronisation unilaterale switches*/
-		OSQPend(sem_statistiques, 0, &err);
+		OSSemPend(sem_statistiques, 0, &err);
 		errMsg(err, "erreur pend statistiques\n");
+
 
 		xil_printf("\n------------------ Affichage des statistiques ------------------\n");
 
