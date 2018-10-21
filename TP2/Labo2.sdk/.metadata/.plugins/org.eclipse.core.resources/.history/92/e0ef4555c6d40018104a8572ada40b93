@@ -165,6 +165,7 @@ void generation(void* data) {
 	xil_printf("[GENERATION] Tache lancee\n");
 	int skipGen = 0;
 	int seed = 42;
+	String msg;
 	while (1) {
 		/*TODO: Synchronisation unilaterale timer 1s*/
 		OSSemPend(sem_generation_donnees, 0, &err);
@@ -186,9 +187,15 @@ void generation(void* data) {
 				errMsg(err, "Erreur Post Q atterissage medium\n");
 			} else if (avion->retard >= 40 && avion->retard <= 60) {
 				err = OSQPost(Q_atterrissage_high, avion);
-				errMsg(err, "Erreur Post Q atterissage high\n");
+
 			} else {
 				xil_printf("[GENERATION] Erreur ! Avion avec plus de 1h de retard\n");
+			}
+
+			if (err == OS_Q_FULL) {
+				stopSimDebordement = true
+			} else {
+				errMsg(err, msg);
 			}
 		}
 		else{
@@ -432,12 +439,8 @@ void errMsg(uint8_t err, char* errMsg)
 {
 	if (err != OS_ERR_NONE)
 	{
-		if (err == OS_ERR_Q_FULL) {
-			xil_printf("OSQPOST DANS UNE FILE PLEINE !\n");
-			stopSimDebordement = true;
-		} else {
-			xil_printf(errMsg);
-		}
+		xil_printf(errMsg);
+		stopSimDebordement = true;
 		exit(1);
 	}
 }

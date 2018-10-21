@@ -432,12 +432,8 @@ void errMsg(uint8_t err, char* errMsg)
 {
 	if (err != OS_ERR_NONE)
 	{
-		if (err == OS_ERR_Q_FULL) {
-			xil_printf("OSQPOST DANS UNE FILE PLEINE !\n");
-			stopSimDebordement = true;
-		} else {
-			xil_printf(errMsg);
-		}
+		xil_printf(errMsg);
+		stopSimDebordement = true;
 		exit(1);
 	}
 }

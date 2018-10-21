@@ -180,15 +180,18 @@ void generation(void* data) {
 			/*TODO: Envoi des avions dans les files appropriees*/
 			if (avion->retard < 20) {
 				err = OSQPost(Q_atterrissage_low, avion);
-				errMsg(err, "Erreur Post Q atterissage low\n");
 			} else if (avion->retard >= 20 && avion->retard <= 39) {
 				err = OSQPost(Q_atterrissage_medium, avion);
-				errMsg(err, "Erreur Post Q atterissage medium\n");
 			} else if (avion->retard >= 40 && avion->retard <= 60) {
 				err = OSQPost(Q_atterrissage_high, avion);
-				errMsg(err, "Erreur Post Q atterissage high\n");
 			} else {
 				xil_printf("[GENERATION] Erreur ! Avion avec plus de 1h de retard\n");
+			}
+
+			if (err == OS_ERR_Q_FULL) {
+				stopSimDebordement = true;
+			} else {
+				errMsg(err, "Erreur lors du QPost de generation");
 			}
 		}
 		else{
@@ -432,12 +435,8 @@ void errMsg(uint8_t err, char* errMsg)
 {
 	if (err != OS_ERR_NONE)
 	{
-		if (err == OS_ERR_Q_FULL) {
-			xil_printf("OSQPOST DANS UNE FILE PLEINE !\n");
-			stopSimDebordement = true;
-		} else {
-			xil_printf(errMsg);
-		}
+		xil_printf(errMsg);
+		stopSimDebordement = true;
 		exit(1);
 	}
 }

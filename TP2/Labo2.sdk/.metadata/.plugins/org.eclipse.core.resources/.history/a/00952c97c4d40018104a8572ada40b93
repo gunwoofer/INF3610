@@ -336,9 +336,9 @@ void statistiques(void* data){
 		err = OSQQuery(Q_decollage, &stat_dec);
 		errMsg(err, "Erreur query dec\n");
 
-		xil_printf("Nb d'avions en attente d'atterrissage de type Low : %d\n", stat_low.OSNMsgs);
+		xil_printf("Nb d'avions en attente d'atterrissage de type High : %d\n", stat_low.OSNMsgs);
 		xil_printf("Nb d'avions en attente d'atterrissage de type Medium : %d\n", stat_med.OSNMsgs);
-		xil_printf("Nb d'avions en attente d'atterrissage de type High : %d\n", stat_high.OSNMsgs);
+		xil_printf("Nb d'avions en attente d'atterrissage de type Low : %d\n", stat_high.OSNMsgs);
 
 		/*TODO: Obtenir statistiques pour la file de decollage*/
 		xil_printf("Nb d'avions en attente de decollage : %d\n", stat_dec.OSNMsgs);
@@ -395,26 +395,21 @@ void verification(void* data){
 		err = OSQQuery(Q_decollage, &data_decollage);
 		errMsg(err, "Erreur query decollage\n");
 
-		if (data_low.OSNMsgs > 6 || data_med.OSNMsgs > 4 || data_high.OSNMsgs > 3 || data_decollage.OSNMsgs > 10)
+		xil_printf("LOW : %d\nMEDIUM %d\nHIGH %d\nDECOLLAGE %d\n", data_low.OSNMsgs, data_med.OSNMsgs, data_high.OSNMsgs, data_decollage.OSNMsgs);
+
+		if (data_low.OSNMsgs >= 6 || data_med.OSNMsgs >= 4 || data_high.OSNMsgs >= 3 || data_decollage.OSNMsgs >= 10)
 			stopSimDebordement = true;
 
 		if (stopSimDebordement){
 			/*TODO: Suspension de toutes les taches de la simulation*/
 			xil_printf("ARRET DE LA SIMULATION\n");
-			err = OSTaskSuspend(GENERATION_PRIO);
-			errMsg(err, "Erreur task suspend\n");
-			err = OSTaskSuspend(ATTERRISSAGE_PRIO);
-			errMsg(err, "Erreur task suspend\n");
-			err = OSTaskSuspend(TERMINAL0_PRIO);
-			errMsg(err, "Erreur task suspend\n");
-			err = OSTaskSuspend(TERMINAL1_PRIO);
-			errMsg(err, "Erreur task suspend\n");
-			err = OSTaskSuspend(DECOLLAGE_PRIO);
-			errMsg(err, "Erreur task suspend\n");
-			err = OSTaskSuspend(VERIFICATION_PRIO);
-			errMsg(err, "Erreur task suspend\n");
-			err = OSTaskSuspend(STATISTIQUES_PRIO);
-			errMsg(err, "Erreur task suspend\n");
+			OSTaskSuspend(GENERATION_PRIO);
+			OSTaskSuspend(ATTERRISSAGE_PRIO);
+			OSTaskSuspend(TERMINAL0_PRIO);
+			OSTaskSuspend(TERMINAL1_PRIO);
+			OSTaskSuspend(DECOLLAGE_PRIO);
+			OSTaskSuspend(VERIFICATION_PRIO);
+			OSTaskSuspend(STATISTIQUES_PRIO);
 		}
 	}
 }
@@ -432,12 +427,8 @@ void errMsg(uint8_t err, char* errMsg)
 {
 	if (err != OS_ERR_NONE)
 	{
-		if (err == OS_ERR_Q_FULL) {
-			xil_printf("OSQPOST DANS UNE FILE PLEINE !\n");
-			stopSimDebordement = true;
-		} else {
-			xil_printf(errMsg);
-		}
+		xil_printf(errMsg);
+		stopSimDebordement = true;
 		exit(1);
 	}
 }
