@@ -22,6 +22,7 @@
     <ProjectGuid>{86DF4B8C-CF94-4EA8-B529-78997F0F30A7}</ProjectGuid>
     <RootNamespace>SystemC</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">

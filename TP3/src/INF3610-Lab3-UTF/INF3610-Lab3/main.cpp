@@ -26,9 +26,17 @@ int sc_main(int arg_count, char **arg_value)
 	
 	// Components
 	// TODO: Instanciation des modules 
+	Reader reader("Reader");
+	Writer writer("Writer");
+	Sobel sobel("Sobel");
+	DataRAM dataram("DataRAM", "image.mem", RAMSIZE, true); // verbose a true pour faciliter debug
 
 	// Connexions
 	//TODO: Connexions des ports des modules
+	reader.dataPortRAM(dataram);
+	sobel.readPort(reader);
+	sobel.writePort(writer);
+	writer.dataPortRAM(dataram);
 
 	// Démarrage de l'application
 	if (!m_bError)
