@@ -1,0 +1,410 @@
+/*
+*********************************************************************************************************
+*                                                 uC/OS-II
+*                                          The Real-Time Kernel
+*                                               PORT Windows
+*
+*
+*            		          	Arnaud Desaulty, Frederic Fortier, Eva Terriault
+*                                  Ecole Polytechnique de Montreal, Qc, CANADA
+*                                                  08/2017
+*
+* File : simulateur.c
+*
+*********************************************************************************************************
+*/
+
+// Main include of ï¿½C-II
+#include "simAvion.h"
+
+#include "bsp_init.h"
+#include "platform.h"
+#include <stdlib.h>
+#include <stdbool.h>
+#include <xil_printf.h>
+#include <xgpio.h>
+///////////////////////////////////////////////////////////////////////////////////////
+//								Routines d'interruptions
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+void timer_isr(void* not_valid) {
+	if (private_timer_irq_triggered()) {
+		private_timer_clear_irq();
+		OSTimeTick();
+	}
+}
+
+void fit_timer_1s_isr(void *not_valid) {
+	/*TODO: definition handler pour timer 1s*/
+	uint8_t erreur = OSSemPost(sem_generation_donnees);
+	errMsg(erreur, "Erreur pendant le post sur sem_generation_donnees\n");
+}
+
+void fit_timer_3s_isr(void *not_valid) {
+	/*TODO: definition handler pour timer 3s*/
+	uint8_t erreur = OSSemPost(sem_verification);
+	errMsg(erreur, "Erreur pendant le post sur sem_verification\n");
+}
+
+void gpio_isr(void * not_valid) {
+	/*TODO: definition handler pour switches*/
+
+	xil_printf("Print !");
+
+	uint8_t erreur = OSSemPost(sem_statistiques);
+	errMsg(erreur, "Erreur pendant le post sur sem_statistiques\n");
+
+	XGpio_InterruptClear(&gpSwitch, XGPIO_IR_MASK);
+}
+
+/*
+*********************************************************************************************************
+*                                                  MAIN
+*********************************************************************************************************
+*/
+
+int main(void)
+{
+	initialize_bsp();
+
+	OSInit(); 
+
+	create_application();
+
+	prepare_and_enable_irq();
+
+	xil_printf("*** Starting uC/OS-II scheduler ***\n");
+
+	stopSimDebordement = false;
+
+	OSStart();
+
+	cleanup();
+
+	cleanup_platform();
+
+	return 0;
+}
+
+void create_application() {
+	int error;
+
+	error = create_tasks();
+	if (error != 0)
+		xil_printf("Error %d while creating tasks\n", error);
+
+	error = create_events();
+	if (error != 0)
+		xil_printf("Error %d while creating events\n", error);
+}
+
+int create_tasks() {
+	// Stacks
+	static OS_STK generationStk[TASK_STK_SIZE]; //Stack of each task
+	static OS_STK atterrissage0Stk[TASK_STK_SIZE];
+	static OS_STK terminal0Stk[TASK_STK_SIZE];
+	static OS_STK terminal1Stk[TASK_STK_SIZE];
+	static OS_STK decollageStk[TASK_STK_SIZE];
+	static OS_STK statistiquesStk[TASK_STK_SIZE];
+	static OS_STK verificationStk[TASK_STK_SIZE];
+
+	uint8_t err;
+
+	/*TODO: Creation des taches*/
+	OSTaskCreate(generation, (void*)0, &generationStk[TASK_STK_SIZE - 1], GENERATION_PRIO);
+	OSTaskCreate(atterrissage, (void*)0, &atterrissage0Stk[TASK_STK_SIZE - 1], ATTERRISSAGE_PRIO);
+
+	OSTaskCreate(terminal, (void*)1, &terminal0Stk[TASK_STK_SIZE - 1], TERMINAL0_PRIO);
+	OSTaskCreate(terminal, (void*)2, &terminal1Stk[TASK_STK_SIZE - 1], TERMINAL1_PRIO);
+
+	OSTaskCreate(decollage, (void*)0, &decollageStk[TASK_STK_SIZE - 1], DECOLLAGE_PRIO);
+	OSTaskCreate(verification, (void*)0, &verificationStk[TASK_STK_SIZE - 1], VERIFICATION_PRIO);
+	OSTaskCreate(statistiques, (void*)0, &statistiquesStk[TASK_STK_SIZE - 1], STATISTIQUES_PRIO);
+
+	return 0;
+}
+
+int create_events() {
+	uint8_t err;
+
+	/* TODO: Creation des semaphores, flags, files, maiblox, mutex, ... */
+	sem_generation_donnees = OSSemCreate(0);
+	sem_verification = OSSemCreate(0);
+	sem_statistiques = OSSemCreate(0);
+
+	Q_atterrissage_low = OSQCreate(&Q_atterrissage_low_data[0], 6);
+	Q_atterrissage_medium = OSQCreate(&Q_atterrissage_medium_data[0], 4);
+	Q_atterrissage_high = OSQCreate(&Q_atterrissage_high_data[0], 3);
+
+	Q_terminal_1 = OSQCreate(&Q_terminal_1_data[0], 1);
+	Q_terminal_2 = OSQCreate(&Q_terminal_2_data[0], 1);
+
+	Q_decollage = OSQCreate(&Q_decollage_data[0], 10);
+
+	terminaux_status = OSFlagCreate(0x00, &err);
+
+	return 0;
+}
+
+/*
+*********************************************************************************************************
+*                                            TASK FUNCTIONS
+*********************************************************************************************************
+*/
+void generation(void* data) {
+	uint8_t err;
+	int nbAvionsCrees = 0;
+	xil_printf("[GENERATION] Tache lancee\n");
+	int skipGen = 0;
+	int seed = 42;
+	while (1) {
+		/*TODO: Synchronisation unilaterale timer 1s*/
+		OSSemPend(sem_generation_donnees, 0, &err);
+		errMsg(err, "Erreur Pend sem generation donnees\n");
+		srand(seed);
+		skipGen = rand() % 5; //On saute la generation 1 fois sur 5
+		if (skipGen != 0){
+			Avion* avion = malloc(sizeof(Avion));
+			avion->id = nbAvionsCrees;
+			remplirAvion(avion);
+			nbAvionsCrees++;
+			xil_printf("Nouvel avion cree avec un retard de %d \n", avion->retard);
+
+			/*TODO: Envoi des avions dans les files appropriees*/
+			if (avion->retard < 20) {
+				err = OSQPost(Q_atterrissage_low, avion);
+				errMsg(err, "Erreur Post Q atterissage low\n");
+			} else if (avion->retard >= 20 && avion->retard <= 39) {
+				err = OSQPost(Q_atterrissage_medium, avion);
+				errMsg(err, "Erreur Post Q atterissage medium\n");
+			} else if (avion->retard >= 40 && avion->retard <= 60) {
+				err = OSQPost(Q_atterrissage_high, avion);
+				errMsg(err, "Erreur Post Q atterissage high\n");
+			} else {
+				xil_printf("Erreur avion avec plus de 1h de retard\n");
+			}
+		}
+		else{
+			/*xil_printf("[GENERATION] Pas de generation\n");*/
+		}
+		seed++;
+	}
+}
+
+void atterrissage(void* data)
+{
+	uint8_t err;
+	Avion* avion = NULL;
+	xil_printf("[ATTERRISSAGE] Tache lancee\n");
+	while (1) {
+		/*TODO: Mise en attente des 3 files en fonction de leur priorité*/
+		while (1) {
+			avion = OSQPend(Q_atterrissage_high, 100, &err);
+			if (avion != NULL)
+				break;
+			avion = OSQPend(Q_atterrissage_medium, 100, &err);
+			if (avion != NULL)
+				break;
+			avion = OSQPend(Q_atterrissage_low, 100, &err);
+			if (avion != NULL)
+				break;
+		}
+
+		xil_printf("[ATTERRISSAGE] Debut atterrissage de l avion en retard de : %d\n", avion->retard);
+		OSTimeDly(150); //Temps pour que l'avion atterrisse
+
+		xil_printf("[ATTERRISSAGE] Attente terminal libre\n");
+		/*TODO: Mise en attente d'un terminal libre (mecanisme a votre choix)*/
+		/*TODO: Envoi de l'avion au terminal choisi (mecanisme de votre choix)*/
+		OS_FLAGS flag = OSFlagPend(terminaux_status, 0x11, OS_FLAG_WAIT_CLR_ANY, 0, &err);
+		// Lire le flag, decider du terminal, decrementer le terminal
+		if (flag == TERMINAL_LIBRE_1 || flag == TERMINAUX_LIBRES) {
+			xil_printf("Envoyer terminal 1\n");
+			OSFlagPost(terminaux_status, 0x10, OS_FLAG_SET, &err);
+			errMsg(err, "Erreur post flag terminal pris\n");
+			err = OSQPost(Q_terminal_1, avion);
+			errMsg(err, "Erreur post q terminal 1\n");
+		} else if (flag == TERMINAL_LIBRE_2) {
+			xil_printf("Envoyer terminal 2\n");
+			OSFlagPost(terminaux_status, 0x01, OS_FLAG_SET, &err);
+			errMsg(err, "Erreur post flag terminal pris\n");
+			err = OSQPost(Q_terminal_2, avion);
+			errMsg(err, "Erreur post q terminal 2\n");
+		}
+
+
+		//xil_printf("[ATTERRISSAGE] Terminal libre num %d obtenu\n", ...);
+
+
+	}
+}
+
+void terminal(void* data)
+{
+	uint8_t err;
+	int numTerminal = data; //TODO: A modifier
+	Avion* avion = NULL;
+	xil_printf("[TERMINAL %d] Tache lancee\n", numTerminal);
+
+	while (1) {
+
+		/*TODO: Mise en attente d'un avion venant de la piste d'atterrissage*/
+		if (numTerminal == 1) {
+			avion = OSQPend(Q_terminal_1, 0, &err);
+			errMsg(err, "Erreur Pend q terminal 1\n");
+		} else {
+			avion = OSQPend(Q_terminal_2, 0, &err);
+			errMsg(err, "Erreur Pend q terminal 2\n");
+		}
+
+		xil_printf("[TERMINAL %d] Obtention avion\n", numTerminal);
+		xil_printf("Arrive dans le terminal %d de l avion en retard de : %d\n", numTerminal, avion->retard);
+
+		OSTimeDly(160);//Attente pour le vidage, le nettoyage et le remplissage de l'avion
+
+		remplirAvion(avion);
+
+		/*TODO: Envoi de l'avion pour le piste de decollage*/
+		xil_printf("[TERMINAL %d] Liberation avion\n", numTerminal);
+
+		/*TODO: Notifier que le terminal est libre (mecanisme de votre choix)*/
+		if (numTerminal == 1) {
+			xil_printf("Liberer terminal 1\n");
+			OSFlagPost(terminaux_status, 0x10, OS_FLAG_CLR, &err);
+			errMsg(err, "Erreur post flag terminal libere\n");
+		} else {
+			xil_printf("Liberer terminal 2\n");
+			OSFlagPost(terminaux_status, 0x01, OS_FLAG_CLR, &err);
+			errMsg(err, "Erreur post flag terminal libere\n");
+		}
+
+		err = OSQPost(Q_decollage, avion);
+		errMsg(err, "erreur post decollage\n");
+	}
+	
+}
+
+void decollage(void* data)
+{
+	uint8_t err;
+	Avion* avion = NULL;
+	xil_printf("[DECOLLAGE] Tache lancee\n");
+
+	while (1) {
+		/*TODO: Mise en attente d'un avion pret pour le decollage*/
+		avion = OSQPend(Q_decollage, 0, &err);
+		errMsg(err, "erreur pend decollage\n");
+		OSTimeDly(30); //Temps pour que l'avion decolle
+		xil_printf("[DECOLLAGE] Avion decolle\n");
+
+		/*TODO: Destruction de l'avion*/
+		free(avion);
+	}
+}
+
+
+void statistiques(void* data){
+	uint8_t err;
+	xil_printf("[STATISTIQUES] Tache lancee\n");
+
+	/*OS_Q_DATA data_low;
+	OS_Q_DATA data_med;
+	OS_Q_DATA data_high;*/
+
+	while(1){
+		/*TODO: Synchronisation unilaterale switches*/
+		OSQPend(sem_statistiques, 0, &err);
+		errMsg(err, "erreur pend statistiques\n");
+
+		xil_printf("\n------------------ Affichage des statistiques ------------------\n");
+
+		/*TODO: Obtenir statistiques pour les files d'atterrissage*/
+
+		/*err = OSQQuery(Q_atterrissage_low, &data_low);
+		errMsg(err, "Erreur query low\n");
+
+		err = OSQQuery(Q_atterrissage_medium, &data_med);
+		errMsg(err, "Erreur query med\n");
+
+		err = OSQQuery(Q_atterrissage_high, &data_high);
+		errMsg(err, "Erreur query high\n");
+
+		xil_printf("Nb d'avions en attente d'atterrissage de type High : %d\n", data_low.OSNMsgs);
+		xil_printf("Nb d'avions en attente d'atterrissage de type Medium : %d\n", data_med.OSNMsgs);
+		xil_printf("Nb d'avions en attente d'atterrissage de type Low : %d\n", data_high.OSNMsgs);*/
+
+		/*TODO: Obtenir statistiques pour la file de decollage*/
+		//xil_printf("Nb d'avions en attente de decollage : %d\n", ...);
+
+		/*TODO: Obtenir statut des terminaux*/
+		xil_printf("Terminal 0 ");
+		int statutTerm0 = 0; /*A modifier (simplement un exemple d'affichage pour vous aider)*/
+		(statutTerm0 == 0) ? xil_printf("OCCUPE\n") : xil_printf("LIBRE\n");
+
+		xil_printf("Terminal 1 ");
+		int statutTerm1 = 0; /*A modifier (simplement un exemple d'affichage pour vous aider)*/
+		(statutTerm1 == 0) ? xil_printf("OCCUPE\n") : xil_printf("LIBRE\n");
+	}
+}
+
+void verification(void* data){
+	uint8_t err;
+	xil_printf("[VERIFICATION] Tache lancee\n");
+
+	OS_Q_DATA data_low;
+	OS_Q_DATA data_med;
+	OS_Q_DATA data_high;
+
+	OS_Q_DATA data_decollage;
+
+	while(1){
+		/*TODO: Synchronisation unilaterale avec timer 3s*/
+		OSSemPend(sem_verification, 0, &err);
+
+		err = OSQQuery(Q_atterrissage_low, &data_low);
+		errMsg(err, "Erreur query low\n");
+
+		err = OSQQuery(Q_atterrissage_medium, &data_med);
+		errMsg(err, "Erreur query med\n");
+
+		err = OSQQuery(Q_atterrissage_high, &data_high);
+		errMsg(err, "Erreur query high\n");
+
+		err = OSQQuery(Q_decollage, &data_decollage);
+		errMsg(err, "Erreur query decollage\n");
+
+		if (data_low.OSNMsgs > 6 || data_med.OSNMsgs > 4 || data_high.OSNMsgs > 3 || data_decollage.OSNMsgs > 10)
+			stopSimDebordement = true;
+
+		if (stopSimDebordement){
+			/*TODO: Suspension de toutes les taches de la simulation*/
+			xil_printf("ARRET DE LA SIMULATION\n");
+			OSTaskSuspend(GENERATION_PRIO);
+			OSTaskSuspend(ATTERRISSAGE_PRIO);
+			OSTaskSuspend(TERMINAL0_PRIO);
+			OSTaskSuspend(TERMINAL1_PRIO);
+			OSTaskSuspend(DECOLLAGE_PRIO);
+			OSTaskSuspend(VERIFICATION_PRIO);
+			OSTaskSuspend(STATISTIQUES_PRIO);
+		}
+	}
+}
+void remplirAvion(Avion* avion) {
+	srand(OSTimeGet());
+	avion->retard = rand() % BORNE_SUP_HIGH;
+	avion->origine = rand() % NB_AEROPORTS;
+	do { avion->destination = rand() % NB_AEROPORTS; } while (avion->origine == avion->destination);
+	/*xil_printf("Avion retard = %d\n", avion->retard);
+	xil_printf("Avion origine = %d\n", avion->origine);
+	xil_printf("Avion destination = %d\n", avion->destination);*/
+}
+
+void errMsg(uint8_t err, char* errMsg)
+{
+	if (err != OS_ERR_NONE)
+	{
+		xil_printf(errMsg);
+		exit(1);
+	}
+}

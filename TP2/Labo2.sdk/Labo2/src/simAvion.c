@@ -27,7 +27,6 @@
 //								Routines d'interruptions
 ///////////////////////////////////////////////////////////////////////////////////////
 
-
 void timer_isr(void* not_valid) {
 	if (private_timer_irq_triggered()) {
 		private_timer_clear_irq();
@@ -49,11 +48,6 @@ void fit_timer_3s_isr(void *not_valid) {
 
 void gpio_isr(void * not_valid) {
 	/*TODO: definition handler pour switches*/
-	if (testflag) {
-		xil_printf("Print !");
-		testflag = false;
-	}
-
 	uint8_t erreur = OSSemPost(sem_statistiques);
 	errMsg(erreur, "Erreur pendant le post sur sem_statistiques\n");
 
@@ -114,15 +108,26 @@ int create_tasks() {
 	uint8_t err;
 
 	/*TODO: Creation des taches*/
-	OSTaskCreate(generation, (void*)0, &generationStk[TASK_STK_SIZE - 1], GENERATION_PRIO);
-	OSTaskCreate(atterrissage, (void*)0, &atterrissage0Stk[TASK_STK_SIZE - 1], ATTERRISSAGE_PRIO);
+	err = OSTaskCreate(generation, (void*)0, &generationStk[TASK_STK_SIZE - 1], GENERATION_PRIO);
+	errMsg(err, "Erreur task create\n");
 
-	OSTaskCreate(terminal, (void*)1, &terminal0Stk[TASK_STK_SIZE - 1], TERMINAL0_PRIO);
-	OSTaskCreate(terminal, (void*)2, &terminal1Stk[TASK_STK_SIZE - 1], TERMINAL1_PRIO);
+	err = OSTaskCreate(atterrissage, (void*)0, &atterrissage0Stk[TASK_STK_SIZE - 1], ATTERRISSAGE_PRIO);
+	errMsg(err, "Erreur task create\n");
 
-	OSTaskCreate(decollage, (void*)0, &decollageStk[TASK_STK_SIZE - 1], DECOLLAGE_PRIO);
-	OSTaskCreate(verification, (void*)0, &verificationStk[TASK_STK_SIZE - 1], VERIFICATION_PRIO);
-	OSTaskCreate(statistiques, (void*)0, &statistiquesStk[TASK_STK_SIZE - 1], STATISTIQUES_PRIO);
+	err = OSTaskCreate(terminal, (void*)1, &terminal0Stk[TASK_STK_SIZE - 1], TERMINAL0_PRIO);
+	errMsg(err, "Erreur task create\n");
+
+	err = OSTaskCreate(terminal, (void*)2, &terminal1Stk[TASK_STK_SIZE - 1], TERMINAL1_PRIO);
+	errMsg(err, "Erreur task create\n");
+
+	err = OSTaskCreate(decollage, (void*)0, &decollageStk[TASK_STK_SIZE - 1], DECOLLAGE_PRIO);
+	errMsg(err, "Erreur task create\n");
+
+	err = OSTaskCreate(verification, (void*)0, &verificationStk[TASK_STK_SIZE - 1], VERIFICATION_PRIO);
+	errMsg(err, "Erreur task create\n");
+
+	err = OSTaskCreate(statistiques, (void*)0, &statistiquesStk[TASK_STK_SIZE - 1], STATISTIQUES_PRIO);
+	errMsg(err, "Erreur task create\n");
 
 	return 0;
 }
@@ -171,7 +176,6 @@ void generation(void* data) {
 			avion->id = nbAvionsCrees;
 			remplirAvion(avion);
 			nbAvionsCrees++;
-			xil_printf("Nouvel avion cree avec un retard de %d \n", avion->retard);
 
 			/*TODO: Envoi des avions dans les files appropriees*/
 			if (avion->retard < 20) {
@@ -184,7 +188,7 @@ void generation(void* data) {
 				err = OSQPost(Q_atterrissage_high, avion);
 				errMsg(err, "Erreur Post Q atterissage high\n");
 			} else {
-				xil_printf("Erreur avion avec plus de 1h de retard\n");
+				xil_printf("[GENERATION] Erreur ! Avion avec plus de 1h de retard\n");
 			}
 		}
 		else{
@@ -213,31 +217,27 @@ void atterrissage(void* data)
 				break;
 		}
 
-		xil_printf("[ATTERRISSAGE] Debut atterrissage de l avion en retard de : %d\n", avion->retard);
+		xil_printf("[ATTERRISSAGE] Debut atterrissage [%d]\n", avion->id);
 		OSTimeDly(150); //Temps pour que l'avion atterrisse
-
-		xil_printf("[ATTERRISSAGE] Attente terminal libre\n");
+		xil_printf("[ATTERRISSAGE] Attente terminal libre [%d]\n", avion->id);
 		/*TODO: Mise en attente d'un terminal libre (mecanisme a votre choix)*/
 		/*TODO: Envoi de l'avion au terminal choisi (mecanisme de votre choix)*/
+
 		OS_FLAGS flag = OSFlagPend(terminaux_status, 0x11, OS_FLAG_WAIT_CLR_ANY, 0, &err);
 		// Lire le flag, decider du terminal, decrementer le terminal
 		if (flag == TERMINAL_LIBRE_1 || flag == TERMINAUX_LIBRES) {
-			xil_printf("Envoyer terminal 1\n");
+			xil_printf("[ATTERRISSAGE] Terminal libre num 1 obtenu [%d]\n", avion->id);
 			OSFlagPost(terminaux_status, 0x10, OS_FLAG_SET, &err);
 			errMsg(err, "Erreur post flag terminal pris\n");
 			err = OSQPost(Q_terminal_1, avion);
 			errMsg(err, "Erreur post q terminal 1\n");
 		} else if (flag == TERMINAL_LIBRE_2) {
-			xil_printf("Envoyer terminal 2\n");
+			xil_printf("[ATTERRISSAGE] Terminal libre num 2 obtenu [%d]\n", avion->id);
 			OSFlagPost(terminaux_status, 0x01, OS_FLAG_SET, &err);
 			errMsg(err, "Erreur post flag terminal pris\n");
 			err = OSQPost(Q_terminal_2, avion);
 			errMsg(err, "Erreur post q terminal 2\n");
 		}
-
-
-		//xil_printf("[ATTERRISSAGE] Terminal libre num %d obtenu\n", ...);
-
 
 	}
 }
@@ -260,26 +260,25 @@ void terminal(void* data)
 			errMsg(err, "Erreur Pend q terminal 2\n");
 		}
 
-		xil_printf("[TERMINAL %d] Obtention avion\n", numTerminal);
-		xil_printf("Arrive dans le terminal %d de l avion en retard de : %d\n", numTerminal, avion->retard);
+		xil_printf("[TERMINAL %d] Obtention avion [%d]\n", numTerminal, avion->id);
 
 		OSTimeDly(160);//Attente pour le vidage, le nettoyage et le remplissage de l'avion
 
 		remplirAvion(avion);
 
 		/*TODO: Envoi de l'avion pour le piste de decollage*/
-		xil_printf("[TERMINAL %d] Liberation avion\n", numTerminal);
+		xil_printf("[TERMINAL %d] Liberation avion [%d]\n", numTerminal, avion->id);
 
 		/*TODO: Notifier que le terminal est libre (mecanisme de votre choix)*/
 		if (numTerminal == 1) {
-			xil_printf("Liberer terminal 1\n");
 			OSFlagPost(terminaux_status, 0x10, OS_FLAG_CLR, &err);
 			errMsg(err, "Erreur post flag terminal libere\n");
 		} else {
-			xil_printf("Liberer terminal 2\n");
 			OSFlagPost(terminaux_status, 0x01, OS_FLAG_CLR, &err);
 			errMsg(err, "Erreur post flag terminal libere\n");
 		}
+
+		xil_printf("[TERMINAL %d] Liberation du terminal\n", numTerminal);
 
 		err = OSQPost(Q_decollage, avion);
 		errMsg(err, "erreur post decollage\n");
@@ -298,7 +297,7 @@ void decollage(void* data)
 		avion = OSQPend(Q_decollage, 0, &err);
 		errMsg(err, "erreur pend decollage\n");
 		OSTimeDly(30); //Temps pour que l'avion decolle
-		xil_printf("[DECOLLAGE] Avion decolle\n");
+		xil_printf("[DECOLLAGE] Avion decolle [%d]\n", avion->id);
 
 		/*TODO: Destruction de l'avion*/
 		free(avion);
@@ -310,43 +309,63 @@ void statistiques(void* data){
 	uint8_t err;
 	xil_printf("[STATISTIQUES] Tache lancee\n");
 
-	/*OS_Q_DATA data_low;
-	OS_Q_DATA data_med;
-	OS_Q_DATA data_high;*/
+	OS_Q_DATA stat_low;
+	OS_Q_DATA stat_med;
+	OS_Q_DATA stat_high;
+	OS_Q_DATA stat_dec;
 
 	while(1){
 		/*TODO: Synchronisation unilaterale switches*/
-		OSQPend(sem_statistiques, 0, &err);
+		OSSemPend(sem_statistiques, 0, &err);
 		errMsg(err, "erreur pend statistiques\n");
+
 
 		xil_printf("\n------------------ Affichage des statistiques ------------------\n");
 
 		/*TODO: Obtenir statistiques pour les files d'atterrissage*/
 
-		/*err = OSQQuery(Q_atterrissage_low, &data_low);
+		err = OSQQuery(Q_atterrissage_low, &stat_low);
 		errMsg(err, "Erreur query low\n");
 
-		err = OSQQuery(Q_atterrissage_medium, &data_med);
+		err = OSQQuery(Q_atterrissage_medium, &stat_med);
 		errMsg(err, "Erreur query med\n");
 
-		err = OSQQuery(Q_atterrissage_high, &data_high);
+		err = OSQQuery(Q_atterrissage_high, &stat_high);
 		errMsg(err, "Erreur query high\n");
 
-		xil_printf("Nb d'avions en attente d'atterrissage de type High : %d\n", data_low.OSNMsgs);
-		xil_printf("Nb d'avions en attente d'atterrissage de type Medium : %d\n", data_med.OSNMsgs);
-		xil_printf("Nb d'avions en attente d'atterrissage de type Low : %d\n", data_high.OSNMsgs);*/
+		err = OSQQuery(Q_decollage, &stat_dec);
+		errMsg(err, "Erreur query dec\n");
+
+		xil_printf("Nb d'avions en attente d'atterrissage de type Low : %d\n", stat_low.OSNMsgs);
+		xil_printf("Nb d'avions en attente d'atterrissage de type Medium : %d\n", stat_med.OSNMsgs);
+		xil_printf("Nb d'avions en attente d'atterrissage de type High : %d\n", stat_high.OSNMsgs);
 
 		/*TODO: Obtenir statistiques pour la file de decollage*/
-		//xil_printf("Nb d'avions en attente de decollage : %d\n", ...);
+		xil_printf("Nb d'avions en attente de decollage : %d\n", stat_dec.OSNMsgs);
 
 		/*TODO: Obtenir statut des terminaux*/
-		xil_printf("Terminal 0 ");
-		int statutTerm0 = 0; /*A modifier (simplement un exemple d'affichage pour vous aider)*/
-		(statutTerm0 == 0) ? xil_printf("OCCUPE\n") : xil_printf("LIBRE\n");
+		int statutTerm1 = 0;
+		int statutTerm2 = 0;
+
+		if (terminaux_status->OSFlagFlags == 0x00) {
+			statutTerm1 = 1;
+			statutTerm2 = 1;
+		} else if (terminaux_status->OSFlagFlags == 0x11) {
+			statutTerm1 = 0;
+			statutTerm2 = 0;
+		} else if (terminaux_status->OSFlagFlags == 0x10) {
+			statutTerm1 = 0;
+			statutTerm2 = 1;
+		} else if (terminaux_status->OSFlagFlags == 0x01) {
+			statutTerm1 = 1;
+			statutTerm2 = 0;
+		}
 
 		xil_printf("Terminal 1 ");
-		int statutTerm1 = 0; /*A modifier (simplement un exemple d'affichage pour vous aider)*/
 		(statutTerm1 == 0) ? xil_printf("OCCUPE\n") : xil_printf("LIBRE\n");
+
+		xil_printf("Terminal 2 ");
+		(statutTerm2 == 0) ? xil_printf("OCCUPE\n") : xil_printf("LIBRE\n");
 	}
 }
 
@@ -382,13 +401,20 @@ void verification(void* data){
 		if (stopSimDebordement){
 			/*TODO: Suspension de toutes les taches de la simulation*/
 			xil_printf("ARRET DE LA SIMULATION\n");
-			OSTaskSuspend(GENERATION_PRIO);
-			OSTaskSuspend(ATTERRISSAGE_PRIO);
-			OSTaskSuspend(TERMINAL0_PRIO);
-			OSTaskSuspend(TERMINAL1_PRIO);
-			OSTaskSuspend(DECOLLAGE_PRIO);
-			OSTaskSuspend(VERIFICATION_PRIO);
-			OSTaskSuspend(STATISTIQUES_PRIO);
+			err = OSTaskSuspend(GENERATION_PRIO);
+			errMsg(err, "Erreur task suspend\n");
+			err = OSTaskSuspend(ATTERRISSAGE_PRIO);
+			errMsg(err, "Erreur task suspend\n");
+			err = OSTaskSuspend(TERMINAL0_PRIO);
+			errMsg(err, "Erreur task suspend\n");
+			err = OSTaskSuspend(TERMINAL1_PRIO);
+			errMsg(err, "Erreur task suspend\n");
+			err = OSTaskSuspend(DECOLLAGE_PRIO);
+			errMsg(err, "Erreur task suspend\n");
+			err = OSTaskSuspend(VERIFICATION_PRIO);
+			errMsg(err, "Erreur task suspend\n");
+			err = OSTaskSuspend(STATISTIQUES_PRIO);
+			errMsg(err, "Erreur task suspend\n");
 		}
 	}
 }
@@ -406,7 +432,12 @@ void errMsg(uint8_t err, char* errMsg)
 {
 	if (err != OS_ERR_NONE)
 	{
-		xil_printf(errMsg);
+		if (err == OS_ERR_Q_FULL) {
+			xil_printf("OSQPOST DANS UNE FILE PLEINE !\n");
+			stopSimDebordement = true;
+		} else {
+			xil_printf(errMsg);
+		}
 		exit(1);
 	}
 }
