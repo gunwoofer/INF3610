@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="assert.c" />
+    <ClCompile Include="Sobel.cpp" />
+    <ClCompile Include="DataRAM.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="RAM.cpp" />
+    <ClCompile Include="Reader.cpp" />
+    <ClCompile Include="Writer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sobel.h" />
+    <ClInclude Include="DataRAM.h" />
+    <ClInclude Include="InterfaceRead.h" />
+    <ClInclude Include="LMBIF.h" />
+    <ClInclude Include="RAM.h" />
+    <ClInclude Include="Reader.h" />
+    <ClInclude Include="Writer.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0C92E0B2-B497-4AEE-9A67-2A461452E7EB}</ProjectGuid>
+    <RootNamespace>INF3610Lab3</RootNamespace>
+    <ProjectName>INF3610-Lab3-UTF</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\lib\systemc-2.3.1\src</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\lib\systemc-2.3.1\src</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\lib\systemc-2.3.1\src</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\lib\systemc-2.3.1\src</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);_XKEYCHECK_H;_CRT_SECURE_NO_WARNINGS;</PreprocessorDefinitions>
+      <AdditionalOptions>/vmg %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>SystemC.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);_XKEYCHECK_H;_CRT_SECURE_NO_WARNINGS;</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>E:\lib\systemc-2.3.1\msvc120\SystemC\x64\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SystemC.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);_XKEYCHECK_H;_CRT_SECURE_NO_WARNINGS;</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\dev\3610_3\systemc-2.3.1\msvc140\SystemC\Release</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SystemC.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);_XKEYCHECK_H;_CRT_SECURE_NO_WARNINGS;</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalOptions>/vmg %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);E:\lib\systemc-2.3.1\msvc120\SystemC\x64\Release</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SystemC.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
