@@ -7,6 +7,7 @@
 #include "Sobel.h"
 #include "Sobelv2.h"
 #include "Reader.h"
+#include "Writer.h"
 #include "DataRAM.h"
 #include "CacheMem.h"
 
@@ -32,6 +33,10 @@ int sc_main(int arg_count, char **arg_value)
 	DataRAM dataRAM("DataRAM", "image.mem", RAMSIZE, false);
 	//TODO : Déclaration du module de l'écrivain
 
+	Writer writer("Writer");
+
+
+
 	// Signals
 	sc_signal<unsigned int, SC_MANY_WRITERS> data;
 	sc_signal<unsigned int, SC_MANY_WRITERS> address;
@@ -39,6 +44,7 @@ int sc_main(int arg_count, char **arg_value)
 	sc_signal<unsigned int> length;
 	sc_signal<bool, SC_MANY_WRITERS> reqRead;
 	sc_signal<bool, SC_MANY_WRITERS> ackReaderWriter;
+	sc_signal<bool, SC_MANY_WRITERS> reqWrite;
 
 	/* à compléter*/
 
@@ -51,6 +57,14 @@ int sc_main(int arg_count, char **arg_value)
 	reader.dataPortRAM(dataRAM);
 
 	/* à compléter */
+	writer.clk(clk);
+	writer.address(address);
+	writer.data(data);
+	writer.request(reqWrite);
+	writer.ack(ackReaderWriter);
+	writer.dataPortRAM(dataRAM);
+
+
 
 	const bool utiliseCacheMem = false;
 

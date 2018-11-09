@@ -3,7 +3,7 @@
 #include <systemc.h>
 #include "LMBIF.h"
 
-class Writer {
+class Writer: sc_module {
 	public:
 		sc_in_clk clk;
 		sc_in<unsigned int> address;

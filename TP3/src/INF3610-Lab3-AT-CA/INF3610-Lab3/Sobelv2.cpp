@@ -74,7 +74,7 @@ static inline uint8_t getVal(int index, int xDiff, int yDiff, int img_width, uin
 	return Y[fullIndex];
 };
 
-uint8_t Sobelv2::Sobel_operator(const int index, const int imgWidth, uint8_t * image)
+uint8_t Sobelv2::Sobelv2_operator(const int index, const int imgWidth, uint8_t * image)
 {
 	int x_weight = 0;
 	int y_weight = 0;

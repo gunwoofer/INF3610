@@ -19,6 +19,10 @@ Sobel::Sobel( sc_module_name name )
 	À compléter
 	
 	*/
+
+	SC_THREAD(thread);
+
+
 }
 
 
@@ -49,6 +53,87 @@ void Sobel::thread(void)
 	À compléter
 	
 	*/
+	// Variable
+	unsigned int address = 0;
+	unsigned int imgWidth, imgHeight;
+
+	while (1) {
+		addressPort.write(address);
+		requestRead.write(true);  // FALSE A CONFIRMER !!! 
+		do {
+			wait(clk->posedge_event());
+		} while (!ack.read());
+		imgWidth = data.read();
+
+
+
+		address += 4;
+
+		addressPort.write(address);
+		do {
+			wait(clk->posedge_event());
+		} while (!ack.read());
+		imgHeight = data.read();
+
+		unsigned int imgSize = imgWidth * imgHeight;
+
+		//Create array
+		uint8_t * image = new uint8_t[imgSize];
+		uint8_t * result = new uint8_t[imgSize];
+		int * imageAsInt = reinterpret_cast<int*>(image);
+		int * resultAsInt = reinterpret_cast<int*>(result);
+
+		for (unsigned int i = 0; i < imgSize / sizeof(int); i++) {
+			//Request element
+			address += 4;
+			addressPort.write(address);
+			do {
+				wait(clk->posedge_event());
+			} while (!ack.read());
+			imageAsInt[i] = data.read();
+		}
+
+		requestRead.write(false);
+
+		//For simplicity, assume that the borders don't contain edges
+		for (unsigned int i = 0; i < imgWidth; ++i)
+			result[i] = 0;
+		for (unsigned int i = imgSize - imgWidth; i < imgSize; ++i)
+			result[i] = 0;
+		for (unsigned int i = 0; i < imgSize; i += imgWidth)
+			result[i] = 0;
+		for (unsigned int i = imgWidth - 1; i < imgSize; i += imgWidth)
+			result[i] = 0;
+
+		//Calling the operator for each pixel
+		for (unsigned int i = 1; i < imgHeight - 1; ++i) {
+			for (unsigned int j = 1; j < imgWidth - 1; ++j) {
+				int fullIndex = i * imgWidth + j;
+				result[fullIndex] = sobel_operator(fullIndex, imgWidth, image);
+			}
+		}
+
+		//Write back nb. elements at the end
+		address = 4;
+		for (unsigned int i = 0; i < imgSize / sizeof(int); i++) {
+			//Write each element
+			address += 4;
+			addressPort.write(address);
+			data.write(resultAsInt[i]);
+			requestWrite.write(true);
+
+			do {
+				wait(clk->posedge_event());
+			} while (!ack.read());
+
+		}
+
+		delete(image);
+		delete(result);
+		sc_stop();
+		wait();
+	}
+	
 
 }
 
