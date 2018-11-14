@@ -11,7 +11,7 @@
 //	Constructeur
 //
 ///////////////////////////////////////////////////////////////////////////////
-Sobel::Sobel( sc_module_name name )
+Sobel::Sobel( sc_module_name name ) : sc_module(name)
 /* À compléter */
 {
 	/*
@@ -59,22 +59,25 @@ void Sobel::thread(void)
 
 	while (1) {
 		addressPort.write(address);
-		requestRead.write(true);  // FALSE A CONFIRMER !!! 
+		requestRead.write(true);
 		do {
 			wait(clk->posedge_event());
 		} while (!ack.read());
 		imgWidth = data.read();
-
-
-
+		wait(clk->posedge_event());
+		requestRead.write(false);
+		
+		
 		address += 4;
-
 		addressPort.write(address);
+		requestRead.write(true);
 		do {
 			wait(clk->posedge_event());
 		} while (!ack.read());
 		imgHeight = data.read();
-
+		wait(clk->posedge_event());
+		requestRead.write(false);
+		
 		unsigned int imgSize = imgWidth * imgHeight;
 
 		//Create array
@@ -84,16 +87,16 @@ void Sobel::thread(void)
 		int * resultAsInt = reinterpret_cast<int*>(result);
 
 		for (unsigned int i = 0; i < imgSize / sizeof(int); i++) {
-			//Request element
 			address += 4;
 			addressPort.write(address);
+			requestRead.write(true);
 			do {
 				wait(clk->posedge_event());
 			} while (!ack.read());
 			imageAsInt[i] = data.read();
+			wait(clk->posedge_event());
+			requestRead.write(false);
 		}
-
-		requestRead.write(false);
 
 		//For simplicity, assume that the borders don't contain edges
 		for (unsigned int i = 0; i < imgWidth; ++i)
@@ -121,11 +124,11 @@ void Sobel::thread(void)
 			addressPort.write(address);
 			data.write(resultAsInt[i]);
 			requestWrite.write(true);
-
 			do {
 				wait(clk->posedge_event());
 			} while (!ack.read());
-
+			wait(clk->posedge_event());
+			requestRead.write(false);
 		}
 
 		delete(image);

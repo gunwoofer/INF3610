@@ -32,7 +32,6 @@ int sc_main(int arg_count, char **arg_value)
 	Reader reader("Reader");
 	DataRAM dataRAM("DataRAM", "image.mem", RAMSIZE, false);
 	//TODO : Déclaration du module de l'écrivain
-
 	Writer writer("Writer");
 
 
@@ -58,8 +57,8 @@ int sc_main(int arg_count, char **arg_value)
 
 	/* à compléter */
 	writer.clk(clk);
-	writer.address(address);
 	writer.data(data);
+	writer.address(address);
 	writer.request(reqWrite);
 	writer.ack(ackReaderWriter);
 	writer.dataPortRAM(dataRAM);
@@ -73,6 +72,11 @@ int sc_main(int arg_count, char **arg_value)
 
 		sobel.clk(clk);
 		/* à compléter */
+		sobel.data(data);
+		sobel.ack(ackReaderWriter);
+		sobel.addressPort(address);
+		sobel.requestRead(reqRead);
+		sobel.requestWrite(reqWrite);
 
 		// Démarrage de l'application
 		cout << "Démarrage de la simulation." << endl;

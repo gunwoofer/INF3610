@@ -1,9 +1,14 @@
 ﻿  assert.c
-  Sobel.cpp
-  DataRAM.cpp
-  main.cpp
-  RAM.cpp
-  Reader.cpp
   Writer.cpp
+d:\gitkrakenprojects\inf3610\tp3\src\inf3610-lab3-utf\inf3610-lab3\writer.h(9): fatal error C1083: Impossible d'ouvrir le fichier include : 'systemc.h' : No such file or directory
+  Reader.cpp
+d:\gitkrakenprojects\inf3610\tp3\src\inf3610-lab3-utf\inf3610-lab3\reader.h(9): fatal error C1083: Impossible d'ouvrir le fichier include : 'systemc.h' : No such file or directory
+  RAM.cpp
+d:\gitkrakenprojects\inf3610\tp3\src\inf3610-lab3-utf\inf3610-lab3\ram.h(9): fatal error C1083: Impossible d'ouvrir le fichier include : 'systemc.h' : No such file or directory
+  main.cpp
+d:\gitkrakenprojects\inf3610\tp3\src\inf3610-lab3-utf\inf3610-lab3\main.cpp(6): fatal error C1083: Impossible d'ouvrir le fichier include : 'systemc.h' : No such file or directory
+  DataRAM.cpp
+d:\gitkrakenprojects\inf3610\tp3\src\inf3610-lab3-utf\inf3610-lab3\dataram.h(9): fatal error C1083: Impossible d'ouvrir le fichier include : 'systemc.h' : No such file or directory
+  Sobel.cpp
+d:\gitkrakenprojects\inf3610\tp3\src\inf3610-lab3-utf\inf3610-lab3\sobel.h(9): fatal error C1083: Impossible d'ouvrir le fichier include : 'systemc.h' : No such file or directory
   Génération de code en cours...
-  INF3610-Lab3.vcxproj -> X:\Bureau\INF3610\INF3610-git\TP3\src\INF3610-Lab3-UTF\Debug\INF3610-Lab3-UTF.exe

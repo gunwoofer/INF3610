@@ -1,6 +1,6 @@
 #include "Writer.h"
 
-Writer::Writer(sc_module_name nom) {
+Writer::Writer(sc_module_name nom) : sc_channel(nom) {
 
 }
 
@@ -20,10 +20,9 @@ void Writer::thread(void) {
 		uiAddress = address.read();
 		uiData = data.read();
 		dataPortRAM->Write(uiAddress, uiData);
-		ack.write(true);
 
+		ack.write(true);
 		wait(clk->posedge_event());
 		ack.write(false);
-		
 	}
 }
