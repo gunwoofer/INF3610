@@ -1,7 +1,7 @@
 #include "Writer.h"
 
-Writer::Writer(sc_module_name nom) : sc_channel(nom) {
-
+Writer::Writer(sc_module_name nom) : sc_module(nom) {
+	SC_THREAD(thread);
 }
 
 Writer::~Writer() {

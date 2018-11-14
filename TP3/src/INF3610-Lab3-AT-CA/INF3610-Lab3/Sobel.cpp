@@ -64,9 +64,7 @@ void Sobel::thread(void)
 			wait(clk->posedge_event());
 		} while (!ack.read());
 		imgWidth = data.read();
-		wait(clk->posedge_event());
 		requestRead.write(false);
-		
 		
 		address += 4;
 		addressPort.write(address);
@@ -75,7 +73,6 @@ void Sobel::thread(void)
 			wait(clk->posedge_event());
 		} while (!ack.read());
 		imgHeight = data.read();
-		wait(clk->posedge_event());
 		requestRead.write(false);
 		
 		unsigned int imgSize = imgWidth * imgHeight;
@@ -94,7 +91,6 @@ void Sobel::thread(void)
 				wait(clk->posedge_event());
 			} while (!ack.read());
 			imageAsInt[i] = data.read();
-			wait(clk->posedge_event());
 			requestRead.write(false);
 		}
 
@@ -127,8 +123,7 @@ void Sobel::thread(void)
 			do {
 				wait(clk->posedge_event());
 			} while (!ack.read());
-			wait(clk->posedge_event());
-			requestRead.write(false);
+			requestWrite.write(false);
 		}
 
 		delete(image);
